@@ -172,7 +172,7 @@ Gimnasio al que asistes regularmente:
 #### Video unificado
 | Entrevista | Marca de tiempo | Entrevistado |
 | :--- | :--- | :--- |
-| 1 | 00:00:00 | Alexander Gutierrez |
+| 1 | 00:00:00 | Julio Cardenas |
 | 2 | 13:49:09 | Luis Romero |
 | 3 | 26:43:21 | Percy Baraybar | 
 | 4 | 36:57:01 | Joan Steffano Quispe Gamez |
@@ -187,9 +187,9 @@ Gimnasio al que asistes regularmente:
 Análisis de Entrevistas: Segmento "Administradores y gerentes de operaciones de gimnasios
 1. **Características Objetivas (Demografía y Comportamiento)**
 
-* Rango Etario y Perfil Profesional (100%): El 100% de los entrevistados (Alexander, Luis y Percy) son hombres que se desempeñan como administradores de gimnasios. Sus edades fluctúan entre los 30 y 51 años (Alexander con 31, Luis con 51 y Percy con 30), representando un segmento con experiencia directa en la gestión operativa de instalaciones deportivas.  
+* Rango Etario y Perfil Profesional (100%): El 100% de los entrevistados (Julio, Luis y Percy) son hombres que se desempeñan como administradores de gimnasios. Sus edades fluctúan entre los 30 y 51 años (Julio con 45, Luis con 51 y Percy con 30), representando un segmento con experiencia directa en la gestión operativa de instalaciones deportivas.  
 * Gestión Operativa de la Congestión (100%): El 100% del segmento implementa estrategias manuales de mitigación durante las horas pico. Para manejar la saturación, recurren a ofrecer ejercicios alternativos, promover el uso de pesos libres, fomentar que se compartan las máquinas o realizar "gestión de piso".  
-* Dependencia de Mantenimiento y Repuestos (100%): El 100% lidia con la logística y los tiempos del mantenimiento de equipos. Un 66.7% (Alexander y Luis) diferencia operativamente entre la rapidez de obtener repuestos de marcas nacionales frente a las demoras logísticas que implican los repuestos importados, especialmente en máquinas de cardio como las trotadoras.  
+* Dependencia de Mantenimiento y Repuestos (100%): El 100% lidia con la logística y los tiempos del mantenimiento de equipos. Un 66.7% (Julio y Luis) diferencia operativamente entre la rapidez de obtener repuestos de marcas nacionales frente a las demoras logísticas que implican los repuestos importados, especialmente en máquinas de cardio como las trotadoras.  
 * Apertura a la Implementación Tecnológica (100%): El 100% de los entrevistados está dispuesto a integrar tecnologías como mapas de calor, paneles de control y sensores/cámaras para medir el uso real del local. Asimismo, un 66.7% (Luis y Percy) enfatiza el uso de procesamiento "Edge" en las cámaras como condición operativa para asegurar la supervisión sin vulnerar la privacidad de los usuarios.  
 * Condicionamiento para la Adopción de Software (100%): El 100% coincide en que la decisión de pagar por una nueva plataforma tecnológica depende de un piloto gratuito (por ejemplo, de 30 días). Exigen que este piloto demuestre datos precisos sobre afluencia, horarios pico y uso de máquinas (o logre una reducción medible de quejas) para justificar la inversión comercial.  
   
@@ -197,8 +197,8 @@ Análisis de Entrevistas: Segmento "Administradores y gerentes de operaciones de
 
 * Frustración y Preocupación por Fuga de Clientes (100%): El 100% reconoce que las fallas en los equipos generan cuellos de botella y quejas inmediatas. Un 66.7% (Luis y Percy) señala con preocupación que estas fallas afectan negativamente la percepción del cliente y son un factor crítico que impacta directamente en la no renovación de las membresías.  
 * Urgencia por Anticipación y Control (100%): El 100% valora profundamente el concepto de "mantenimiento predictivo". Perciben que poder anticipar el desgaste de piezas clave antes de que se rompan "cambiaría las reglas del juego" o sería "magnífico", ya que su principal dolor es el tiempo de inactividad de las máquinas (downtime) y el alto costo del mantenimiento correctivo.  
-* Necesidad de Certeza frente a la Subjetividad (66.7%): Para el 66.7% (Alexander y Percy), existe el deseo de dejar atrás la intuición para pasar a los datos reales. Sienten la necesidad de contar con mapas de calor para prever demandas, optimizar el mix de máquinas y redistribuir al staff de manera fundamentada, sin depender de percepciones subjetivas.  
-* Empatía Tecnológica con el Socio (66.7%): Un 66.7% (Alexander y Percy) proyecta que las herramientas visuales beneficiarían emocionalmente al usuario final. Consideran valioso que el socio pueda visualizar la disponibilidad del local o reservar espacios a través de una app, ayudando a que el cliente entienda la capacidad del lugar y gestione mejor sus expectativas.  
+* Necesidad de Certeza frente a la Subjetividad (66.7%): Para el 66.7% (Julio y Percy), existe el deseo de dejar atrás la intuición para pasar a los datos reales. Sienten la necesidad de contar con mapas de calor para prever demandas, optimizar el mix de máquinas y redistribuir al staff de manera fundamentada, sin depender de percepciones subjetivas.  
+* Empatía Tecnológica con el Socio (66.7%): Un 66.7% (Julio y Percy) proyecta que las herramientas visuales beneficiarían emocionalmente al usuario final. Consideran valioso que el socio pueda visualizar la disponibilidad del local o reservar espacios a través de una app, ayudando a que el cliente entienda la capacidad del lugar y gestione mejor sus expectativas.  
   
 3. **Resumen para la construcción del Arquetipo**
 
