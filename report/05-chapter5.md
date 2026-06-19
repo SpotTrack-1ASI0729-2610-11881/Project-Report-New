@@ -586,6 +586,14 @@ El hecho de contar con la Fake API accesible en una URL pública —y no solo en
 
 Inicializar el proyecto Angular con carpetas separadas por contexto (`auth/`, `heatmap/`, `admin/`, `maintenance/`, `equipment/`, `routines/`) demostró que los límites de dominio definidos en el DDD son aplicables también en la capa de presentación. Esta organización facilitó que cada integrante trabajara en su módulo asignado con mínima interferencia sobre el código de los demás, confirmando que la inversión en el diseño de arquitectura del Sprint 1 tiene retorno directo en la productividad del equipo de desarrollo.
 
+#### Sprint 3
+
+La transición de JSON Server a Spring Boot validó la decisión arquitectónica tomada en el Sprint 2 de establecer un contrato de API explícito. Al preservar los mismos paths, estructuras de respuesta y códigos de estado en el backend real, la integración se redujo a actualizar la URL base en el `environment.ts` de Angular sin modificar ningún servicio ni componente existente. Este resultado confirma que documentar los contratos de API desde la fase de Fake API no es documentación accesoria, sino una decisión técnica que elimina retrabajo en la etapa de integración.
+
+Las entrevistas de validación realizadas con representantes de ambos segmentos objetivo —administradores de gimnasio y clientes frecuentes— confirmaron que las funcionalidades implementadas (mapa de calor en tiempo real, gestión de activos, reservas exprés y alertas de mantenimiento predictivo) responden directamente a los dolores identificados durante la investigación inicial del Sprint 1. Los participantes lograron completar sus tareas principales sin bloqueos críticos, lo que valida tanto el flujo de navegación del producto como la solidez de la integración frontend-backend alcanzada en este sprint.
+
+La arquitectura de Bounded Contexts definida mediante EventStorming en el Sprint 1 y actualizada en el sprint 3, demostró su valor end-to-end al guiar también la organización del backend en Spring Boot: cada contexto delimitado (Gym, Monitoring, Maintenance, Reservatinos, Analytics, and the rest) se tradujo en un módulo de backend independiente con sus propios controladores, commandos, queries, servicios y repositorios. Esta coherencia entre el modelo de dominio, la estructura del frontend Angular y la arquitectura del backend redujo la fricción de comunicación entre subequipos y facilitó la integración de los tres sprints en una plataforma funcional y coherente.
+
 ---
 
 ### Recomendaciones
@@ -603,6 +611,17 @@ La configuración del `db.json` con datos semilla completos  es un requisito té
 Las tareas T15 (Build interactive heatmap component) y T16 (Implement real-time status update via polling) son el núcleo funcional del producto desde la perspectiva del cliente final. El resto de funcionalidades del flujo de cliente —filtrado por tipo de máquina (T17-T18), cambio de sucursal (T19-T20) y motor de rutinas alternativas (T21-T22)— dependen del mapa de calor como superficie de interacción base. Dejarlas para el final del sprint compromete la viabilidad de toda la demo del Sprint Review.
 
 Para que el paso de JSON Server a Spring Boot no implique cambios en los componentes Angular, los endpoints del backend real deben respetar los mismos paths, estructuras de response y códigos de estado ya documentados en la tabla de servicios del Sprint 2. Con ese contrato preservado, la transición se reduce a actualizar la URL base en el `environment.ts` de Angular sin tocar ningún servicio ni componente existente.
+
+#### Sprint 3
+
+Los hallazgos de las entrevistas de validación deben traducirse en un backlog priorizado para el siguiente ciclo. Las observaciones sobre fricción de navegación, flujos de reserva y visualización del mapa de calor deben evaluarse según su impacto en ambos segmentos antes de planificar nuevas funcionalidades. Incorporar métricas de tasa de éxito de tareas por segmento como criterio de aceptación en los próximos sprint backlogs consolidará la práctica de validación continua con usuarios reales que se estableció en este sprint.
+
+Con el backend en producción y ambos segmentos accediendo a la plataforma real, el siguiente paso crítico es reforzar la seguridad del sistema: implementar autenticación basada en tokens JWT con expiración controlada, aplicar validaciones de entrada en todos los endpoints del backend y configurar CORS estrictamente para aceptar únicamente los orígenes de producción autorizados. La transición de un Fake API a un backend real expone datos de gimnasios y clientes que requieren protección activa.
+
+Se recomienda extender el pipeline CI/CD al repositorio del backend Spring Boot, siguiendo el mismo modelo automatizado implementado para la Landing Page y la Web Application. Un workflow de GitHub Actions que ejecute las pruebas unitarias e integración antes de cada despliegue en el entorno de producción reduciría el riesgo de regresiones a medida que el equipo incorpore correcciones y nuevas funcionalidades en iteraciones posteriores.
+
+
+Se recomienda finalizar los bounded contexts faltantes para el sprint final.
 
 ## Bibliography
 
