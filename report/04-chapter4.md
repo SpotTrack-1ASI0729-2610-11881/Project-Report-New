@@ -184,6 +184,10 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 
 ![US14 Motor de sugerencia de rutinas alternativas](../assets/WIREFRAMES/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){width=600px}
 
+![US15 Filtrado de alternativas por grupo muscular](../assets/WIREFRAMES/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-W.png)
+
+![US16 Sistema de reserva exprés en horas pico](../assets/WIREFRAMES/S16%20-%20reserva%20express.png}
+
 ![US17 Acumulación automática de horas de uso](../assets/WIREFRAMES/US17_Wireframe.png){width=600px}
 
 ![US18 Identificación de equipos subutilizados](../assets/WIREFRAMES/US18_Wireframe.png){width=600px}
@@ -238,8 +242,14 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 ![TASKFLOW-14](../assets/TASKFLOWS/TASKFLOW-14.jpg)
 ![WFM-14](../assets/WIREFLOWS%20MOBILE/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
 ![WF-14](../assets/WIREFLOWS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
+
+![TASKFLOW-15](../assets/TASKFLOWS/TASKFLOW-15.png)
+![WFM-15](../assets/WIREFLOWS%20MOBILE/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-WFM.png)
+![WF-15](../assets/WIREFLOWS/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-WF.png)
+
 ![task16.png](../assets/TASKFLOWS/TASKFLOW-16.png)
-![WF-16](../assets/WIREFLOWS/Frame%2017.png)
+![WF-16](../assets/WIREFLOWS/S16%20-%20reserva%20express.png)
+![WFM-16](../assets/WIREFLOWS%20MOBILE/S16%20-%20reserva%20express.png)
 
 ![task17.png](../assets/TASKFLOWS/TASKFLOW-17.png)
 ![WFM-17](../assets/WIREFLOWS%20MOBILE/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
@@ -305,7 +315,7 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 ![MOCKUP-US12](../assets/MOCKUPS/US12%20Notificaciones%20push%20de%20resolución%20de%20disponibilidad%20(Epic_%20EP03).png)
 ![MOCKUP-US13](../assets/MOCKUPS/US13_%20Reporte%20de%20máquina.png)
 ![MOCKUP-US14](../assets/MOCKUPS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
-![MOCKUP-US17](../assets/MOCKUPS/US17%20Acumulación%20automática%20de%20horas%20de%20uso.pngg)
+![MOCKUP-US17](../assets/MOCKUPS/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
 ![MOCKUP-US18](../assets/MOCKUPS/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
 ![MOCKUP-US19](../assets/MOCKUPS/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
 ![MOCKUP-US20](../assets/MOCKUPS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
@@ -423,7 +433,29 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 
 ## US15: Filtrado de alternativas por grupo muscular 
 
+![UF-15](../assets/USERFLOWS/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular.png){
+    width=90%
+}
+![UFM-15](../assets/USERFLOW%20MOBILE/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-UFM.png){
+    width=90%
+}
+
+* **User Goal:** Como cliente frecuente, quiero que las rutinas sugeridas respeten mi grupo muscular objetivo y omitan máquinas averiadas, para tener opciones realmente útiles.
+* **Happy Path:** Al solicitar alternativas para una máquina no disponible, el motor filtra los ejercicios disponibles y presenta una lista de opciones equivalentes que trabajan estrictamente el mismo grupo muscular mapeado.
+* **Unhappy Path:** Si todos los equipos alternativos biomecánicamente válidos para ese grupo muscular se encuentran inhabilitados u ocupados, la UI muestra un empty state indicando que no hay sustitutos viables en ese momento.
+
+
 ## US16: Sistema de reserva exprés en horas pico
+![UF-16](../assets/USERFLOWS/S16%20-%20reserva%20express.png){
+    width=90%
+}
+![UFM-16](../assets/USERFLOW%20MOBILE/S16%20-%20reserva%20express.png){
+    width=90%
+}
+
+* **User Goal:** Como cliente frecuente, quiero separar virtualmente una máquina libre por 10 minutos durante horas pico, para asegurar su uso mientras me dirijo a ella.
+* **Happy Path:** Al seleccionar una máquina con estado libre en el mapa, el usuario activa la reserva exprés. El sistema cambia el estado del equipo a reservado y bloquea su uso para otros clientes, iniciando un temporizador de cuenta regresiva de 10 minutos hasta que el usuario llegue y valide su presencia.
+* **Unhappy Path:** Si el temporizador llega a cero antes de que el usuario valide su presencia en la máquina, el sistema cancela automáticamente la reserva, libera el equipo pasándolo a estado libre y emite una notificación de penalización o expiración al usuario.
 
 ## US17: Acumulación automática de horas de uso (EP08)
 ![UF-17](../assets/USERFLOWS/US17_%20Acumulación%20automática%20de%20horas%20de%20uso%20(EP08).png){ width=90% }
@@ -546,7 +578,7 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d317_upc_edu_pe/IQDCANk2
 ## Domain-Driven Software Architecture
 
 ### Design-Level Event Storming
-![Design-Level Event Storming](../assets/event%20storming.png)
+![Design-Level Event Storming](../assets/Event%20Storming.png)
 
 ### Aggregates
 ![aggregates.png](../assets/aggregates.png)
