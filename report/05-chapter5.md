@@ -763,8 +763,7 @@ SpotTrack
 El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
 
 1. Visualización del mapa de calor y aplicación de filtros (Userflow: US09 y US10).
-
-![Userflow US09 y US10](../assets/USERFLOWS/US09%20Y%20US10_%20MAPA%20DE%20CALOR%20Y%20FILTROS.png)
+2. Reserva exprés de equipos (Userflow: S16).
 
 **ESCALA DE SEVERIDAD:**
 Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
@@ -783,6 +782,9 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
 | 1 | Los colores indicadores en el mapa de calor (rojo/verde) carecen de un texto o ícono alternativo, dificultando la lectura para personas con daltonismo. | 3 | Inclusive Design: Provide comparable experience |
 | 2 | Al aplicar múltiples filtros en la búsqueda de máquinas, no existe una opción de "Limpiar filtros" visible en el primer nivel de navegación. | 2 | Usability: Control y libertad del usuario / Information Architecture: Is it usable? |
 | 3 | No se muestra retroalimentación visual inmediata mientras el mapa de calor está cargando los datos filtrados, lo cual puede generar incertidumbre en la conexión. | 2 | Usability: Visibilidad del estado del sistema |
+| 4 | El tiempo restante para la reserva exprés no es visible si el usuario navega a otra pantalla durante el periodo activo de reserva. | 3 | Usability: Visibilidad del estado del sistema |
+| 5 | Falta de instrucciones claras sobre las consecuencias de que la reserva exprés expire antes de ser confirmada presencialmente. | 2 | Usability: Prevención de errores / Ayuda y documentación |
+| 6 | El botón para cancelar la reserva exprés utiliza un color neutral en lugar de un color semántico destructivo (rojo). | 2 | Usability: Consistencia y estándares |
 
 **DESCRIPCIÓN DE PROBLEMAS:**
 
@@ -790,6 +792,8 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
 
 Severidad: 3
 Heurística violada: Inclusive Design - Provide comparable experience
+
+![Userflow US09 y US10](../assets/USERFLOWS/US09%20Y%20US10_%20MAPA%20DE%20CALOR%20Y%20FILTROS.png)
 
 **Problema:**
 Al visualizar la disponibilidad de las máquinas en el mapa de calor, el único indicador de estado es el color (verde para disponible, rojo para ocupado). Esto genera problemas de accesibilidad para personas con daltonismo (protanopia o deuteranopia), ya que no pueden distinguir fácilmente qué equipo está libre.
@@ -804,6 +808,8 @@ Acompañar los colores con un indicador iconográfico (ej. un "check" para libre
 Severidad: 2
 Heurística violada: Usability - Control y libertad del usuario
 
+![Userflow US09 y US10](../assets/USERFLOWS/US09%20Y%20US10_%20MAPA%20DE%20CALOR%20Y%20FILTROS.png)
+
 **Problema:**
 Una vez que el cliente elige múltiples filtros de tipo de máquina (ej. Cardio, Fuerza, etc.), tiene que desmarcar cada uno manualmente para regresar a la vista general. No existe una "salida de emergencia" o botón rápido para restablecer la vista.
 
@@ -817,11 +823,58 @@ Añadir un botón claro de "Limpiar todos los filtros" junto al panel de filtrad
 Severidad: 2
 Heurística violada: Usability - Visibilidad del estado del sistema
 
+![Userflow US09 y US10](../assets/USERFLOWS/US09%20Y%20US10_%20MAPA%20DE%20CALOR%20Y%20FILTROS.png)
+
 **Problema:**
 Cuando la red está lenta y el usuario aplica un filtro, el sistema no muestra un *spinner* ni un estado de carga claro (esqueleto) en la cuadrícula de máquinas, por lo que el usuario podría pensar que la app se congeló.
 
 **Recomendación:**
 Implementar un estado de carga (skeleton loaders o spinners interactivos) sobre el área del mapa de calor, que comunique al usuario de manera transparente que el sistema está procesando su petición.
+
+---
+
+**PROBLEMA #4: Falta de visibilidad global del temporizador de reserva exprés**
+
+Severidad: 3
+Heurística violada: Usability - Visibilidad del estado del sistema
+
+![Userflow S16](../assets/USERFLOWS/S16%20-%20reserva%20express.png)
+
+**Problema:**
+Durante el periodo de reserva exprés (que tiene un tiempo limitado de pocos minutos), si el usuario abandona la pantalla de confirmación para ver su perfil u otras secciones, el temporizador deja de ser visible. El usuario puede olvidar cuánto tiempo le queda para llegar a la máquina.
+
+**Recomendación:**
+Implementar un *banner* fijo superior (sticky) o un ícono flotante que permanezca visible a lo largo de toda la aplicación mientras haya una reserva activa, mostrando el contador regresivo de forma persistente.
+
+---
+
+**PROBLEMA #5: Instrucciones poco claras sobre la expiración de la reserva**
+
+Severidad: 2
+Heurística violada: Usability - Prevención de errores / Ayuda y documentación
+
+![Userflow S16](../assets/USERFLOWS/S16%20-%20reserva%20express.png)
+
+**Problema:**
+Al momento de confirmar la reserva exprés, la interfaz no indica explícitamente qué sucede cuando el tiempo expira ni advierte si existe alguna penalización por no cumplir con la reserva, generando ansiedad en el usuario.
+
+**Recomendación:**
+Añadir una pequeña nota aclaratoria debajo del botón de reserva (ej. "Si no te acercas a la máquina en 5 minutos, la reserva se anulará sin penalización").
+
+---
+
+**PROBLEMA #6: Colores confusos para acciones destructivas**
+
+Severidad: 2
+Heurística violada: Usability - Consistencia y estándares
+
+![Userflow S16](../assets/USERFLOWS/S16%20-%20reserva%20express.png)
+
+**Problema:**
+El botón de "Cancelar Reserva" emplea un color neutral o idéntico al de botones de acciones secundarias no destructivas, lo que podría provocar que el usuario lo confunda o no identifique rápidamente cómo anular la acción.
+
+**Recomendación:**
+Usar un color que indique peligro o acción destructiva, como un rojo suave, para el botón de cancelar reserva o aplicar un texto en color rojo, siguiendo los patrones de diseño UI estándar.
 
 ## Video About the Product
 
