@@ -506,7 +506,7 @@ Como parte de la tarea **CORR-05**, la Landing Page de SpotTrack fue desplegada 
 
 | Producto | Entorno | URL de Producción |
 | :--- | :--- | :--- |
-| SpotTrack Landing Page | GitHub Pages (producción) | https://spottrack-1asi0729-2610-11881.github.io/SpotTrack-Landing-Page/ |
+| SpotTrack Landing Page | GitHub Pages (producción) | https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/|
 
 La siguiente figura muestra la Landing Page de SpotTrack correctamente desplegada y funcional en el entorno de producción de GitHub Pages:
 
@@ -518,7 +518,7 @@ Por parte de la aplicación web, se utilizó un static web app de Azure para rea
 ![](../assets/azure-evidence.png)
 ![](../assets/github-actions-webapp.png)
 
-Webapp URL: https://purple-tree-092d40a10.7.azurestaticapps.net/
+Webapp URL: https://kind-desert-06c07fc10.7.azurestaticapps.net/
 
 #### Team Collaboration Insights during Sprint
 
@@ -740,6 +740,25 @@ El backend de SpotTrack (`spottrack-platform`) fue desplegado en **Azure App Ser
 #### Team Collaboration Insights for Sprint Review
 
 Durante el Sprint 3, la colaboración del equipo se concentró principalmente en el repositorio `spottrack-platform`. El historial de commits refleja una distribución activa del trabajo: **llummo** (Juan Pablo Azama) fue el principal contribuidor en los Bounded Contexts de Gym, Equipment, Maintenance y Reservation; mientras que **ORION-tech-c** (Álvaro Fernández) lideró los Bounded Contexts de IAM, Profiles y Routines. El repositorio acumuló más de 80 Pull Requests fusionados a la rama `develop` durante el período del sprint (2026-05-18 al 2026-06-19), evidenciando una metodología GitFlow disciplinada con ramas por feature y revisión de código mediante PRs.
+
+Entendido. Aquí tienes la documentación ajustada para enfocarse **exclusivamente en el despliegue del backend**, lista para que la copies y pegues en tu Sprint Review:
+
+---
+
+#### Software Deployment Evidence for Sprint Review
+
+Durante este sprint, el objetivo de despliegue se centró en el **Backend de SpotTrack**, el cual fue desplegado exitosamente y ya se encuentra operativo en el entorno de la nube de **Azure**.
+
+| Componente | Entorno de Despliegue | URL de Producción |
+| --- | --- | --- |
+| **SpotTrack platform** | Azure Web App | [spottrack-platform-os.azurewebsites.net](spottrack-platform-os.azurewebsites.net) |
+
+Este despliegue garantiza que la lógica de negocio, las bases de datos y los servicios del backend estén completamente disponibles en la nube para ser consumidos de manera estable y segura.
+
+![Servicios1](../assets/mysql-os.png)
+![Servicios2](../assets/servicio2.png)
+
+---
 
 ## Validation Interviews
 ### Diseño de Entrevistas
@@ -1094,3 +1113,18 @@ Se recomienda finalizar los bounded contexts faltantes para el sprint final.
 
 
 
+### Annex C : Link importantes
+
+Link del Landing: https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/
+
+Link del WebApp: https://kind-desert-06c07fc10.7.azurestaticapps.net/login
+
+Link de la organizacion: https://github.com/upc-pre-202610-1asi0729-11881-spottrack
+
+Link del repositorio de webapp: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp
+
+Link del repositorio de platform: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform.git
+
+Link del repositorio de Landing page: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-website
+
+Link del repositorio del report: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report
