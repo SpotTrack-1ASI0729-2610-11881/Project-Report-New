@@ -532,7 +532,6 @@ Webapp URL: https://purple-tree-092d40a10.7.azurestaticapps.net/
 
 El presente apartado detalla los acuerdos y objetivos definidos durante el Sprint Planning Meeting de nuestra tercera iteración. Para este Sprint, el equipo se enfocó en dos frentes de trabajo simultáneos: (1) la corrección y completitud de todos los artefactos pendientes del Sprint 2, incluyendo el despliegue completo de la Web Application frontend; y (2) el inicio del desarrollo backend de la aplicación principal, conectando los servicios reales a las vistas ya implementadas en el Sprint anterior, con el objetivo de lograr una plataforma web completamente integrada para administradores y clientes de gimnasio.
 
-#### Sprint Backlog 3
 
 | Aspect | Details |
 | :--- | :--- |
@@ -549,6 +548,11 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 | **Sum of Story Points** | 45 |
 
 
+#### Aspect Leaders and Collaborators
+
+
+#### Sprint Backlog 3
+
 | Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | TAS-167 | Eventstorming review | TAS-168 | EVENT STORMING GROUP MEETING (MANDATORY ATTENDANCE) (NO SEQUENTIAL EVENTS) | - | - | Sin asignar | To Do |
@@ -563,6 +567,19 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 | TAS-164 | Sprint 2 corrections | TAS-173 | Support in C4 diagram revision | - | - | Azama | To Do |
 | TAS-164 | Sprint 2 corrections | TAS-172 | Diagrams Revision C4 Backend | - | - | Atoche | To Do |
 | TAS-164 | Sprint 2 corrections | TAS-171 | Figma documentation correction and completition | - | - | Espinoza | To Do |
+
+
+#### Development Evidence for Sprint Review
+#### Execution Evidence for Sprint Review
+#### Services Documentation for Sprint Review
+#### Software Deployment Evidence for Sprint Review
+#### Team Collaboration Insights for Sprint Review
+
+## Validation Interviews
+### Diseño de Entrevistas
+### Registro de Entrevistas
+### Evaluaciones Según Heurísticas
+## Video About the Product
 
 ## Conclusiones y Recomendaciones
 
