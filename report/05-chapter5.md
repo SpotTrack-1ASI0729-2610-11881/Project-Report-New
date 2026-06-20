@@ -550,6 +550,15 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 
 #### Aspect Leaders and Collaborators
 
+Para este Sprint 3, el equipo concentró sus esfuerzos en el desarrollo del backend con Spring Boot. La división de trabajo se organizó por Bounded Contexts del dominio, permitiendo que cada integrante tomara ownership completo sobre uno o varios contextos delimitados.
+
+| Team Member (Last Name, First Name) | GitHub Username | Aspect 1: Backend Gym & Equipment BC Leader (L) / Collaborator (C) | Aspect 2: Backend IAM & Profiles BC Leader (L) / Collaborator (C) | Aspect 3: Validation Interviews Leader (L) / Collaborator (C) | Aspect 4: Sprint 2 Corrections Leader (L) / Collaborator (C) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Azama Fukuda, Juan Pablo | llummo | Gym / Equipment / Maintenance / Reservation BC (L) | IAM BC (C) | Segment 1 (C) | Corrections (C) |
+| Fernández Linares, Alvaro Sebastian | ORION-tech-c | Profiles BC / Routines BC (L) | IAM BC (L) | Segment 2 (L) | C4 Diagram Revision (C) |
+| Atoche Gonzales, Nicolas Fernando | THECOMAX | Analytics BC (L) | (C) | (C) | Ubiquitous Language Update (L) |
+| Cataño Zarate, Jesus Miguel | jcuz1510 | Database Design & Creation (L) | (C) | (C) | Figma Documentation (C) |
+| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Analytics BC (C) | (C) | Segment 1 (L) | Figma Documentation (L) |
 
 #### Sprint Backlog 3
 
@@ -570,15 +579,122 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 
 
 #### Development Evidence for Sprint Review
+
+El principal trabajo del Sprint 3 se concentró en el repositorio `spottrack-platform`, correspondiente al backend desarrollado con Spring Boot. A continuación se presentan los commits más representativos, agrupados por Bounded Context.
+
+Backend Web Services Commits (spottrack-platform):
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | main | 1325eaf | Initial commit | - | 2026-05-19 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | develop | 86e7199 | chore: initial project setup | - | 2026-05-29 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/shared-bounded-context | e58c5dc | feat: add shared bounded context | - | 2026-05-29 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/equipment | b3baf4c | feat: add equipment bounded context and aggregate | - | 2026-05-29 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/equipment | 81032b1 | add RegisterEquipmentCommand and MarkEquipmentOutOfService command | - | 2026-06-02 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/equipment | 20eb775 | fix: add currency pattern validation for money value object | - | 2026-06-02 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/equipment | 5d3f36c | feat: add equipment commandService implementation | - | 2026-06-02 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/reservation | 52aabc7 | feat: add Reservation bounded context | - | 2026-06-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/maintenance | 85aaa7c | feat: add maintenance bounded context | - | 2026-06-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/routines-bounded | fe293a1 | domain layer implemented | - | 2026-06-08 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/profiles-bounded | fe4e01e | domain layer added | - | 2026-06-10 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/profiles-bounded | 57db4ce | add interfaces layer | - | 2026-06-10 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/routines-bounded | 81bd12d | RoutineSession aggregate implemented | - | 2026-06-11 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/register-equipment | a995d66 | feat(equipments): consolidated equipments bounded context | - | 2026-06-12 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/equipment-markout | 70c410e | feat(equipments): finish mark equipment out of service | - | 2026-06-13 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/equipment-reworkTo-gym | 956991d | feat(gym): add createGym controller | - | 2026-06-13 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/add-branch | cb5b898 | feat(gym): add addbranch command impl | - | 2026-06-13 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/add-zone | 935ba34 | feat(gym): complete add zone feature | - | 2026-06-14 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/define-threshold | dfa9941 | feat(gym): add DefineMaintenanceThresholdCommand | - | 2026-06-14 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | fix/persistence-entities | a07eb89 | feat(reservation): finished initiate express reservation command working with persistence entity | - | 2026-06-15 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/iam-dependencies | 6b02423 | chore: add Spring Security and JWT dependencies | - | 2026-06-16 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/iam-register-user | fedf4b3 | feat(iam): add UsersController | - | 2026-06-16 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/iam-login-user | 5a24c22 | feat(iam): add AuthenticationController | - | 2026-06-16 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/iam-security | 81c77cd | feat(iam): add WebSecurityConfiguration | - | 2026-06-16 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/profiles-update-profile-endpoint | 0fa8256 | feat(profiles): add PUT update profile endpoint | - | 2026-06-16 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/reservation-timer | 9c92017 | feat(reservation): add methods required for creating the timer and enabled scheduling | - | 2026-06-17 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/maintenance | fbddba4 | feat(maintenance): add EquipmentId value object | - | 2026-06-18 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/ticket-created-policy | 0ea580e | feat(maintenance): implement ticket created policy to mark equipment out of service | - | 2026-06-19 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/ticket-resolved-policy | 7e3d5f1 | feat(maintenance): implement ticket resolved policy to request equipment status update to available | - | 2026-06-19 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | develop | 080acf5 | Merge pull request #81 fix/maintenance-repository-save-update | - | 2026-06-19 |
+
 #### Execution Evidence for Sprint Review
+
+Durante el Sprint 3, el equipo concretó la transición de una arquitectura basada en Fake API (JSON Server) a un backend real implementado con Spring Boot. La plataforma `spottrack-platform` fue construida siguiendo los principios de Domain-Driven Design, con Bounded Contexts claramente delimitados: **Gym** (gestión de sedes, zonas y umbral de mantenimiento), **Equipment** (registro, actualización de estado, retiro y reubicación de activos), **Maintenance** (tickets técnicos, trabajos de mantenimiento y bitácora), **Reservation** (reservas exprés con temporizador), **Profiles** (perfiles de administrador y cliente), **IAM** (autenticación JWT, registro, login y desactivación de cuenta) y **Routines** (sesiones de rutina).
+
+Los Bounded Contexts se comunicaron mediante eventos de integración, implementando el patrón de ACL (Anti-Corruption Layer): el evento `TicketCreatedEvent` disparó la política que marcó el equipo como fuera de servicio en el Gym BC, y el evento `TicketResolvedEvent` disparó la política que actualizó el estado del equipo a disponible al completar el mantenimiento.
+
+La integración frontend-backend se logró sin modificaciones a los componentes Angular del Sprint 2, al respetar el contrato de API documentado desde la etapa de Fake API. Únicamente fue necesario actualizar la URL base en `environment.ts`.
+
+Link del video:
+
 #### Services Documentation for Sprint Review
+
+El backend fue construido con Spring Boot y expone una API RESTful protegida con JWT. A continuación se detallan los principales endpoints implementados por Bounded Context.
+
+##### Bounded Context: IAM (Identity & Access Management)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/auth/sign-up` | Registrar usuario | `POST` | `/api/v1/auth/sign-up` | `{ "id": 1, "username": "admin@gym.com", "roles": ["ROLE_ADMIN"] }` | Crea un nuevo usuario con rol asignado y dispara la creación del perfil correspondiente. |
+| `/api/v1/auth/sign-in` | Autenticar usuario | `POST` | `/api/v1/auth/sign-in` | `{ "id": 1, "username": "admin@gym.com", "token": "eyJ..." }` | Valida credenciales y retorna un Bearer Token JWT para autenticación posterior. |
+| `/api/v1/auth/sign-out` | Cerrar sesión | `POST` | `/api/v1/auth/sign-out` | `{ "message": "Signed out successfully" }` | Invalida la sesión activa del usuario. |
+| `/api/v1/auth/reset-password` | Restablecer contraseña | `POST` | `/api/v1/auth/reset-password` | `{ "message": "Password reset successfully" }` | Permite al usuario actualizar su contraseña. |
+
+##### Bounded Context: Gym (Gestión de Instalaciones)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/gyms` | Crear gimnasio | `POST` | `/api/v1/gyms` | `{ "id": "uuid", "name": "FitNode Central" }` | Registra un nuevo gimnasio en el sistema. |
+| `/api/v1/gyms/{gymId}/branches` | Agregar sede | `POST` | `/api/v1/gyms/{gymId}/branches` | `{ "id": "uuid", "name": "Main Branch", "address": "..." }` | Añade una sede física al gimnasio indicado. |
+| `/api/v1/gyms/{gymId}/branches/{branchId}/zones` | Agregar zona | `POST` | `/api/v1/gyms/{gymId}/branches/{branchId}/zones` | `{ "id": "uuid", "name": "Cardio Zone" }` | Crea una zona dentro de una sede. |
+| `/api/v1/gyms/{gymId}/maintenance-threshold` | Definir umbral | `PATCH` | `/api/v1/gyms/{gymId}/maintenance-threshold` | `{ "thresholdHours": 200 }` | Configura las horas de uso máximo antes de alertar mantenimiento predictivo. |
+
+##### Bounded Context: Equipment (Gestión de Activos)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/equipments` | Registrar equipo | `POST` | `/api/v1/equipments` | `{ "id": "uuid", "name": "Treadmill", "status": "OPERATIONAL" }` | Registra un equipo físico vinculado a un sensor IoT. |
+| `/api/v1/equipments/{id}` | Consultar equipo | `GET` | `/api/v1/equipments/{id}` | `{ "id": "uuid", "name": "Treadmill", "status": "OPERATIONAL" }` | Retorna el detalle completo de un equipo. |
+| `/api/v1/equipments/{id}/status` | Actualizar estado | `PATCH` | `/api/v1/equipments/{id}/status` | `{ "status": "OUT_OF_SERVICE" }` | Cambia el estado operativo del equipo. |
+| `/api/v1/equipments/{id}/decommission` | Dar de baja | `PATCH` | `/api/v1/equipments/{id}/decommission` | `{ "status": "DECOMMISSIONED" }` | Retira definitivamente el equipo del inventario activo. |
+| `/api/v1/equipments/{id}/relocate` | Reubicar equipo | `PATCH` | `/api/v1/equipments/{id}/relocate` | `{ "zoneId": "uuid" }` | Transfiere el equipo a otra zona o sede. |
+
+##### Bounded Context: Maintenance (Mantenimiento)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/maintenance/request` | Solicitar mantenimiento | `POST` | `/api/v1/maintenance/request` | `{ "id": "uuid", "status": "PENDING" }` | Inicia una solicitud de mantenimiento; dispara el evento que marca el equipo fuera de servicio. |
+| `/api/v1/maintenance/tickets` | Crear ticket técnico | `POST` | `/api/v1/maintenance/tickets` | `{ "id": "uuid", "priority": "HIGH", "status": "OPEN" }` | Registra un ticket técnico asociado a la solicitud de mantenimiento. |
+| `/api/v1/maintenance/tickets/{id}/accept` | Aceptar ticket | `PATCH` | `/api/v1/maintenance/tickets/{id}/accept` | `{ "status": "IN_PROGRESS", "technicianId": 5 }` | Asigna un técnico y activa el trabajo de mantenimiento. |
+| `/api/v1/maintenance/tickets/{id}/resolve` | Resolver ticket | `PATCH` | `/api/v1/maintenance/tickets/{id}/resolve` | `{ "status": "RESOLVED" }` | Cierra el ticket y dispara el evento que devuelve el equipo a estado disponible. |
+
+##### Bounded Context: Reservation (Reservas Exprés)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/reservations/initiate-express` | Iniciar reserva exprés | `POST` | `/api/v1/reservations/initiate-express` | `{ "id": "uuid", "status": "ACTIVE", "timerExpiry": "..." }` | Bloquea lógicamente el equipo durante el período reservado; activa el temporizador. |
+| `/api/v1/reservations/request-occupy` | Solicitar ocupación | `POST` | `/api/v1/reservations/request-occupy` | `{ "id": "uuid", "status": "PENDING" }` | Registra la intención del cliente de ocupar un equipo en horas pico. |
+| `/api/v1/reservations/{id}/end` | Finalizar reserva | `PUT` | `/api/v1/reservations/{id}/end` | `{ "status": "ENDED" }` | Termina la reserva y dispara el evento para liberar el equipo. |
+
 #### Software Deployment Evidence for Sprint Review
+
+El backend de SpotTrack (`spottrack-platform`) fue desplegado en **Azure App Service**, siguiendo el mismo modelo CI/CD establecido para el frontend en el Sprint 2. Se configuró un workflow de GitHub Actions en `.github/workflows/azure-webapp.yml` que se activa con cada `push` a la rama `main`, construyendo el JAR de Spring Boot y publicándolo automáticamente en el entorno de producción de Azure.
+
+| Producto | Entorno | Tecnología |
+| :--- | :--- | :--- |
+| SpotTrack Backend API | Azure App Service (producción) | Spring Boot + Java |
+| SpotTrack Web Application | Azure Static Web Apps (producción) | Angular |
+| SpotTrack Landing Page | GitHub Pages (producción) | Angular |
+
 #### Team Collaboration Insights for Sprint Review
+
+Durante el Sprint 3, la colaboración del equipo se concentró principalmente en el repositorio `spottrack-platform`. El historial de commits refleja una distribución activa del trabajo: **llummo** (Juan Pablo Azama) fue el principal contribuidor en los Bounded Contexts de Gym, Equipment, Maintenance y Reservation; mientras que **ORION-tech-c** (Álvaro Fernández) lideró los Bounded Contexts de IAM, Profiles y Routines. El repositorio acumuló más de 80 Pull Requests fusionados a la rama `develop` durante el período del sprint (2026-05-18 al 2026-06-19), evidenciando una metodología GitFlow disciplinada con ramas por feature y revisión de código mediante PRs.
 
 ## Validation Interviews
 ### Diseño de Entrevistas
 ### Registro de Entrevistas
 ### Evaluaciones Según Heurísticas
+
 ## Video About the Product
 
 ## Conclusiones y Recomendaciones
