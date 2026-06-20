@@ -884,12 +884,20 @@ Entrevista #6
 | **Duración** | Entre 1 a 2 horas |
 | **Contexto** | Adapta sus entrenamientos según su carga laboral y académica. |
 |**Resumen**| Participante de 20 años, residente de Los Olivos, asiste al gimnasio 3 a 4 veces por semana. Encontró la plataforma intuitiva para reportar equipos y buscar alternativas disponibles. Consideró que la landing page podría reforzar más su identidad relacionada con el gimnasio mediante imágenes o elementos visuales del rubro. Señaló que los colores permiten identificar fácilmente las acciones, aunque algunas letras podrían ser más grandes para mejorar la legibilidad. Como mejoras, sugirió incorporar la opción de cancelar reservas, recibir notificaciones sobre equipos malogrados y añadir videos, recomendaciones y rutinas más completas y personalizadas dentro de la aplicación.
-| **Link** | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBFQYoChOMaSpPJ6Wp5AXuMAS2UsOruQATKpZ7eJkDyqdU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=4BlzqE ](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBFQYoChOMaSpPJ6Wp5AXuMAS2UsOruQATKpZ7eJkDyqdU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=4BlzqE)
+| **Link** | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBFQYoChOMaSpPJ6Wp5AXuMAS2UsOruQATKpZ7eJkDyqdU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=4BlzqE ](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBFQYoChOMaSpPJ6Wp5AXuMAS2UsOruQATKpZ7eJkDyqdU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=4BlzqE)|
 
+#### Video unificado
+| Entrevista | Marca de tiempo | Entrevistado |
+| :--- | :--- | :--- |
+| 1 | 00:00:00 | Julio Cardenas |
+| 2 | 09:26:26 | Luis Romero |
+| 3 | 25:20:96 | Percy Baraybar | 
+| 4 | 36:07:12 | Joan Steffano Quispe Gamez |
+| 5 | 42:16:27 | Fabián Suárez |
+| 6 | 51:04:27 | Diego Quispe |
 
+| **Link** | [Enlace al video unificado de entrevistas - SpotTrack] (https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQC4THjNSb7oRaOHLJ-MgEa4ATxqbIKiZ5H2DUDdsVrw1ms?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=vD9jjd)|
 
-
-|
 
 ### Evaluaciones Según Heurísticas
 
