@@ -564,18 +564,69 @@ Para este Sprint 3, el equipo concentró sus esfuerzos en el desarrollo del back
 
 | Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| TAS-167 | Eventstorming review | TAS-168 | EVENT STORMING GROUP MEETING (MANDATORY ATTENDANCE) (NO SEQUENTIAL EVENTS) | - | - | Sin asignar | To Do |
-| TAS-166 | Validation Interviews | TAS-180 | Create interview questions segment 2 | - | - | Fernández | To Do |
-| TAS-166 | Validation Interviews | TAS-179 | Create interview questions segment 1 | - | - | Espinoza | To Do |
-| TAS-166 | Validation Interviews | TAS-170 | Segment 2 | - | - | Fernández | To Do |
-| TAS-166 | Validation Interviews | TAS-169 | Segment 1 | - | - | Espinoza | To Do |
-| TAS-165 | Web Services Programming | TAS-177 | Create Data Base | - | - | Cataño | To Do |
-| TAS-165 | Web Services Programming | TAS-176 | Solidify Data Base Design (meeting) | - | - | Cataño | To Do |
-| TAS-164 | Sprint 2 corrections | TAS-175 | Ubiquitous language update | - | - | Atoche | To Do |
-| TAS-164 | Sprint 2 corrections | TAS-174 | Remove hardcoded part in the main flow of the app | - | - | Fernández | To Do |
-| TAS-164 | Sprint 2 corrections | TAS-173 | Support in C4 diagram revision | - | - | Azama | To Do |
-| TAS-164 | Sprint 2 corrections | TAS-172 | Diagrams Revision C4 Backend | - | - | Atoche | To Do |
-| TAS-164 | Sprint 2 corrections | TAS-171 | Figma documentation correction and completition | - | - | Espinoza | To Do |
+| TAS-167 | Eventstorming review | TAS-168 | EVENT STORMING GROUP MEETING (MANDATORY ATTENDANCE) | Reunión grupal obligatoria para revisión del Event Storming del dominio antes de comenzar el backend. | 2 hrs | Sin asignar | Done |
+| TAS-166 | Validation Interviews | TAS-180 | Create interview questions segment 2 | Elaborar guía de preguntas para entrevistas de validación con administradores de gimnasio. | 2 hrs | Fernández | Done |
+| TAS-166 | Validation Interviews | TAS-179 | Create interview questions segment 1 | Elaborar guía de preguntas para entrevistas de validación con clientes frecuentes. | 2 hrs | Espinoza | Done |
+| TAS-166 | Validation Interviews | TAS-170 | Segment 2 interviews | Realizar y registrar entrevistas de validación con representantes del segmento administradores. | 4 hrs | Fernández | Done |
+| TAS-166 | Validation Interviews | TAS-169 | Segment 1 interviews | Realizar y registrar entrevistas de validación con representantes del segmento clientes frecuentes. | 4 hrs | Espinoza | Done |
+| TAS-165 | Web Services Programming | TAS-177 | Create Data Base | Desplegar e inicializar el esquema de base de datos SQL para todos los Bounded Contexts del backend. | 4 hrs | Espinoza | Done |
+| TAS-165 | Web Services Programming | TAS-176 | Solidify Data Base Design (meeting) | Reunión de validación y cierre del diseño de base de datos con el equipo antes de la implementación. | 3 hrs | Fernández | Done |
+| TS01 | Registrar usuario API | T01 | IAM domain layer (User aggregate, commands, value objects) | Definir el agregado User, comandos SignUp/SignIn/SignOut/ResetPassword/Deactivate y value objects del Bounded Context IAM. | 4 hrs | Fernández | Done |
+| TS01 | Registrar usuario API | T02 | IAM application layer (UserCommandService & UserQueryService) | Implementar UserCommandService y UserQueryService con todos los métodos handle para cada comando/query IAM. | 4 hrs | Fernández | Done |
+| TS01 | Registrar usuario API | T03 | IAM infrastructure layer (JWT provider, Spring Security config) | Configurar el proveedor de tokens JWT, el filtro de seguridad y la cadena de filtros de Spring Security. | 4 hrs | Fernández | Done |
+| TS01 | Registrar usuario API | T04 | Implement POST /api/v1/authentication/sign-up | Endpoint REST para registro de nuevos usuarios con asignación de rol y creación de perfil. | 3 hrs | Fernández | Done |
+| TS02 | Autenticar usuario API | T05 | Implement POST /api/v1/authentication/sign-in | Endpoint REST para validar credenciales y retornar token JWT firmado. | 3 hrs | Fernández | Done |
+| TS31 | Cerrar sesión API | T06 | Implement POST /api/v1/authentication/sign-out | Endpoint REST para invalidar la sesión activa del usuario autenticado. | 2 hrs | Fernández | Done |
+| TS32 | Restablecer contraseña API | T07 | Implement POST /api/v1/authentication/reset-password | Endpoint REST para que el usuario actualice su contraseña de forma segura. | 2 hrs | Fernández | Done |
+| TS33 | Desactivar cuenta API | T08 | Implement POST /api/v1/authentication/deactivate | Endpoint REST para deshabilitar una cuenta de usuario sin eliminarla del sistema. | 2 hrs | Fernández | Done |
+| TS03 | Obtener usuario por ID API | T09 | Implement GET /api/v1/users/{id} | Endpoint REST para recuperar datos del usuario por identificador único. | 2 hrs | Fernández | Done |
+| TS34 | Listar todos los usuarios API | T10 | Implement GET /api/v1/users | Endpoint REST para retornar el listado completo de usuarios registrados en el sistema. | 2 hrs | Fernández | Done |
+| TS35 | Crear perfil de administrador API | T11 | Profiles BC domain layer (Admin & Client aggregates, commands, value objects) | Definir los agregados Admin y Client, comandos CreateAdmin/UpdateAdmin/CreateClient/UpdateClient y value objects. | 4 hrs | Fernández | Done |
+| TS35 | Crear perfil de administrador API | T12 | Implement POST /api/v1/profiles/admins | Endpoint REST para crear el perfil de un administrador vinculado a su cuenta IAM. | 3 hrs | Fernández | Done |
+| TS36 | Obtener perfil de administrador API | T13 | Implement GET /api/v1/profiles/admins/{id} | Endpoint REST para recuperar el perfil de un administrador por identificador único. | 2 hrs | Fernández | Done |
+| TS37 | Actualizar perfil de administrador API | T14 | Implement PUT /api/v1/profiles/admins/{id} | Endpoint REST para actualizar datos personales de un perfil de administrador. | 3 hrs | Fernández | Done |
+| TS38 | Crear perfil de cliente API | T15 | Implement POST /api/v1/profiles/clients | Endpoint REST para crear el perfil de un cliente vinculado a su cuenta IAM. | 3 hrs | Fernández | Done |
+| TS39 | Obtener perfil de cliente API | T16 | Implement GET /api/v1/profiles/clients/{id} | Endpoint REST para recuperar el perfil de un cliente por identificador único. | 2 hrs | Fernández | Done |
+| TS40 | Actualizar perfil de cliente API | T17 | Implement PUT /api/v1/profiles/clients/{id} | Endpoint REST para actualizar datos personales de un perfil de cliente. | 2 hrs | Fernández | Done |
+| TS41 | Crear gimnasio API | T18 | Gym BC domain layer (Gym aggregate, Branch & Zone entities, commands) | Definir el agregado Gym, entidades Branch y Zone, y los comandos CreateGym/AddBranch/AddZone. | 4 hrs | Azama | Done |
+| TS41 | Crear gimnasio API | T19 | Implement POST /api/v1/gyms | Endpoint REST para registrar un nuevo gimnasio como entidad raíz del sistema. | 3 hrs | Azama | Done |
+| TS42 | Agregar sede a gimnasio API | T20 | Implement POST /api/v1/gyms/{gymId}/branches | Endpoint REST para añadir una sede física a un gimnasio existente. | 3 hrs | Azama | Done |
+| TS43 | Agregar zona a sede API | T21 | Implement POST /api/v1/gyms/{gymId}/branches/{branchId}/zones | Endpoint REST para crear una zona dentro de una sede (ej. Zona Cardio, Zona de Pesas). | 3 hrs | Azama | Done |
+| TS05 | Registrar equipo API | T22 | Equipment BC domain layer (Equipment aggregate, commands, value objects) | Definir el agregado Equipment, comandos RegisterEquipment/MarkOutOfService/Relocate/Decommission y value objects de estado. | 4 hrs | Azama | Done |
+| TS05 | Registrar equipo API | T23 | Implement POST /api/v1/equipments | Endpoint REST para registrar un nuevo equipo físico vinculado a una zona. | 3 hrs | Azama | Done |
+| TS07 | Obtener equipo por ID API | T24 | Implement GET /api/v1/equipments/{id} | Endpoint REST para recuperar el detalle físico y lógico de un equipo. | 2 hrs | Azama | Done |
+| TS44 | Actualizar estado de equipo API | T25 | Implement PATCH /api/v1/equipments/{id}/status | Endpoint REST para cambiar el estado operativo de un equipo directamente. | 2 hrs | Azama | Done |
+| TS45 | Marcar equipo fuera de servicio API | T26 | Implement PATCH /api/v1/equipments/{id}/out-of-service | Endpoint REST para señalar que un equipo no está disponible y publicar EquipmentStatusUpdatedEvent. | 2 hrs | Azama | Done |
+| TS08 | Reubicar equipo API | T27 | Implement PATCH /api/v1/equipments/{id}/relocate | Endpoint REST para reasignar un equipo a una zona distinta. | 2 hrs | Azama | Done |
+| TS09 | Dar de baja equipo API | T28 | Implement PATCH /api/v1/equipments/{id}/decomission | Endpoint REST para retirar definitivamente un equipo del inventario activo. | 2 hrs | Azama | Done |
+| TS46 | Definir umbral de mantenimiento API | T29 | Implement PATCH /api/v1/equipments/{id}/maintenance-threshold | Endpoint REST para configurar las horas de uso seguro antes de disparar una alerta de mantenimiento. | 2 hrs | Azama | Done |
+| TS47 | Solicitar mantenimiento API | T30 | Maintenance BC domain layer (Maintenance, TechnicalTicket, MaintenanceJob, MaintenanceLog aggregates) | Definir los agregados y comandos del Bounded Context Maintenance, incluyendo políticas de integración con Gym BC. | 5 hrs | Azama | Done |
+| TS47 | Solicitar mantenimiento API | T31 | Implement POST /api/v1/maintenance/requests | Endpoint REST para iniciar una solicitud de mantenimiento que marca el equipo fuera de servicio. | 3 hrs | Azama | Done |
+| TS21 | Crear ticket técnico API | T32 | Implement POST /api/v1/maintenance/tickets | Endpoint REST para registrar una incidencia técnica formal con prioridad y descripción. | 3 hrs | Azama | Done |
+| TS48 | Asignar ticket a técnico API | T33 | Implement PATCH /api/v1/maintenance/tickets/{id}/assign/{technicianId} | Endpoint REST para vincular un técnico responsable a un ticket técnico. | 2 hrs | Azama | Done |
+| TS49 | Aceptar trabajo de mantenimiento API | T34 | Implement PATCH /api/v1/maintenance/jobs/{jobId}/accept/{technicianId} | Endpoint REST para que el técnico acepte y active un trabajo de mantenimiento. | 2 hrs | Azama | Done |
+| TS23 | Completar ticket técnico API | T35 | Implement PATCH /api/v1/maintenance/tickets/{id}/complete | Endpoint REST para cerrar el ticket y disparar el evento TicketResolvedEvent que restaura el equipo. | 3 hrs | Azama | Done |
+| TS50 | Modificar estado de ticket API | T36 | Implement PATCH /api/v1/maintenance/tickets/{id}/status | Endpoint REST para actualizar el estado de un ticket técnico a cualquier estado válido. | 2 hrs | Azama | Done |
+| TS51 | Registrar bitácora de mantenimiento API | T37 | Implement POST /api/v1/maintenance/tickets/{id}/completion-log | Endpoint REST para registrar las acciones, materiales y costos de una intervención técnica. | 3 hrs | Azama | Done |
+| TS52 | Recomendar transferencia de equipo API | T38 | Implement POST /api/v1/maintenance/equipment/{id}/transfer-recommendation | Endpoint REST para generar una recomendación de reubicación de equipo desde mantenimiento. | 2 hrs | Azama | Done |
+| TS18 | Iniciar reserva exprés API | T39 | Reservation BC domain layer (Reservation & ReservationRequest aggregates, timer logic) | Definir los agregados Reservation y ReservationRequest, comandos, temporizador y políticas de integración con Gym BC. | 5 hrs | Azama | Done |
+| TS18 | Iniciar reserva exprés API | T40 | Implement POST /api/v1/reservations/reserve | Endpoint REST para iniciar una reserva exprés y bloquear lógicamente el equipo. | 3 hrs | Azama | Done |
+| TS53 | Iniciar temporizador de reserva API | T41 | Implement PATCH /api/v1/reservations/{id}/timer | Endpoint REST para activar el countdown de una reserva activa con duración configurable. | 2 hrs | Azama | Done |
+| TS54 | Finalizar reserva API | T42 | Implement PATCH /api/v1/reservations/{id}/end | Endpoint REST para que el cliente termine explícitamente su reserva y dispare la liberación del equipo. | 2 hrs | Azama | Done |
+| TS19 | Cancelar reserva API | T43 | Implement DELETE /api/v1/reservations/{id} | Endpoint REST para cancelar una reserva activa y liberar el equipo bloqueado. | 2 hrs | Azama | Done |
+| TS55 | Enviar solicitud de ocupación API | T44 | Implement POST /api/v1/reservation-requests | Endpoint REST para registrar la intención de un cliente de ocupar un equipo específico. | 3 hrs | Azama | Done |
+| TS56 | Solicitar equipo alternativo API | T45 | Implement PATCH /api/v1/reservation-requests/{id}/alternative | Endpoint REST para cambiar la solicitud a un equipo alternativo disponible. | 2 hrs | Azama | Done |
+| TS57 | Liberar equipo de reserva API | T46 | Implement PATCH /api/v1/reservation-requests/{id}/release | Endpoint REST para señalar que el equipo debe volver a estado disponible al concluir o cancelar la reserva. | 2 hrs | Azama | Done |
+| TS58 | Crear rutina API | T47 | Routine BC domain layer (Routine aggregate, ExerciseBlock entity, RoutineSession aggregate) | Definir el agregado Routine, la entidad ExerciseBlock, el agregado RoutineSession y los comandos correspondientes. | 4 hrs | Fernández | Done |
+| TS58 | Crear rutina API | T48 | Implement POST /api/v1/routines | Endpoint REST para crear una nueva rutina de entrenamiento asociada a un cliente. | 3 hrs | Fernández | Done |
+| TS59 | Obtener rutina por ID API | T49 | Implement GET /api/v1/routines/{id} | Endpoint REST para recuperar el detalle de una rutina con sus bloques de ejercicio. | 2 hrs | Fernández | Done |
+| TS60 | Listar rutinas por cliente API | T50 | Implement GET /api/v1/routines?clientId={id} | Endpoint REST para listar todas las rutinas de un cliente específico. | 2 hrs | Fernández | Done |
+| TS61 | Agregar bloque de ejercicio API | T51 | Implement POST /api/v1/routines/{id}/exercise-blocks | Endpoint REST para añadir un bloque de ejercicio con nombre, tipo y orden a una rutina existente. | 3 hrs | Fernández | Done |
+| TAS-164 | Sprint 2 corrections | TAS-175 | Ubiquitous language update | Actualizar el glosario de lenguaje ubicuo en el Capítulo II para reflejar la terminología implementada en el backend. | 3 hrs | Atoche | Done |
+| TAS-164 | Sprint 2 corrections | TAS-174 | Remove hardcoded part in the main flow of the app | Conectar el frontend Angular a las URLs reales del backend, reemplazando valores hardcodeados por el environment de producción. | 3 hrs | Fernández | Done |
+| TAS-164 | Sprint 2 corrections | TAS-173 | Support in C4 diagram revision | Revisar y validar los diagramas C4 Component para asegurar que reflejan la arquitectura real del backend Spring Boot. | 3 hrs | Azama | Done |
+| TAS-164 | Sprint 2 corrections | TAS-172 | Diagrams Revision C4 Backend | Actualizar y corregir los diagramas C4 para representar con precisión la arquitectura por Bounded Contexts del backend. | 4 hrs | Atoche | Done |
+| TAS-164 | Sprint 2 corrections | TAS-171 | Figma documentation correction and completion | Corregir y completar la documentación de prototipos Figma en el informe del proyecto. | 3 hrs | Espinoza | Done |
 
 
 #### Development Evidence for Sprint Review
