@@ -744,7 +744,7 @@ Durante el Sprint 3, la colaboración del equipo se concentró principalmente en
 ## Validation Interviews
 ### Diseño de Entrevistas
 
-Segmento 1 (Administradores de gimnasio) 
+Segmento 1 (Administradores de gimnasio y gerentes de Operaciones) 
 
 1. ¿Qué tan fluido te resultó el proceso de autenticación en la pantalla de Iniciar Sesión y qué fue lo primero que llamó tu atención al entrar al Panel Principal?
 2. Observando la gráfica de Uso de Máquinas en el Panel Principal, ¿te resulta evidente identificar su tiempo de uso de las máquinas del gimnasio?
@@ -781,6 +781,45 @@ Segmento 2 (Clientes frecuentes de gimnasio)
 
 
 ### Registro de Entrevistas
+Segmento 1: Administradores de gimnasios y gerentes de operaciones 
+ Entrevista #1 
+ | Campo | Detalle |
+| :--- | :--- |
+| **Entrevistado** | Julio Cardenas |
+| **Imagen** | ![EntrevistaJulio](../assets/Interview-iniciaI.png){width=80%} |
+| **Edad** | 45 |
+| **Ocupación** | Administrador de Gimnasio |
+| **Link** | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQCZBlRAQy6vTKt2sy_uq2wxAdvr5oWA557SQsOtwPZU9xo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=3Aga7d](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQCZBlRAQy6vTKt2sy_uq2wxAdvr5oWA557SQsOtwPZU9xo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=3Aga7d) |
+| **Resumen** | La entrevista presenta a Julio Cárdenas, administrador de gimnasios de 45 años, quien valoró positivamente SpotTrack por su facilidad de uso, claridad visual y utilidad para la toma de decisiones. Destacó el dashboard, las métricas de uso de equipos, el tablero de mantenimiento y, especialmente, la herramienta de reubicación de máquinas entre sedes, considerada la funcionalidad con mayor impacto para reducir costos y maximizar ingresos. También resaltó el simulador de ROI y la visualización de pérdidas por inactividad como herramientas clave para justificar inversiones. Como mejoras, sugirió una aplicación móvil para técnicos y una mayor precisión en las lecturas de batería de los sensores IoT. Finalmente, indicó que estaría dispuesto a pagar una suscripción al considerar que la plataforma genera ahorros y optimiza la gestión del gimnasio.
+
+
+Entrevista #2
+
+
+| Campo | Detalle |
+| :--- | :--- |
+| **Entrevistado** | Luis Romero |
+| **Imagen** | ![EntrevistaLuis](../assets/EntrevistaLuis.jpeg){width=80%} |
+| **Edad** | 51 |
+| **Ocupación** | Administrador de Gimnasio |
+| **Link** | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQD_5gyaNnsmRrRNHsDQAmRVAWRrRspTMiVz2J91TZ_5MEU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=g4BSMA](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQD_5gyaNnsmRrRNHsDQAmRVAWRrRspTMiVz2J91TZ_5MEU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=g4BSMA) |
+| **Resumen** | La entrevista presenta a Luis Romero, entrenador y encargado del gimnasio de Monterrico (UPC), quien destacó la facilidad de uso y el diseño intuitivo de SpotTrack. Valoró especialmente la visualización de métricas sobre uso de máquinas, ocupación y mantenimiento, ya que le permiten tomar decisiones basadas en datos en lugar de percepciones. Consideró útiles las herramientas de reubicación de equipos, monitoreo IoT, mantenimiento preventivo y análisis de pérdidas económicas por inactividad. Entre todas las funcionalidades, señaló que el simulador de ROI tendría el mayor impacto para reducir costos y justificar inversiones. Asimismo, indicó que estaría dispuesto a pagar una suscripción por la plataforma y sugirió incorporar métricas relacionadas con la asistencia de usuarios a clases grupales, como zumba, baile o cycling, para evaluar mejor el desempeño de las actividades y los instructores.
+ |
+
+ Entrevista #3
+
+ 
+| Campo | Detalle |
+| :--- | :--- |
+| **Entrevistado** | Percy Baraybar |
+| **Imagen** | ![EntrevistaPercy](../assets/EntrevistaPercy.jpeg){width=80%} |
+| **Edad** | 30 |
+| **Ocupación** | Administrador de Gimnasio |
+| **Link** | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQAwVXFjAV-_QoogXMMWflDOARN7DWk8a4ZW3xSLubHEQ18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=rJdCDm](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQAwVXFjAV-_QoogXMMWflDOARN7DWk8a4ZW3xSLubHEQ18?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=rJdCDm) |
+| **Resumen** |La entrevista presenta a Percy Baraybar, administrador de gimnasio de 30 años, quien destacó la rapidez de uso y el diseño profesional de SpotTrack. Valoró especialmente las métricas visuales sobre uso de equipos, tiempo inactivo, pérdidas económicas y mantenimiento, ya que le permiten tomar decisiones rápidas y sustentadas en datos. Consideró que las recomendaciones de reubicación de máquinas entre sedes y el simulador de ROI son las funcionalidades más valiosas para incrementar ingresos y justificar inversiones. También resaltó la utilidad de las alertas preventivas, el monitoreo IoT y la visualización del impacto financiero de las fallas. Indicó que estaría dispuesto a pagar una suscripción porque la plataforma se justifica por los ahorros generados y sugirió mejorar la precisión de las lecturas de batería de los sensores, ya que observó que todos aparecían con 0% a pesar de estar funcionando correctamente. |
+
+
+
 ### Evaluaciones Según Heurísticas
 
 **UX Heuristics & Principles Evaluation**
