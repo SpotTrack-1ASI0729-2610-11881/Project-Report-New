@@ -746,6 +746,83 @@ Durante el Sprint 3, la colaboración del equipo se concentró principalmente en
 ### Registro de Entrevistas
 ### Evaluaciones Según Heurísticas
 
+**UX Heuristics & Principles Evaluation**
+**Usability – Inclusive Design – Information Architecture**
+
+**CARRERA:** Ingeniería de Software
+**CURSO:** Desarrollo de Aplicaciones Open Source
+**SECCIÓN:** 1ASI0729
+**PROFESORES:** Todos
+**AUDITOR:** Producto: Bloomie, Grupo: Dermacare (u202416272 - Asmat Alminco, Martin Alejandro; u202414802 - Contreras Torres, Arturo Valentino; u20241b843 - Mechan Montenegro, Luciana Carolina)
+**CLIENTE(S):** SpotTrack Team
+
+**SITE o APP A EVALUAR:**
+SpotTrack
+
+**TAREAS A EVALUAR:**
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+1. Visualización del mapa de calor y aplicación de filtros (Userflow: US09 y US10).
+
+![Userflow US09 y US10](../assets/USERFLOWS/US09%20Y%20US10_%20MAPA%20DE%20CALOR%20Y%20FILTROS.png)
+
+**ESCALA DE SEVERIDAD:**
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
+
+| Nivel | Descripción |
+| --- | --- |
+| 1 | Problema superficial: puede ser fácilmente superador por el usuario o ocurre con muy poco frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+**TABLA RESUMEN:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+| :--- | :--- | :--- | :--- |
+| 1 | Los colores indicadores en el mapa de calor (rojo/verde) carecen de un texto o ícono alternativo, dificultando la lectura para personas con daltonismo. | 3 | Inclusive Design: Provide comparable experience |
+| 2 | Al aplicar múltiples filtros en la búsqueda de máquinas, no existe una opción de "Limpiar filtros" visible en el primer nivel de navegación. | 2 | Usability: Control y libertad del usuario / Information Architecture: Is it usable? |
+| 3 | No se muestra retroalimentación visual inmediata mientras el mapa de calor está cargando los datos filtrados, lo cual puede generar incertidumbre en la conexión. | 2 | Usability: Visibilidad del estado del sistema |
+
+**DESCRIPCIÓN DE PROBLEMAS:**
+
+**PROBLEMA #1: Falta de alternativas visuales en el indicador de disponibilidad (rojo/verde)**
+
+Severidad: 3
+Heurística violada: Inclusive Design - Provide comparable experience
+
+**Problema:**
+Al visualizar la disponibilidad de las máquinas en el mapa de calor, el único indicador de estado es el color (verde para disponible, rojo para ocupado). Esto genera problemas de accesibilidad para personas con daltonismo (protanopia o deuteranopia), ya que no pueden distinguir fácilmente qué equipo está libre.
+
+**Recomendación:**
+Acompañar los colores con un indicador iconográfico (ej. un "check" para libre y una "x" u "ojo tachado" para ocupado), o una etiqueta de texto breve que aclare el estado del activo, garantizando así una experiencia comparable.
+
+---
+
+**PROBLEMA #2: Ausencia de opción rápida para "Limpiar Filtros"**
+
+Severidad: 2
+Heurística violada: Usability - Control y libertad del usuario
+
+**Problema:**
+Una vez que el cliente elige múltiples filtros de tipo de máquina (ej. Cardio, Fuerza, etc.), tiene que desmarcar cada uno manualmente para regresar a la vista general. No existe una "salida de emergencia" o botón rápido para restablecer la vista.
+
+**Recomendación:**
+Añadir un botón claro de "Limpiar todos los filtros" junto al panel de filtrado, que se muestre activo únicamente cuando exista al menos un filtro aplicado.
+
+---
+
+**PROBLEMA #3: Falta de retroalimentación durante el filtrado**
+
+Severidad: 2
+Heurística violada: Usability - Visibilidad del estado del sistema
+
+**Problema:**
+Cuando la red está lenta y el usuario aplica un filtro, el sistema no muestra un *spinner* ni un estado de carga claro (esqueleto) en la cuadrícula de máquinas, por lo que el usuario podría pensar que la app se congeló.
+
+**Recomendación:**
+Implementar un estado de carga (skeleton loaders o spinners interactivos) sobre el área del mapa de calor, que comunique al usuario de manera transparente que el sistema está procesando su petición.
+
 ## Video About the Product
 
 ## Conclusiones y Recomendaciones
