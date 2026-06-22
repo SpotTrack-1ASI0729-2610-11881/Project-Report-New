@@ -160,6 +160,9 @@ A lo largo de esta primera iteración del proyecto SpotTrack, logramos consolida
 
 
 #### Team Collaboration Insights during Sprint
+![](../assets/Insights/website.png)
+
+
 
 ### Sprint 2
 
@@ -632,6 +635,8 @@ Para este Sprint 3, el equipo concentró sus esfuerzos en el desarrollo del back
 ![Trello-board-complete](image-1.png)
 
 
+![Jira-board](image-2.png)
+![Jira-board-complete](image-3.png)
 
 #### Development Evidence for Sprint Review
 
