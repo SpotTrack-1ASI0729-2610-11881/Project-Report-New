@@ -737,16 +737,27 @@ Durante el Sprint 3, se completó el despliegue en producción de los tres produ
 | SpotTrack Web Application | Azure Static Web Apps (producción) | Angular |https://ashy-meadow-0d9e60a10.7.azurestaticapps.net|
 | SpotTrack Landing Page | GitHub Pages (producción) | Angular | https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website |
 
-#### Team Collaboration Insights for Sprint Review
-
-Durante el Sprint 3, la colaboración del equipo se concentró principalmente en el repositorio `spottrack-platform`. El historial de commits refleja una distribución activa del trabajo: **llummo** (Juan Pablo Azama) fue el principal contribuidor en los Bounded Contexts de Gym, Equipment, Maintenance y Reservation; mientras que **ORION-tech-c** (Álvaro Fernández) lideró los Bounded Contexts de IAM, Profiles y Routines. El repositorio acumuló más de 80 Pull Requests fusionados a la rama `develop` durante el período del sprint (2026-05-18 al 2026-06-19), evidenciando una metodología GitFlow disciplinada con ramas por feature y revisión de código mediante PRs.
-
-
-
 Este despliegue garantiza que la lógica de negocio, las bases de datos y los servicios del backend estén completamente disponibles en la nube para ser consumidos de manera estable y segura.
 
 ![Servicios1](../assets/mysql-os.png)
 ![Servicios2](../assets/servicio2.png)
+
+
+#### Team Collaboration Insights for Sprint Review
+
+Durante el Sprint 3, la colaboración del equipo se concentró principalmente en el repositorio `spottrack-platform`. El historial de commits refleja una distribución activa del trabajo: **llummo** (Juan Pablo Azama) fue el principal contribuidor en los Bounded Contexts de Gym, Equipment, Maintenance y Reservation; mientras que **ORION-tech-c** (Álvaro Fernández) lideró los Bounded Contexts de IAM, Profiles y Routines. El repositorio acumuló más de 80 Pull Requests fusionados a la rama `develop` durante el período del sprint (2026-05-18 al 2026-06-19), evidenciando una metodología GitFlow disciplinada con ramas por feature y revisión de código mediante PRs.
+
+#### Platform
+![alt text](/assets/Insights/sprint3/platform-insights.png)
+
+#### Report
+![alt text](/assets/Insights/sprint3/report-insights.png)
+#### Webapp
+![alt text](/assets/Insights/sprint3/webapp-insights.png)
+
+#### Website
+![alt text](/assets/Insights/sprint3/website-insights.png)
+
 
 ---
 
