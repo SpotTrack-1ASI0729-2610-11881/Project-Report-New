@@ -628,6 +628,10 @@ Para este Sprint 3, el equipo concentró sus esfuerzos en el desarrollo del back
 | TAS-164 | Sprint 2 corrections | TAS-172 | Diagrams Revision C4 Backend | Actualizar y corregir los diagramas C4 para representar con precisión la arquitectura por Bounded Contexts del backend. | 4 hrs | Atoche | Done |
 | TAS-164 | Sprint 2 corrections | TAS-171 | Figma documentation correction and completion | Corregir y completar la documentación de prototipos Figma en el informe del proyecto. | 3 hrs | Espinoza | Done |
 
+![Trello-board](image.png)
+![Trello-board-complete](image-1.png)
+
+
 
 #### Development Evidence for Sprint Review
 
