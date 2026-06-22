@@ -280,7 +280,7 @@ Basado en esta evidencia estadística, el arquetipo de este segmento debe ser mo
 
 ## Big Picture Event Storming
 
-![Event storming Big Picture.png](../assets/Event%20storming%20Big%20Picture.png)
+![Event storming Big Picture.png](../assets/BigPicture-EventStorming.png)
 
 ## Ubiquitous Language
 

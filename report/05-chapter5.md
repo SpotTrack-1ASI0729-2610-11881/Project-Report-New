@@ -1135,7 +1135,7 @@ Se recomienda finalizar los bounded contexts faltantes para el sprint final.
 
 Link del Landing: https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/
 
-Link del WebApp: https://kind-desert-06c07fc10.7.azurestaticapps.net/login
+Link del WebApp: https://ashy-meadow-0d9e60a10.7.azurestaticapps.net
 
 Link de la organizacion: https://github.com/upc-pre-202610-1asi0729-11881-spottrack
 
