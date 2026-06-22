@@ -729,7 +729,7 @@ El backend fue construido con Spring Boot y expone una API RESTful protegida con
 
 #### Software Deployment Evidence for Sprint Review
 
-El backend de SpotTrack (`spottrack-platform`) fue desplegado en **Azure App Service**, siguiendo el mismo modelo CI/CD establecido para el frontend en el Sprint 2. Se configuró un workflow de GitHub Actions en `.github/workflows/azure-webapp.yml` que se activa con cada `push` a la rama `main`, construyendo el JAR de Spring Boot y publicándolo automáticamente en el entorno de producción de Azure.
+Durante el Sprint 3, se completó el despliegue en producción de los tres productos que conforman la solución SpotTrack. El backend fue publicado como un servicio en Azure App Service, conectado a una instancia de Azure MySQL Flexible Database, y expone su documentación interactiva mediante Swagger UI. La aplicación web fue desplegada en Azure Static Web Apps, permitiendo a los usuarios finales acceder a la plataforma desde cualquier navegador. La landing page permanece publicada en GitHub Pages y fue actualizada para reflejar las funcionalidades incorporadas en este sprint. Todos los entornos se encuentran activos y accesibles públicamente a través de los enlaces indicados en la siguiente tabla.
 
 | Producto | Entorno | Tecnología | Enlace |
 | :--- | :--- | :--- | :-- |
@@ -741,17 +741,7 @@ El backend de SpotTrack (`spottrack-platform`) fue desplegado en **Azure App Ser
 
 Durante el Sprint 3, la colaboración del equipo se concentró principalmente en el repositorio `spottrack-platform`. El historial de commits refleja una distribución activa del trabajo: **llummo** (Juan Pablo Azama) fue el principal contribuidor en los Bounded Contexts de Gym, Equipment, Maintenance y Reservation; mientras que **ORION-tech-c** (Álvaro Fernández) lideró los Bounded Contexts de IAM, Profiles y Routines. El repositorio acumuló más de 80 Pull Requests fusionados a la rama `develop` durante el período del sprint (2026-05-18 al 2026-06-19), evidenciando una metodología GitFlow disciplinada con ramas por feature y revisión de código mediante PRs.
 
-Entendido. Aquí tienes la documentación ajustada para enfocarse **exclusivamente en el despliegue del backend**, lista para que la copies y pegues en tu Sprint Review:
 
----
-
-#### Software Deployment Evidence for Sprint Review
-
-Durante este sprint, el objetivo de despliegue se centró en el **Backend de SpotTrack**, el cual fue desplegado exitosamente y ya se encuentra operativo en el entorno de la nube de **Azure**.
-
-| Componente | Entorno de Despliegue | URL de Producción |
-| --- | --- | --- |
-| **SpotTrack platform** | Azure Web App | [spottrack-platform-os.azurewebsites.net](spottrack-platform-os.azurewebsites.net) |
 
 Este despliegue garantiza que la lógica de negocio, las bases de datos y los servicios del backend estén completamente disponibles en la nube para ser consumidos de manera estable y segura.
 
