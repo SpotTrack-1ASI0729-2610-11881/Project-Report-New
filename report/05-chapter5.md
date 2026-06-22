@@ -731,11 +731,11 @@ El backend fue construido con Spring Boot y expone una API RESTful protegida con
 
 El backend de SpotTrack (`spottrack-platform`) fue desplegado en **Azure App Service**, siguiendo el mismo modelo CI/CD establecido para el frontend en el Sprint 2. Se configuró un workflow de GitHub Actions en `.github/workflows/azure-webapp.yml` que se activa con cada `push` a la rama `main`, construyendo el JAR de Spring Boot y publicándolo automáticamente en el entorno de producción de Azure.
 
-| Producto | Entorno | Tecnología |
-| :--- | :--- | :--- |
-| SpotTrack Backend API | Azure App Service (producción) | Spring Boot + Java |
-| SpotTrack Web Application | Azure Static Web Apps (producción) | Angular |
-| SpotTrack Landing Page | GitHub Pages (producción) | Angular |
+| Producto | Entorno | Tecnología | Enlace |
+| :--- | :--- | :--- | :-- |
+| SpotTrack Backend API | Docker + Azure MySQL Flexibe Database (producción) | Spring Boot + Java | https://spottrack-platform-os.azurewebsites.net/swagger-ui/index.html |
+| SpotTrack Web Application | Azure Static Web Apps (producción) | Angular |https://ashy-meadow-0d9e60a10.7.azurestaticapps.net|
+| SpotTrack Landing Page | GitHub Pages (producción) | Angular | https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website |
 
 #### Team Collaboration Insights for Sprint Review
 
