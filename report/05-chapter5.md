@@ -761,12 +761,89 @@ Durante el Sprint 3, la colaboración del equipo se concentró principalmente en
 
 #### Report
 ![alt text](/assets/Insights/sprint3/report-insights.png)
+
 #### Webapp
 ![alt text](/assets/Insights/sprint3/webapp-insights.png)
 
 #### Website
 ![alt text](/assets/Insights/sprint3/website-insights.png)
 
+
+---
+
+### Sprint 4
+
+#### Sprint Planning 4
+
+El presente apartado detalla los acuerdos y objetivos definidos durante el Sprint Planning Meeting de nuestra cuarta y última iteración. Para este Sprint final, el equipo se concentrará en dos frentes de trabajo: (1) completar los Bounded Contexts de Analytics e IoT/Telemetría del backend con Spring Boot, cerrando así la cobertura total del dominio de SpotTrack; y (2) lograr la integración plena del frontend Angular con el backend real desplegado en producción, subsanando las correcciones identificadas en el Sprint 3 y consolidando la versión final definitiva de todos los productos digitales de la plataforma.
+
+| Aspect | Details |
+| :--- | :--- |
+| **Sprint #** | Sprint 4 |
+| **Date** | 2026-06-22 |
+| **Time** | 09:00 AM |
+| **Location** | Reunión Virtual (Discord) |
+| **Prepared By** | Azama Fukuda, Juan Pablo |
+| **Attendees (to planning meeting)** |  Azama Fukuda, Juan Pablo / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
+| **Sprint 3 Review Summary** | Sprint 3 entregó el backend completo con Spring Boot para los Bounded Contexts IAM, Gym, Equipment, Maintenance, Reservation, Profiles y Routines, todos desplegados en Azure App Service conectado a Azure MySQL Flexible Database. Se realizaron seis entrevistas de validación con representantes de ambos segmentos objetivo y se documentó la evaluación heurística del producto, identificando seis áreas de mejora en usabilidad y diseño inclusivo. Sin embargo, quedaron pendientes los Bounded Contexts de Analytics e IoT/Telemetría, la conexión total del frontend Angular al backend real en producción, y la producción del Video About-the-Product. |
+| **Sprint 3 Retrospective Summary** | El equipo reconoció que la amplitud del dominio del backend fue subestimada durante la planificación del Sprint 3, lo que impidió completar los Bounded Contexts de Analytics y Telemetría en el tiempo previsto. Como aciertos se destacaron la correcta arquitectura DDD con comunicación entre BCs mediante eventos de integración (TicketCreatedEvent / TicketResolvedEvent) y el despliegue exitoso de los tres productos en la nube. Para el Sprint 4 se establecerán check-ins diarios de progreso, criterios de aceptación explícitos por endpoint antes de comenzar su implementación, y un responsable de integración que valide el contrato de API entre frontend y backend antes del cierre de cada tarea. El despliegue de la versión final de todos los productos se tratará como tarea crítica de primer orden. |
+| **Sprint Goal** | Nuestro enfoque es que los administradores de gimnasios puedan tomar decisiones informadas sobre la rentabilidad y el estado de sus equipos, y anticiparse a fallas antes de que afecten la experiencia de sus clientes, a través de reportes de uso, indicadores financieros y alertas de monitoreo disponibles en una plataforma ya completamente operativa. Creemos que esto les entrega control total sobre sus operaciones —desde identificar qué equipos conviene reubicar o reemplazar, hasta detectar de forma temprana un mal funcionamiento— sin depender de reportes manuales ni de la inspección física de cada máquina. Esto se confirmará cuando los administradores puedan consultar sus analíticas de negocio, recibir alertas de estado de sus equipos y gestionar todas sus operaciones diarias desde la plataforma final de SpotTrack, disponible en producción sin bloqueos críticos. |
+| **Sprint 4 Velocity** | 40 Story Points |
+| **Sum of Story Points** | 40 |
+
+##### Sprint 3 Retrospective — Individual Feedback
+
+Durante la reunión de retrospectiva del Sprint 3, el equipo coincidió en que el sprint dejó como resultado la primera versión funcional de los tres productos (v1 del backend, v2 del frontend y v3 de la landing page), y resumió sus principales aprendizajes en tres puntos: (1) el equipo trabajó de forma más ordenada, (2) se definieron con más detalle las tareas, y (3) se logró una mejor distribución de la carga de trabajo respecto a sprints anteriores. A continuación se detalla la opinión individual de los miembros que participaron en esta retrospectiva.
+
+| Miembro | Aciertos | Oportunidades de mejora |
+| :--- | :--- | :--- |
+| Azama Fukuda, Juan Pablo | Estuvimos organizados, nos esforzamos, mayor proactividad. | Se pudieron definir mejor los objetivos, se pudo distribuir mejor la carga. |
+| Fernández Linares, Alvaro Sebastian | Hubo un objetivo macro que funcionó como motor de avance. | Podríamos haber tenido más cuidado con el backend, mejor definición de objetivos. |
+| Espinoza Orrego, Valentino Andre | Sintió mejor definición de qué tenía que hacer. | Revisar bien la delegación que cada uno tiene, mejora en QA. |
+
+
+#### Aspect Leaders and Collaborators
+
+Para este Sprint 4 final, el equipo organizó su trabajo en cuatro frentes simultáneos: completar los Bounded Contexts de Analytics e IoT/Telemetría del backend, lograr la integración total del frontend con el backend real, y aplicar las correcciones y documentación final pendientes del Sprint 3. Esta estructura garantiza avance paralelo con ownership claro sobre cada frente, asegurando la entrega definitiva del proyecto.
+
+| Team Member (Last Name, First Name) | GitHub Username | Aspect 1: Analytics BC Backend Leader (L) / Collaborator (C) | Aspect 2: IoT/Telemetry BC Backend Leader (L) / Collaborator (C) | Aspect 3: Frontend-Backend Full Integration Leader (L) / Collaborator (C) | Aspect 4: Sprint 3 Corrections & Final Documentation Leader (L) / Collaborator (C) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Azama Fukuda, Juan Pablo | llummo | Analytics BC (C) | IoT/Telemetry BC (L) | Heatmap & IoT Integration (C) | (C) |
+| Atoche Gonzales, Nicolas Fernando | THECOMAX | Analytics BC (L) | (C) | (C) | (C) |
+| Cataño Zarate, Jesus Miguel | jcuz1510 | (C) | (C) | Frontend Integration (L) | (C) |
+| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Analytics BC (C) | (C) | (C) | Final Documentation (L) |
+| Fernández Linares, Alvaro Sebastian | ORION-tech-c | (C) | IoT/Telemetry BC (C) | (C) | Corrections & Swagger Docs (L) |
+
+
+#### Sprint Backlog 4
+
+| Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| - | Analytics BC | T01 | Analytics BC domain layer (AnalyticsSummary aggregate, UsageStat & PeakHourData value objects) | Definir el agregado AnalyticsSummary, los value objects UsageStat y PeakHourData, y los comandos de consulta del Bounded Context Analytics. | 4 hrs | Atoche | To-do |
+| TS14 | Obtener picos de afluencia por día API | T02 | Implement GET /api/v1/analytics/peak-hours | Retornar los bloques horarios por sede que superan el umbral de ocupación configurado (90% de capacidad). | 4 hrs | Atoche | To-do |
+| US17 | Acumulación automática de horas de uso | T03 | Implement GET /api/v1/analytics/usage-stats | Retornar estadísticas acumuladas de horas de uso y conteo diario por equipo con filtro de rango de fechas. | 4 hrs | Atoche | To-do |
+| US18 | Identificación de equipos subutilizados | T04 | Implement GET /api/v1/analytics/underutilized-equipment | Retornar listado de equipos que no alcanzan el umbral mínimo de uso en el período analizado. | 3 hrs | Espinoza | To-do |
+| US27 | Estadísticas de reubicación multisede | T05 | Implement GET /api/v1/analytics/relocation-recommendations | Comparar utilización entre sedes y retornar sugerencias de transferencia de equipos con estimación de ingresos adicionales por mes. | 4 hrs | Espinoza | To-do |
+| TS26 | Calcular impacto financiero API | T06 | Implement GET /api/v1/analytics/financial-impact | Calcular la pérdida monetaria estimada por horas de inactividad de cada equipo en el período seleccionado. | 4 hrs | Atoche | To-do |
+| TS27 | Simular ROI API | T07 | Implement POST /api/v1/analytics/roi-projection | Ejecutar la simulación de ROI basada en el costo de adquisición de un equipo y la demanda insatisfecha registrada por telemetría. | 4 hrs | Espinoza | To-do |
+| TS15 | Exportar reporte gerencial API | T08 | Implement GET /api/v1/analytics/export | Generar el reporte de analíticas en formato PDF/CSV para descarga directa desde el portal de administración. | 3 hrs | Atoche | To-do |
+| - | IoT/Telemetry BC | T09 | IoT/Telemetry BC domain layer (IoTDevice aggregate, SensorReading entity, commands) | Definir el agregado IoTDevice, la entidad SensorReading con datos de telemetría (ocupación, vibración, nivel de señal y batería), y los comandos RegisterDevice y RecordReading. | 4 hrs | Azama | To-do |
+| TS12 | Registrar evento de telemetría IoT API | T10 | Implement POST /api/v1/telemetry | Recibir y procesar el evento de estado del sensor IoT proveniente del dispositivo Edge y disparar el OccupancyChangedEvent hacia el Equipment BC. | 4 hrs | Azama | To-do |
+| TS13 | Listar historial de uso general API | T11 | Implement GET /api/v1/telemetry/history | Retornar el historial de lecturas de telemetría por dispositivo con filtro de rango de fechas y paginación. | 3 hrs | Azama | To-do |
+| US21 | Monitoreo de estado de hardware Edge IoT | T12 | Implement GET /api/v1/iot-devices | Retornar todos los dispositivos IoT registrados con su estado de conexión, nivel de batería y señal actualizado. | 3 hrs | Fernández | To-do |
+| - | IoT/Telemetry BC | T13 | Implement PATCH /api/v1/iot-devices/{id}/status | Actualizar el estado de conexión de un dispositivo IoT (ACTIVE / DISCONNECTED) desde el panel de administración. | 2 hrs | Fernández | To-do |
+| - | IoT/Telemetry BC | T14 | Integrate telemetry events with Equipment BC | Publicar OccupancyChangedEvent cuando el sensor detecta un cambio de estado de ocupación; actualizar el estado del equipo en el Gym BC para reflejar disponibilidad en tiempo real en el mapa de calor. | 4 hrs | Azama | To-do |
+| - | Frontend Integration | T15 | Connect Analytics module to real backend | Reemplazar las llamadas a JSON Server en los servicios Angular de analytics por los endpoints reales del backend en producción. | 4 hrs | Cataño | To-do |
+| - | Frontend Integration | T16 | Connect IoT Monitoring module to real backend | Conectar el componente de monitoreo IoT al endpoint GET /api/v1/iot-devices del backend real, eliminando datos hardcodeados. | 3 hrs | Cataño | To-do |
+| - | Frontend Integration | T17 | Update heatmap polling to consume real equipment status | Actualizar el mecanismo de polling del mapa de calor para consumir el estado real de equipos desde el backend en lugar de la Fake API. | 3 hrs | Azama | To-do |
+| - | Frontend Integration | T18 | Connect financial impact and ROI views to analytics endpoints | Conectar los módulos de impacto financiero y simulador de ROI del frontend Angular a los endpoints reales del Bounded Context Analytics. | 3 hrs | Cataño | To-do |
+| - | Frontend Integration | T19 | Final environment.ts update and optimized production build | Verificar que todas las variables de entorno apunten a las URLs de producción del backend y generar el build optimizado para Azure Static Web Apps. | 2 hrs | Azama | To-do |
+| - | Sprint 3 Corrections | T20 | Complete Sprint 3 execution evidence video | Grabar y publicar el video de evidencia de ejecución del Sprint 3 en Microsoft Stream e incluir el enlace en el informe del proyecto. | 3 hrs | Espinoza | To-do |
+| - | Sprint 3 Corrections | T21 | Fix heuristic issue #1: add text/icon indicators to heatmap | Añadir indicadores iconográficos (ícono check / x) o etiquetas de texto breve al mapa de calor para complementar los indicadores de color y garantizar accesibilidad para personas con daltonismo. | 3 hrs | Cataño | To-do |
+| - | Sprint 3 Corrections | T22 | Fix heuristic issue #2: add clear filters button on heatmap | Implementar el botón "Limpiar filtros" en el panel de filtrado del mapa de calor, visible únicamente cuando hay al menos un filtro activo. | 2 hrs | Cataño | To-do |
+| - | Sprint 3 Corrections | T23 | Complete Swagger documentation for all backend endpoints | Añadir anotaciones OpenAPI a todos los endpoints del backend e incluir ejemplos de request/response en el Swagger UI de producción. | 3 hrs | Fernández | To-do |
+| - | Final Deployment | T24 | Final deployment verification of all products | Validar que los tres productos (Landing Page, Web Application y Backend API) son accesibles y funcionales en sus URLs de producción para la versión final del proyecto. | 2 hrs | Azama | To-do |
+| - | Final Deployment | T25 | Document Sprint 4 in project report | Redactar las secciones de Sprint Planning 4, Aspect Leaders, Sprint Backlog y evidencias en el Capítulo V del informe del proyecto. | 4 hrs | Espinoza | To-do |
 
 ---
 
