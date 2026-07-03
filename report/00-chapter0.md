@@ -56,6 +56,10 @@
 
 \newpage
 
+\tableofcontents
+
+\newpage
+
 # Registro de Versiones del Informe
 
 | Versión | Fecha | Autor | Descripción de modificación |
@@ -73,9 +77,6 @@
 URL del Repositorio spottrack-report: (https://github.com/SpotTrack-1ASI0729-2610-11881/spottrack-report.git)
 
 ![](../assets/Insights/report.png)
----
-
-\tableofcontents
 
 ---
 

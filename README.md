@@ -57,6 +57,104 @@
 
 \newpage
 
+# Contenido
+
+## Tabla de contenidos
+
+- [Student Outcome](#student-outcome)
+- **[Capítulo I: Introducción](#capítulo-i-introducción)**
+  - 1.1. [Startup Profile](#startup-profile)
+    - 1.1.1. [Descripción de la Startup](#descripción-de-la-startup)
+    - 1.1.2. [Perfiles de integrantes del equipo](#perfiles-de-integrantes-del-equipo)
+  - 1.2. [Solution Profile](#solution-profile)
+    - 1.2.1. [Antecedentes y problemática](#antecedentes-y-problemática)
+    - 1.2.2. [Lean UX Process](#lean-ux-process)
+      - 1.2.2.1. [Lean UX Problem Statements](#lean-ux-problem-statements)
+      - 1.2.2.2. [Lean UX Assumptions](#lean-ux-assumptions)
+      - 1.2.2.3. [Lean UX Hypothesis Statements](#lean-ux-hypothesis-statements)
+      - 1.2.2.4. [Lean UX Canvas](#lean-ux-canvas)
+  - 1.3. [Segmentos objetivo](#segmentos-objetivo)
+- **[Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)**
+  - 2.1. [Competidores](#competidores)
+    - 2.1.1. [Análisis competitivo](#211-análisis-competitivo)
+    - 2.1.2. [Estrategias y tácticas frente a competidores](#estrategias-y-tácticas-frente-a-competidores)
+  - 2.2. [Entrevistas](#entrevistas)
+    - 2.2.1. [Diseño de entrevistas](#diseño-de-entrevistas)
+    - 2.2.2. [Registro de entrevistas](#registro-de-entrevistas)
+    - 2.2.3. [Análisis de entrevistas](#análisis-de-entrevistas)
+  - 2.3. [Needfinding](#needfinding)
+    - 2.3.1. [User Personas](#user-personas)
+    - 2.3.2. [User Task Matrix](#user-task-matrix)
+    - 2.3.3. [User Journey Mapping](#user-journey-mapping)
+    - 2.3.4. [Empathy Mapping](#empathy-mapping)
+  - 2.4. [Big Picture Event Storming](#big-picture-event-storming)
+  - 2.5. [Ubiquitous Language](#ubiquitous-language)
+- **[Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)**
+  - 3.1. [User Stories](#user-stories)
+  - 3.2. [Impact Mapping](#impact-mapping)
+  - 3.3. [Product Backlog](#product-backlog)
+- **[Capítulo IV: Product Design](#capítulo-iv-product-design)**
+  - 4.1. [Style Guidelines](#style-guidelines)
+    - 4.1.1. [General Style Guidelines](#general-style-guidelines)
+    - 4.1.2. [Web Style Guidelines](#web-style-guidelines)
+  - 4.2. [Information Architecture](#information-architecture)
+    - 4.2.1. [Organization Systems](#421-organization-systems)
+    - 4.2.2. [Labeling Systems](#labeling-systems)
+    - 4.2.3. [SEO Tags and Meta Tags](#seo-tags-and-meta-tags)
+    - 4.2.4. [Searching Systems](#searching-systems)
+    - 4.2.5. [Navigation Systems](#navigation-systems)
+  - 4.3. [Landing Page UI Design](#landing-page-ui-design)
+    - 4.3.1. [Landing Page Wireframe](#landing-page-wireframe)
+    - 4.3.2. [Landing Page Mock-up](#landing-page-mock-up)
+  - 4.4. [Web Applications UX/UI Design](#web-applications-uxui-design)
+    - 4.4.1. [Web Applications Wireframes](#web-applications-wireframes)
+    - 4.4.2. [Web Applications Wireflow Diagrams](#web-applications-wireflow-diagrams)
+    - 4.4.3. [Web Applications Mock-ups](#web-applications-mock-ups)
+    - 4.4.4. [Web Applications User Flow Diagrams](#web-applications-user-flow-diagrams)
+  - 4.5. [Web Applications Prototyping](#web-applications-prototyping)
+  - 4.6. [Domain-Driven Software Architecture](#domain-driven-software-architecture)
+    - 4.6.1. [Design-Level Event Storming](#design-level-event-storming)
+    - 4.6.2. [Software Architecture Context Diagram](#software-architecture-context-diagram)
+    - 4.6.3. [Software Architecture Container Diagrams](#software-architecture-container-diagrams)
+    - 4.6.4. [Software Architecture Components Diagrams](#software-architecture-components-diagrams)
+  - 4.7. [Software Object-Oriented Design](#software-object-oriented-design)
+    - 4.7.1. [Class Diagrams](#class-diagrams)
+  - 4.8. [Database Design](#database-design)
+    - 4.8.1. [Database Diagrams](#database-diagrams)
+- **[Capítulo V: Product Implementation, Validation & Deployment](#capítulo-v-product-implementation-validation--deployment)**
+  - 5.1. [Software Configuration Management](#software-configuration-management)
+    - 5.1.1. [Software Development Environment Configuration](#software-development-environment-configuration)
+    - 5.1.2. [Source Code Management](#source-code-management)
+    - 5.1.3. [Source Code Style Guide & Conventions](#source-code-style-guide--conventions)
+    - 5.1.4. [Software Deployment Configuration](#software-deployment-configuration)
+  - 5.2. [Landing Page, Services & Applications Implementation](#landing-page-services--applications-implementation)
+    - 5.2.1. Sprint 1
+      - 5.2.1.1. [Sprint Planning 1](#sprint-planning-1)
+      - 5.2.1.2. [Aspect Leaders and Collaborators](#aspect-leaders-and-collaborators)
+      - 5.2.1.3. [Sprint Backlog](#sprint-backlog)
+      - 5.2.1.4. [Development Evidence for Sprint Review](#development-evidence-for-sprint-review)
+      - 5.2.1.5. [Execution Evidence for Sprint Review](#execution-evidence-for-sprint-review)
+      - 5.2.1.8. [Team Collaboration Insights during Sprint](#team-collaboration-insights-during-sprint)
+    - 5.2.2. Sprint 2
+      - 5.2.2.1. [Sprint Planning 2](#sprint-planning-2)
+      - 5.2.2.2. [Aspect Leaders and Collaborators](#aspect-leaders-and-collaborators-1)
+      - 5.2.2.3. [Sprint Backlog](#sprint-backlog-1)
+      - 5.2.2.4. [Development Evidence for Sprint Review](#development-evidence-for-sprint-review-1)
+      - 5.2.2.5. [Execution Evidence for Sprint Review](#execution-evidence-for-sprint-review-1)
+      - 5.2.2.6. [Services Documentation Evidence for Sprint Review](#services-documentation-evidence-for-sprint-review)
+      - 5.2.2.7. [Software Deployment Evidence for Sprint Review](#software-deployment-evidence-for-sprint-review)
+      - 5.2.2.8. [Team Collaboration Insights during Sprint](#team-collaboration-insights-during-sprint-1)
+    - *(Sprint 3 y Sprint 4 aún no están sincronizados en README.md — ver `report/05-chapter5.md`)*
+  - 5.3. Validation Interviews *(sección pendiente de sincronizar en README.md)*
+  - 5.4. Video About-the-Product *(sección pendiente de sincronizar en README.md)*
+- [Conclusiones](#conclusiones)
+- [Conclusiones y Recomendaciones](#conclusiones-y-recomendaciones)
+- Video About-the-Team *(sección pendiente de sincronizar en README.md)*
+- [Bibliografía](#bibliography)
+- [Anexos](#annexes)
+
+\newpage
+
 # Registro de Versiones del Informe
 
 | Versión | Fecha | Autor | Descripción de modificación |
@@ -74,9 +172,6 @@
 URL del Repositorio spottrack-report: (https://github.com/SpotTrack-1ASI0729-2610-11881/spottrack-report.git)
 
 ![](../assets/Insights/report.png)
----
-
-\tableofcontents
 
 ---
 
