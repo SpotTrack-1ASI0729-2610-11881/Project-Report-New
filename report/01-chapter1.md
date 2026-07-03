@@ -21,7 +21,7 @@ Soy **Juan Pablo Azama Fukuda** (Código: u202411310), estudiante de quinto cicl
 
 ![foto-alvaro-f](../assets/foto-alvaro-f.png)
 
-Soy **Alvaro Sebastian Fernanadez Linares** (codigo: u202414928), estudiante de 5to ciclo de Ingeniería de Software. Cuento con un nivel intermedio en C++ y bases sólidas en Java, lenguajes que me han permitido especializarme en el desarrollo backend, enfocándome en la lógica de negocio y la funcionalidad del servidor. Me defino como una persona responsable, organizada y con una fuerte orientación al trabajo en equipo y la eficiencia. Para este ciclo, mi objetivo en Desarrollo de Aplicaciones Open Source es trasladar mi experiencia en desarrollo estructurado hacia entornos colaborativos. Aspiro a integrar mis habilidades técnicas con la filosofía de código abierto para crear soluciones que no solo sean eficientes, sino también accesibles y transparentes, entendiendo que el futuro de la ingeniería de software se construye colectivamente.
+Soy **Alvaro Sebastian Fernández Linares** (código: u202414928), estudiante de 5to ciclo de Ingeniería de Software. Cuento con un nivel intermedio en C++ y bases sólidas en Java, lenguajes que me han permitido especializarme en el desarrollo backend, enfocándome en la lógica de negocio y la funcionalidad del servidor. Me defino como una persona responsable, organizada y con una fuerte orientación al trabajo en equipo y la eficiencia. Para este ciclo, mi objetivo en Desarrollo de Aplicaciones Open Source es trasladar mi experiencia en desarrollo estructurado hacia entornos colaborativos. Aspiro a integrar mis habilidades técnicas con la filosofía de código abierto para crear soluciones que no solo sean eficientes, sino también accesibles y transparentes, entendiendo que el futuro de la ingeniería de software se construye colectivamente.
 ![foto-valentino](../assets/foto-valentino.jpeg)
 
 Soy **Valentino Andre Espinoza Orrego** (código: u202410344), "Estudiante de Ingeniería de Software en la UPC apasionado por la tecnología y el aprendizaje constante. Me especializo en potenciar mis capacidades técnicas y analíticas, trabajando colaborativamente para resolver problemas con eficiencia. Busco oportunidades prácticas donde aplicar mis conocimientos, contribuir responsablemente y desarrollar soluciones funcionales de alto impacto
@@ -32,7 +32,7 @@ Soy **Nicolas Fernando Atoche Gonzales** (código: u20241d317), actualmente esto
 
 ![foto-jesus](../assets/foto-jesus-c.png)
 
-Soy **Jesús Miguel Cataño Zárate**, (Codigo: u202413214). Actualmente estudio el 5to ciclo de Ingeniería de Software. Cuento con un nivel intermedio en C++,C# y experiencia usando Java, para desarrollos moviles y HTML,JS,Node.Js en cuanto a paginas web. 
+Soy **Jesús Miguel Cataño Zárate**, (Código: u202413214). Actualmente estudio el 5to ciclo de Ingeniería de Software. Cuento con un nivel intermedio en C++,C# y experiencia usando Java, para desarrollos móviles y HTML,JS,Node.Js en cuanto a páginas web. 
 Mi aporte al equipo, a nivel técnico, contribuyo en el desarrollo creación de arquitecturas escalables y eficientes. Por otro lado, desempeño el rol de Team Leader dentro de mi grupo, asumiendo la responsabilidad de guiar y coordinar al equipo para trabajar de manera efectiva.
 
 ## Solution Profile
@@ -146,14 +146,14 @@ Debe tener un aspecto moderno, deportivo y ágil. Para los usuarios, debe ser ex
 
 **Esto lo resolveremos** utilizando protocolos ligeros y dispositivos que puedan guardar temporalmente la data si se cae la red.
 
-**Otras suposiciones** que tenemos es que ciertos gimnasios ya tengan este tipo de sistemas o que cierta maquinaria venga con telemetría ya incluída. En consecuencia, nuestra idea carecería de valor. Por ende, es importante tener en mente que si un gimnasio ya posee este sistema debemos proponer una mejora.
+**Otras suposiciones** que tenemos es que ciertos gimnasios ya tengan este tipo de sistemas o que cierta maquinaria venga con telemetría ya incluida. En consecuencia, nuestra idea carecería de valor. Por ende, es importante tener en mente que si un gimnasio ya posee este sistema debemos proponer una mejora.
 
 #### Lean UX Hypothesis Statements
 
 Hipótesis 1: 
 **Creemos que** implementar un mapa de calor en tiempo real en una web app (Angular) para los clientes del gimnasio logrará reducir su nivel de frustración por aglomeraciones.
 
-**Sabremos que** tendremos exito
+**Sabremos que** tendremos éxito
 
 **Cuando veamos** que la desviación estándar de la asistencia por hora se reduce en un 15%, indicando una distribución de usuarios más uniforme durante el día.
 
@@ -163,7 +163,7 @@ Hipótesis 2:
 
 **Sabremos que** esto se cumplió 
 
-**Cuando veamos** que el gasto mensual en reparaciones de emergencia (correctivas) disminuye en un 20% en un periodo de 3 meses tras la instalación de los sensores.
+**Cuando veamos** que el gasto mensual en reparaciones de emergencia (correctivas) disminuye en un 20% en un período de 3 meses tras la instalación de los sensores.
 
 Hipótesis 3: 
 

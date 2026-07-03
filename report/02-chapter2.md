@@ -296,7 +296,7 @@ Para mejorar la cohesión del equipo, adoptaremos el Ubiquitous Language. Esta h
 
 **Corrective Maintenance (Mantenimiento correctivo)**: Reparación de emergencia y costosa que se realiza cuando una máquina falla repentinamente durante la operación del local.
 
-**Downtime (Tiempo de inactividad)**: Periodo crítico durante el cual una máquina de ejercicio se encuentra fuera de servicio por avería, generando tiempos de espera y molestia en los usuarios.
+**Downtime (Tiempo de inactividad)**: Período crítico durante el cual una máquina de ejercicio se encuentra fuera de servicio por avería, generando tiempos de espera y molestia en los usuarios.
 
 **Churn Rate (Tasa de abandono)**: Porcentaje anual de usuarios que deciden no renovar o cancelar su membresía del gimnasio, frecuentemente impulsado por la frustración ante instalaciones abarrotadas y máquinas inoperativas.
 
