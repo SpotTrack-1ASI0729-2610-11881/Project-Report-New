@@ -453,7 +453,7 @@ Landing Page Commits
 
 #### Execution Evidence for Sprint Review
 
-Se logró desplegar una primera versión de la aplicación web, se reailzaron correcciones en los diagramas C4, diagramas de clase, diagramas de base de datos, calidad de imágenes de figma. Finalmente, se desplegó el landing page completamente funcional con call-to-action.
+Se logró desplegar una primera versión de la aplicación web, se realizaron correcciones en los diagramas C4, diagramas de clase, diagramas de base de datos, calidad de imágenes de figma. Finalmente, se desplegó el landing page completamente funcional con call-to-action.
 
 Execution evidence video: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202411310_upc_edu_pe/IQAyZJfDltN7RJ8xrkWcS9TAAd0yi2YQX-Dd3K_c-9unRaM?e=LvnaDZ&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
 
@@ -742,7 +742,7 @@ Durante el Sprint 3, se completó el despliegue en producción de los tres produ
 
 | Producto | Entorno | Tecnología | Enlace |
 | :--- | :--- | :--- | :-- |
-| SpotTrack Backend API | Docker + Azure MySQL Flexibe Database (producción) | Spring Boot + Java | https://spottrack-platform-os.azurewebsites.net/swagger-ui/index.html |
+| SpotTrack Backend API | Docker + Azure MySQL Flexible Database (producción) | Spring Boot + Java | https://spottrack-platform-os.azurewebsites.net/swagger-ui/index.html |
 | SpotTrack Web Application | Azure Static Web Apps (producción) | Angular |https://ashy-meadow-0d9e60a10.7.azurestaticapps.net|
 | SpotTrack Landing Page | GitHub Pages (producción) | Angular | https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website |
 
@@ -1024,7 +1024,7 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
 | 1 | Los colores indicadores en el mapa de calor (rojo/verde) carecen de un texto o ícono alternativo, dificultando la lectura para personas con daltonismo. | 3 | Inclusive Design: Provide comparable experience |
 | 2 | Al aplicar múltiples filtros en la búsqueda de máquinas, no existe una opción de "Limpiar filtros" visible en el primer nivel de navegación. | 2 | Usability: Control y libertad del usuario / Information Architecture: Is it usable? |
 | 3 | No se muestra retroalimentación visual inmediata mientras el mapa de calor está cargando los datos filtrados, lo cual puede generar incertidumbre en la conexión. | 2 | Usability: Visibilidad del estado del sistema |
-| 4 | El tiempo restante para la reserva exprés no es visible si el usuario navega a otra pantalla durante el periodo activo de reserva. | 3 | Usability: Visibilidad del estado del sistema |
+| 4 | El tiempo restante para la reserva exprés no es visible si el usuario navega a otra pantalla durante el período activo de reserva. | 3 | Usability: Visibilidad del estado del sistema |
 | 5 | Falta de instrucciones claras sobre las consecuencias de que la reserva exprés expire antes de ser confirmada presencialmente. | 2 | Usability: Prevención de errores / Ayuda y documentación |
 | 6 | El botón para cancelar la reserva exprés utiliza un color neutral en lugar de un color semántico destructivo (rojo). | 2 | Usability: Consistencia y estándares |
 
@@ -1083,7 +1083,7 @@ Heurística violada: Usability - Visibilidad del estado del sistema
 ![Userflow S16](../assets/USERFLOWS/S16%20-%20reserva%20express.png)
 
 **Problema:**
-Durante el periodo de reserva exprés (que tiene un tiempo limitado de pocos minutos), si el usuario abandona la pantalla de confirmación para ver su perfil u otras secciones, el temporizador deja de ser visible. El usuario puede olvidar cuánto tiempo le queda para llegar a la máquina.
+Durante el período de reserva exprés (que tiene un tiempo limitado de pocos minutos), si el usuario abandona la pantalla de confirmación para ver su perfil u otras secciones, el temporizador deja de ser visible. El usuario puede olvidar cuánto tiempo le queda para llegar a la máquina.
 
 **Recomendación:**
 Implementar un *banner* fijo superior (sticky) o un ícono flotante que permanezca visible a lo largo de toda la aplicación mientras haya una reserva activa, mostrando el contador regresivo de forma persistente.
@@ -1148,7 +1148,7 @@ La transición de JSON Server a Spring Boot validó la decisión arquitectónica
 
 Las entrevistas de validación realizadas con representantes de ambos segmentos objetivo —administradores de gimnasio y clientes frecuentes— confirmaron que las funcionalidades implementadas (mapa de calor en tiempo real, gestión de activos, reservas exprés y alertas de mantenimiento predictivo) responden directamente a los dolores identificados durante la investigación inicial del Sprint 1. Los participantes lograron completar sus tareas principales sin bloqueos críticos, lo que valida tanto el flujo de navegación del producto como la solidez de la integración frontend-backend alcanzada en este sprint.
 
-La arquitectura de Bounded Contexts definida mediante EventStorming en el Sprint 1 y actualizada en el sprint 3, demostró su valor end-to-end al guiar también la organización del backend en Spring Boot: cada contexto delimitado (Gym, Monitoring, Maintenance, Reservatinos, Analytics, and the rest) se tradujo en un módulo de backend independiente con sus propios controladores, commandos, queries, servicios y repositorios. Esta coherencia entre el modelo de dominio, la estructura del frontend Angular y la arquitectura del backend redujo la fricción de comunicación entre subequipos y facilitó la integración de los tres sprints en una plataforma funcional y coherente.
+La arquitectura de Bounded Contexts definida mediante EventStorming en el Sprint 1 y actualizada en el sprint 3, demostró su valor end-to-end al guiar también la organización del backend en Spring Boot: cada contexto delimitado (Gym, Monitoring, Maintenance, Reservation, Analytics, and the rest) se tradujo en un módulo de backend independiente con sus propios controladores, commandos, queries, servicios y repositorios. Esta coherencia entre el modelo de dominio, la estructura del frontend Angular y la arquitectura del backend redujo la fricción de comunicación entre subequipos y facilitó la integración de los tres sprints en una plataforma funcional y coherente.
 
 ---
 
@@ -1214,7 +1214,7 @@ Link del Landing: https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spot
 
 Link del WebApp: https://ashy-meadow-0d9e60a10.7.azurestaticapps.net
 
-Link de la organizacion: https://github.com/upc-pre-202610-1asi0729-11881-spottrack
+Link de la organización: https://github.com/upc-pre-202610-1asi0729-11881-spottrack
 
 Link del repositorio de webapp: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp
 
