@@ -40,7 +40,7 @@
     <tr><td>u202413214</td><td>Cataño Zárate, Jesús Miguel</td></tr>
     <tr><td>u202414928</td><td>Fernández Linares, Alvaro Sebastian</td></tr>
     <tr><td>u202410344</td><td>Espinoza Orrego, Valentino Andre</td></tr>
-    <tr><td>uXXXXXXXXX</td><td>Limache Coronel, Imanol Fabrizio</td></tr>
+    <tr><td>u20241a860</td><td>Limache Coronel, Imanol Fabrizio</td></tr>
   </tbody>
 </table>
 
