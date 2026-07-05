@@ -302,5 +302,3 @@ Para mejorar la cohesión del equipo, adoptaremos el Ubiquitous Language. Esta h
 
 **Subutilization (Subutilización)**: Condición estadística en la que una máquina específica registra una tasa de uso excepcionalmente baja en comparación con otras, lo que sugiere al administrador que debe ser reubicada.
 
-**Crowdsourcing (Colaboración masiva)**: Acción mediante la cual los propios usuarios del gimnasio actualizan el estado de disponibilidad de un equipo en la plataforma a cambio de puntos de recompensa.
-
