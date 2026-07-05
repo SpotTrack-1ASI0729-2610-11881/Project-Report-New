@@ -561,7 +561,7 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u20241d317_upc_edu_pe/IQDCANk2
 ## Domain-Driven Software Architecture
 
 ### Design-Level Event Storming
-![Design-Level Event Storming](../assets/Event%20Storming.png)
+![Design-Level Event Storming](../assets/event-storming-design-level.jpg)
 
 ### Aggregates
 ![aggregates.png](../assets/aggregates.png)
