@@ -754,16 +754,16 @@ Este despliegue garantiza que la lógica de negocio, las bases de datos y los se
 Durante el Sprint 3, la colaboración del equipo se concentró principalmente en el repositorio `spottrack-platform`. El historial de commits refleja una distribución activa del trabajo: **llummo** (Juan Pablo Azama) fue el principal contribuidor en los Bounded Contexts de Gym, Equipment, Maintenance y Reservation; mientras que **ORION-tech-c** (Álvaro Fernández) lideró los Bounded Contexts de IAM, Profiles y Routines. El repositorio acumuló más de 80 Pull Requests fusionados a la rama `develop` durante el período del sprint (2026-05-18 al 2026-06-19), evidenciando una metodología GitFlow disciplinada con ramas por feature y revisión de código mediante PRs.
 
 #### Platform
-![alt text](/assets/Insights/sprint3/platform-insights.png)
+![alt text](../assets/Insights/sprint3/platform-insights.png)
 
 #### Report
-![alt text](/assets/Insights/sprint3/report-insights.png)
+![alt text](../assets/Insights/sprint3/report-insights.png)
 
 #### Webapp
-![alt text](/assets/Insights/sprint3/webapp-insights.png)
+![alt text](../assets/Insights/sprint3/webapp-insights.png)
 
 #### Website
-![alt text](/assets/Insights/sprint3/website-insights.png)
+![alt text](../assets/Insights/sprint3/website-insights.png)
 
 
 ---
