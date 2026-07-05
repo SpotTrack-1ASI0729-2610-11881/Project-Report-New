@@ -1453,3 +1453,20 @@ Link del about the product: https://upcedupe-my.sharepoint.com/:v:/g/personal/u2
 
 Link del about the team: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQCeBAJRJruqRpHrYHKWh9dIAZ-pnIuAtFKfjQC6ITyNkzQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=ZWNmmV
 
+### Annex D : Credenciales de Demo
+
+Admins:
+
+| Correo | Contraseña | Descripción |
+| :--- | :--- | :--- |
+| admin@spottrack.com | demo1234 | SpotTrack Demo (gym original) |
+| admin2@fitzone.pe | demo1234 | FitZone Lima (segundo gym, agregado esta sesión) |
+
+Clientes:
+
+| Correo | Contraseña | Descripción |
+| :--- | :--- | :--- |
+| cliente@email.com | demo1234 | Asociado a ambos gyms (SpotTrack Demo activo + FitZone Lima disponible para switch) |
+| cliente2@demo.com | demo1234 | Solo SpotTrack Demo |
+| cliente3@demo.com | demo1234 | Solo SpotTrack Demo |
+
