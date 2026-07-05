@@ -940,6 +940,18 @@ Landing Page (`spottrack-website`):
 
 Al cierre del Sprint 4, SpotTrack alcanzó su versión final como plataforma SaaS B2B2C completa: un administrador puede registrar su negocio, seleccionar un plan de membresía (Basic/Mid/Platinum), pagar mediante Stripe Checkout, crear su gimnasio y sedes respetando el límite de su plan, gestionar una lista blanca de clientes autorizados, monitorear en tiempo real sensores de movimiento y cámara, recibir y resolver alertas centralizadas (mantenimiento, sensores, anomalías, reservas), asignar técnicos a tickets con bitácora de costos, y proyectar el ROI de nuevas inversiones o reubicaciones de equipos. Los clientes, por su parte, pueden asociarse a un gimnasio autorizado, hacer check-in de sus reservas exprés mediante código QR, reportar anomalías desde una reserva activa, y llevar seguimiento del progreso de sus rutinas por bloque de ejercicio. La Landing Page cerró su versión final (v3.0.1) con una sección de video demostrativo, navegación móvil y un formulario de contacto funcional vía EmailJS.
 
+![Documentación de la API con Swagger](../assets/Sprint4-Execution-Evidence/swagger-api-docs.png)
+
+![Gestión de equipos del gimnasio (vista administrador)](../assets/Sprint4-Execution-Evidence/gym-equipment-management.png)
+
+![Mapa de disponibilidad en tiempo real (vista cliente)](../assets/Sprint4-Execution-Evidence/realtime-availability-map.png)
+
+![Landing Page - Hero Section final](../assets/Sprint4-Execution-Evidence/landing-page-hero.png)
+
+![Landing Page - Sección de video About the Product](../assets/Sprint4-Execution-Evidence/landing-page-about-the-product.png)
+
+![Landing Page - Sección de video About the Team](../assets/Sprint4-Execution-Evidence/landing-page-about-the-team.png)
+
 *Video de evidencia de ejecución:* [Enlace al video de ejecución del Sprint 4 - SpotTrack](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202411310_upc_edu_pe/IQBSBXxJ7QCGRYPQp4-K74l6AZuoE_AJcGf8MW04nLF-HpE?e=qEWGQk&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 #### Services Documentation Evidence for Sprint Review
