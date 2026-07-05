@@ -220,6 +220,7 @@
   - [Annexes](#annexes)
     - [Annex A : Videos de Exposiciones](#annex-a--videos-de-exposiciones)
     - [Annex B : Video unificado entrevistas](#annex-b--video-unificado-entrevistas)
+    - [Annex C : Link importantes](#annex-c--link-importantes)
 
 \newpage
 
@@ -2379,4 +2380,20 @@ Para que el paso de JSON Server a Spring Boot no implique cambios en los compone
 [Enlace al video unificado de entrevistas - SpotTrack](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202413214_upc_edu_pe/IQDpYTdDwbM1QZOtdJPZIbsQASLFAmK8moRkLLD7ZudoVtM?e=unt1Xd&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
+
+### Annex C : Link importantes
+
+Link del Landing: https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/
+
+Link del WebApp: https://ashy-meadow-0d9e60a10.7.azurestaticapps.net
+
+Link de la organización: https://github.com/upc-pre-202610-1asi0729-11881-spottrack
+
+Link del repositorio de webapp: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp
+
+Link del repositorio de platform: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform.git
+
+Link del repositorio de Landing page: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-website
+
+Link del repositorio del report: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report
 

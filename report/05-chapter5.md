@@ -1322,6 +1322,9 @@ Usar un color que indique peligro o acción destructiva, como un rojo suave, par
 
 ## Video About the Product
 
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBqCwjhy-X9RpjfwzjwhXqVARIbfCSm8cjN-vPPROqJqLk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BDcZEP
+
+
 ## Conclusiones y Recomendaciones
 
 ### Conclusiones
@@ -1425,3 +1428,8 @@ Link del repositorio de platform: https://github.com/upc-pre-202610-1asi0729-118
 Link del repositorio de Landing page: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-website
 
 Link del repositorio del report: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report
+
+Link del about the product: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBqCwjhy-X9RpjfwzjwhXqVARIbfCSm8cjN-vPPROqJqLk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BDcZEP
+
+Link del about the team: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQCeBAJRJruqRpHrYHKWh9dIAZ-pnIuAtFKfjQC6ITyNkzQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=ZWNmmV
+
