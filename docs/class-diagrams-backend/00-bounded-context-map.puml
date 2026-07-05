@@ -1,0 +1,103 @@
+@startuml 00-bounded-context-map
+title Spottrack Platform — Bounded Context Map (index of the per-context class diagrams in this folder)
+
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+note as Legend
+  Each bounded context below has its own small, focused class-diagram file
+  in this folder (e.g. gym-equipment-domain-model.puml). This map only shows
+  context-to-context DEPENDENCIES (derived from actual cross-package imports),
+  not class detail — splitting the model this way is what keeps any single
+  diagram from becoming a "big ball of mud".
+end note
+
+package "shared" as shared <<Shared Kernel>> #EFEFEF
+
+package "iam" as iam
+package "profiles" as profiles
+package "gym" as gym
+package "membership" as membership
+package "reservation" as reservation
+package "maintenance" as maintenance
+package "monitoring" as monitoring
+package "analytics" as analytics
+package "routine" as routine
+
+package "alert (misplaced inside shared.*)" as alert #FFE0E0
+
+alert ..> shared
+
+' every context depends on the shared kernel (omitted per-arrow for readability)
+iam ..> shared
+profiles ..> shared
+gym ..> shared
+membership ..> shared
+reservation ..> shared
+maintenance ..> shared
+monitoring ..> shared
+analytics ..> shared
+routine ..> shared
+
+' real cross-context dependencies, derived from import scans
+gym --> iam
+gym --> maintenance
+gym --> membership
+gym --> profiles
+gym --> reservation
+
+iam --> profiles
+
+maintenance --> gym
+maintenance --> iam
+
+membership --> iam
+membership --> profiles
+
+monitoring --> gym
+monitoring --> iam
+monitoring --> profiles
+monitoring --> reservation
+
+profiles --> gym
+profiles --> iam
+
+reservation --> gym
+reservation --> iam
+reservation --> monitoring
+reservation --> profiles
+
+analytics --> gym
+analytics --> iam
+analytics --> monitoring
+
+routine --> iam
+routine --> profiles
+
+note bottom of gym
+  <b>Cyclic dependencies detected</b> (bounded contexts import
+  each other's domain types both ways — no clean one-directional
+  dependency, which undermines context isolation):
+  • gym <-> profiles
+  • gym <-> reservation
+  • iam  <-> profiles
+  • reservation <-> monitoring
+  A DDD-cleaner alternative: replace direct type imports across
+  contexts with domain events + anti-corruption layers, or typed
+  IDs only (no behavior/entity imports) in the dependent direction.
+end note
+
+note bottom of routine
+  routine has no incoming or cyclic edges — the most cleanly
+  isolated context in the codebase (see routine-domain-model.puml).
+end note
+
+note bottom of alert
+  Alert has its own aggregate, repository, application services and
+  REST controller, but is physically packaged under shared.* alongside
+  the real shared kernel (Money, AbstractDomainAggregateRoot, Result).
+  Nothing about it is actually shared/reused — this is the one spot in
+  the codebase already drifting toward "big ball of mud" packaging.
+  See alert-domain-model.puml.
+end note
+@enduml

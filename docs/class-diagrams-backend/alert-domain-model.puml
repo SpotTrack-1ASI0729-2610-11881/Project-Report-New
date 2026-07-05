@@ -1,0 +1,80 @@
+@startuml alert-domain-model
+title Spottrack — "Alert" Domain Model (currently misplaced under shared.*)
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+note as Misplacement
+  Alert is a genuinely self-contained mini bounded context (its own
+  aggregate, repository, command/query services, REST controller —
+  see AlertsController) yet it physically lives under the
+  com.spottrack.platform.shared package alongside the true shared
+  kernel (Money, AbstractDomainAggregateRoot, Result, ApplicationError).
+  It is NOT reused by any other bounded context — nothing about it is
+  "shared". Leaving it here is exactly how a shared-kernel package
+  starts turning into a dumping ground / big ball of mud. Recommended
+  fix: extract it into its own top-level "alert" bounded context
+  package, mirroring gym/iam/profiles/etc.
+end note
+
+package "Shared Kernel (see shared-kernel.puml)" {
+  abstract class AbstractDomainAggregateRoot<T> <<shared kernel>>
+}
+
+package "Alert Aggregate" {
+  class Alert <<AggregateRoot>> {
+    - id: Long
+    - adminUserId: Long
+    - equipmentId: String
+    - severity: AlertSeverity
+    - message: String
+    - resolved: boolean
+    - createdAt: Date
+    --
+    + resolve()
+  }
+
+  enum AlertSeverity {
+    WARNING
+    CRITICAL
+  }
+}
+
+package "Commands / Queries" {
+  class CreateAlertCommand <<Command>> {
+    adminUserId: Long
+    equipmentId: String
+    severity: AlertSeverity
+    message: String
+  }
+  class ResolveAlertCommand <<Command>> {
+    alertId: Long
+    adminUserId: Long
+  }
+  class GetAlertsByAdminUserIdQuery <<Query>> {
+    adminUserId: Long
+  }
+}
+
+package "Repository" {
+  interface AlertRepository <<Repository>> {
+    + findById(Long): Optional<Alert>
+    + findAllByAdminUserId(Long): List<Alert>
+    + save(Alert): Alert
+  }
+}
+
+Alert --|> AbstractDomainAggregateRoot
+Alert *-- AlertSeverity
+AlertRepository ..> Alert
+CreateAlertCommand ..> AlertSeverity
+
+note bottom of Alert
+  adminUserId (iam/profiles) and equipmentId (gym) are both raw
+  primitives, not typed cross-context ID VOs — same primitive-obsession
+  pattern seen in membership and maintenance.
+  Alert also raises no domain events; resolve() silently flips a flag
+  with no MaintenanceAlertResolvedEvent-style signal for other contexts
+  (e.g. analytics) to react to.
+end note
+@enduml

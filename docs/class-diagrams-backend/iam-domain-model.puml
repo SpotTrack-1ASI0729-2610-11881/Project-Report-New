@@ -1,0 +1,116 @@
+@startuml iam-domain-model
+title Spottrack — IAM Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "iam.domain.model.aggregates" {
+
+  class User <<AggregateRoot>> {
+    - id: Long
+    - username: String
+    - password: String
+    - roles: Set<Role>
+    - active: boolean
+    - notifyOnCritical: boolean
+    - notifyOnWarning: boolean
+    - notificationEmail: String
+    --
+    + addRole(role: Role): void
+    + addRoles(roles: List<Role>): void
+    + deactivate(): void
+  }
+
+  class PendingRegistration <<AggregateRoot>> {
+    - registrationId: UUID
+    - email: String
+    - hashedPassword: String
+    - firstName: String
+    - lastName: String
+    - phoneNumber: String
+    - dni: String
+    - companyName: String
+    - ruc: String
+    - legalStructure: String
+    - companyPhone: String
+    - companyEmail: String
+    - streetAddress: String
+    - city: String
+    - district: String
+    - membershipTier: String
+    - createdAt: LocalDateTime
+    - expiresAt: LocalDateTime
+    - status: PendingRegistrationStatus
+    --
+    + consume(): void
+    + isExpired(): boolean
+    + isPending(): boolean
+  }
+}
+
+package "iam.domain.model.entities" {
+
+  class Role <<Entity>> {
+    - id: Long
+    - name: Roles
+    --
+    + getStringName(): String
+    + {static} getDefaultRole(): Role
+    + {static} toRoleFromName(name: String): Role
+    + {static} validateRoleSet(roles: List<Role>): List<Role>
+  }
+}
+
+package "iam.domain.model.valueobjects" {
+
+  enum Roles <<ValueObject>> {
+    ROLE_CLIENT
+    ROLE_ADMIN
+  }
+
+  enum PendingRegistrationStatus <<ValueObject>> {
+    PENDING
+    CONSUMED
+  }
+}
+
+package "iam.repositories" {
+
+  interface UserRepository <<Repository>> {
+    + findByUsername(username: String): Optional<User>
+    + existsByUsername(username: String): boolean
+    + save(user: User): User
+    + findById(id: Long): Optional<User>
+    + findAll(): List<User>
+  }
+
+  interface RoleRepository <<Repository>> {
+    + findByName(name: Roles): Optional<Role>
+    + existsByName(name: Roles): boolean
+    + save(role: Role): Role
+    + findAll(): List<Role>
+  }
+
+  interface PendingRegistrationRepository <<Repository>> {
+    + save(pendingRegistration: PendingRegistration): PendingRegistration
+    + findById(registrationId: UUID): Optional<PendingRegistration>
+    + findByEmail(email: String): Optional<PendingRegistration>
+    + existsActivePendingByEmail(email: String): boolean
+    + deleteExpiredPending(): void
+  }
+}
+
+class AbstractDomainAggregateRoot<T> <<shared kernel>>
+
+' -- Relationships --
+
+User "1" o-- "0..*" Role : roles (shared/independent lifecycle)
+Role "*" --> "1" Roles : name
+PendingRegistration "1" *-- "1" PendingRegistrationStatus : status
+User --|> AbstractDomainAggregateRoot
+
+UserRepository ..> User
+RoleRepository ..> Role
+PendingRegistrationRepository ..> PendingRegistration
+
+@enduml

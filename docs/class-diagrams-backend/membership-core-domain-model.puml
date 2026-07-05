@@ -1,0 +1,185 @@
+@startuml membership-core-domain-model
+title Spottrack — Membership Bounded Context — Domain Model (Aggregates, Value Objects, Repositories)
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "Shared Kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>>
+  class Money <<shared kernel>> {
+    amount: BigDecimal
+    currency: String
+  }
+}
+
+package "Aggregates" {
+  class Membership <<AggregateRoot>> {
+    id: Long
+    membershipId: MembershipId
+    clientId: Long
+    membershipTier: MembershipTier
+    price: Money
+    membershipPeriod: MembershipPeriod
+    status: MembershipStatus
+    cancelAtPeriodEnd: boolean
+    pendingDowngradeTier: MembershipTier
+    --
+    activate()
+    cancel()
+    undoCancellation()
+    completeCancellation()
+    suspend()
+    requestDowngrade(command)
+    applyDowngrade()
+    upgradePlan(command)
+    renew(command)
+    expire()
+    onCreated()
+  }
+
+  class Payment <<AggregateRoot>> {
+    id: Long
+    paymentId: PaymentId
+    userId: Long
+    pendingRegistrationId: UUID
+    membershipId: UUID
+    membershipTier: MembershipTier
+    amount: Money
+    status: PaymentStatus
+    gatewayTransactionId: String
+    paymentPurpose: PaymentPurpose
+    --
+    confirm(gatewayTransactionId)
+    fail()
+    onCreated()
+  }
+
+  class BranchAccess <<AggregateRoot>> {
+    id: Long
+    branchAccessId: BranchAccessId
+    membershipId: Long
+    branchId: Long
+    status: BranchAccessStatus
+    --
+    onCreated()
+  }
+}
+
+package "Value Objects" {
+  class MembershipId <<ValueObject>> {
+    uuid: UUID
+  }
+
+  class PaymentId <<ValueObject>> {
+    uuid: UUID
+  }
+
+  class BranchAccessId <<ValueObject>> {
+    uuid: UUID
+  }
+
+  class MembershipPeriod <<ValueObject>> {
+    startDate: LocalDate
+    endDate: LocalDate
+  }
+
+  class UserId <<ValueObject>> {
+    id: Long
+  }
+
+  enum MembershipStatus {
+    PENDING_ACTIVATION
+    ACTIVE
+    SUSPENDED
+    CANCELLED
+    EXPIRED
+  }
+
+  enum PaymentStatus {
+    PENDING
+    CONFIRMED
+    FAILED
+    REFUNDED
+  }
+
+  enum BranchAccessStatus {
+    GRANTED
+    DENIED
+  }
+
+  enum PaymentPurpose {
+    NEW_MEMBERSHIP
+    BUSINESS_REGISTRATION
+    DEBT_RENEWAL
+    PLAN_UPGRADE
+    RESUBSCRIPTION
+  }
+
+  enum MembershipTier {
+    BASIC
+    MID
+    PLATINUM
+    --
+    toMoney(): Money
+    maxBranches(): int
+  }
+}
+
+package "Repositories" {
+  interface MembershipRepository <<Repository>> {
+    findByMembershipId(id): Optional<Membership>
+    findById(id): Optional<Membership>
+    findByClientId(clientId): List<Membership>
+    save(membership): Membership
+    existsByMembershipId(id): boolean
+    findActiveExpiredBefore(date): List<Membership>
+    findPendingCancellationExpiredBefore(date): List<Membership>
+  }
+
+  interface PaymentRepository <<Repository>> {
+    findByPaymentId(id): Optional<Payment>
+    findByUserId(userId): List<Payment>
+    save(payment): Payment
+  }
+
+  interface BranchAccessRepository <<Repository>> {
+    findByBranchAccessId(id): Optional<BranchAccess>
+    findByMembershipId(membershipId): List<BranchAccess>
+    save(branchAccess): BranchAccess
+  }
+}
+
+Membership --|> AbstractDomainAggregateRoot
+Payment --|> AbstractDomainAggregateRoot
+BranchAccess --|> AbstractDomainAggregateRoot
+
+Membership *-- MembershipId
+Membership *-- MembershipPeriod
+Membership --> MembershipStatus
+Membership --> MembershipTier
+Membership --> Money
+
+Payment *-- PaymentId
+Payment --> MembershipTier
+Payment --> PaymentStatus
+Payment --> PaymentPurpose
+Payment --> Money
+
+BranchAccess *-- BranchAccessId
+BranchAccess --> BranchAccessStatus
+
+MembershipTier ..> Money : toMoney()
+
+MembershipRepository --> Membership
+PaymentRepository --> Payment
+BranchAccessRepository --> BranchAccess
+
+note right of UserId
+  Declared value object, but not
+  currently used by any aggregate.
+  Payment.userId is a raw Long
+  instead of this VO — inconsistent
+  primitive-obsession vs. VO usage.
+end note
+
+@enduml

@@ -1,0 +1,212 @@
+@startuml profiles-domain-model
+title Spottrack — Profiles Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Shared Kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>>
+}
+
+package "Profiles :: Aggregates" {
+
+  class Admin <<AggregateRoot>> {
+    - id: Long
+    - userId: Long
+    - personInfo: PersonInfo
+    - emailAddress: EmailAddress
+    --
+    + updateProfile(command)
+    + isProfileComplete(): boolean
+    + getFullName(): String
+    + onCreated()
+  }
+
+  class Client <<AggregateRoot>> {
+    - id: Long
+    - userId: Long
+    - personInfo: PersonInfo
+    - emailAddress: EmailAddress
+    --
+    + updateProfile(command)
+    + isProfileComplete(): boolean
+    + getFullName(): String
+    + onCreated()
+  }
+
+  class BusinessProfile <<AggregateRoot>> {
+    - id: Long
+    - userId: Long
+    - businessInfo: BusinessInfo
+    --
+    + onCreated()
+  }
+}
+
+package "Profiles :: Entities" {
+  class ClientGymAssociation <<Entity>> {
+    - id: Long
+    - clientId: Long
+    - gymId: String
+    - active: boolean
+    --
+    + isActive(): boolean
+    + setActive(boolean)
+  }
+}
+
+package "Profiles :: Value Objects" {
+
+  class PersonInfo <<ValueObject>> {
+    - firstName: String
+    - lastName: String
+    - phoneNumber: PhoneNumber
+    - dni: Dni
+    --
+    + getFullName(): String
+  }
+
+  class EmailAddress <<ValueObject>> {
+    - address: String
+  }
+
+  class PhoneNumber <<ValueObject>> {
+    - phoneNumber: String
+  }
+
+  class Dni <<ValueObject>> {
+    - dni: String
+  }
+
+  class BusinessInfo <<ValueObject>> {
+    - companyName: String
+    - ruc: String
+    - legalStructure: String
+    - companyPhone: PhoneNumber
+    - companyEmail: EmailAddress
+    - streetAddress: String
+    - city: String
+    - district: String
+  }
+
+  class AdminId <<ValueObject>> {
+    - adminId: Long
+  }
+
+  class ClientId <<ValueObject>> {
+    - clientId: Long
+  }
+
+  class BusinessProfileId <<ValueObject>> {
+    - businessProfileId: Long
+  }
+}
+
+package "Profiles :: Domain Events" {
+  class AdminRegisteredEvent <<DomainEvent>> {
+    - adminId: Long
+    - firstName: String
+    - lastName: String
+    - email: String
+    - phoneNumber: String
+    - dni: String
+  }
+
+  class ClientRegisteredEvent <<DomainEvent>> {
+    - clientId: Long
+    - firstName: String
+    - lastName: String
+    - email: String
+    - phoneNumber: String
+    - dni: String
+  }
+
+  class BusinessProfileCreatedEvent <<DomainEvent>> {
+    - businessProfileId: Long
+    - userId: Long
+    - companyName: String
+    - ruc: String
+  }
+}
+
+package "Profiles :: Repositories" {
+  interface AdminRepository <<Repository>> {
+    + findById(AdminId): Optional<Admin>
+    + findByUserId(Long): Optional<Admin>
+    + findByEmailAddress(EmailAddress): Optional<Admin>
+    + save(Admin): Admin
+    + existsByEmailAddress(EmailAddress): boolean
+  }
+
+  interface ClientRepository <<Repository>> {
+    + findById(ClientId): Optional<Client>
+    + findByUserId(Long): Optional<Client>
+    + findByEmailAddress(EmailAddress): Optional<Client>
+    + save(Client): Client
+    + existsByEmailAddress(EmailAddress): boolean
+  }
+
+  interface BusinessProfileRepository <<Repository>> {
+    + findById(BusinessProfileId): Optional<BusinessProfile>
+    + findByUserId(Long): Optional<BusinessProfile>
+    + save(BusinessProfile): BusinessProfile
+    + existsByUserId(Long): boolean
+  }
+}
+
+' Inheritance from shared kernel
+Admin --|> AbstractDomainAggregateRoot
+Client --|> AbstractDomainAggregateRoot
+BusinessProfile --|> AbstractDomainAggregateRoot
+
+' Composition: aggregate roots own their value objects
+Admin *-- PersonInfo
+Admin *-- EmailAddress
+Client *-- PersonInfo
+Client *-- EmailAddress
+BusinessProfile *-- BusinessInfo
+
+PersonInfo *-- PhoneNumber
+PersonInfo *-- Dni
+BusinessInfo *-- PhoneNumber
+BusinessInfo *-- EmailAddress
+
+' Note: ClientGymAssociation is NOT composed by Client in the domain model;
+' it only references Client by raw clientId (Long), and is persisted/queried
+' independently of the Client aggregate boundary.
+ClientGymAssociation ..> Client : references by clientId (Long)\n(no object composition)
+
+' Repositories operate on aggregates, keyed by identity VOs
+AdminRepository ..> Admin
+AdminRepository ..> AdminId
+ClientRepository ..> Client
+ClientRepository ..> ClientId
+BusinessProfileRepository ..> BusinessProfile
+BusinessProfileRepository ..> BusinessProfileId
+
+' Domain events raised by aggregates
+Admin ..> AdminRegisteredEvent : raises
+Client ..> ClientRegisteredEvent : raises
+BusinessProfile ..> BusinessProfileCreatedEvent : raises
+
+note right of Admin
+  Identity mismatch: Admin.id is a raw Long,
+  while AdminId (Long, validated >=1) exists
+  only as a repository lookup key — it is not
+  actually the aggregate's identity type.
+  Same pattern for Client/ClientId and
+  BusinessProfile/BusinessProfileId.
+end note
+
+note bottom of ClientGymAssociation
+  Modeled as a domain Entity but has no
+  domain repository interface and is not
+  referenced from the Client aggregate root
+  (only a foreign-key-style Long clientId).
+  It behaves more like its own mini-aggregate,
+  managed entirely through infrastructure/
+  application layers.
+end note
+
+@enduml

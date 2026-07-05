@@ -1,0 +1,165 @@
+@startuml routine-domain-model
+title Spottrack — Routine Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "shared kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>> {
+  }
+}
+
+package "routine.domain" {
+
+  package "aggregates" {
+    class Routine <<AggregateRoot>> {
+      - id: Long
+      - routineName: RoutineName
+      - clientId: ClientId
+      - exerciseBlocks: List<ExerciseBlock>
+      --
+      + addExerciseBlock(name, type, order, sets, reps)
+      + onCreated()
+    }
+
+    class RoutineSession <<AggregateRoot>> {
+      - id: Long
+      - routineId: Long
+      - clientId: ClientId
+      - status: RoutineSessionStatus
+      - startedAt: Date
+      - completedExercises: List<SessionExerciseCompletion>
+      --
+      + complete()
+      + markMissed()
+      + setExerciseCompletion(exerciseBlockId, completed)
+      + getCompletedExerciseBlockIds(): List<Long>
+      + onCreated()
+    }
+  }
+
+  package "entities" {
+    class ExerciseBlock <<Entity>> {
+      - id: Long
+      - exerciseName: ExerciseName
+      - exerciseType: ExerciseType
+      - order: int
+      - sets: int
+      - reps: int
+    }
+
+    class SessionExerciseCompletion <<Entity>> {
+      - id: Long
+      - exerciseBlockId: Long
+    }
+  }
+
+  package "valueobjects" {
+    class RoutineName <<ValueObject>> {
+      + routineName: String
+    }
+
+    class ClientId <<ValueObject>> {
+      + clientId: Long
+    }
+
+    class ExerciseName <<ValueObject>> {
+      + exerciseName: String
+    }
+
+    enum ExerciseType {
+      CARDIO
+      STRENGTH
+      FLEXIBILITY
+    }
+
+    enum RoutineSessionStatus {
+      STARTED
+      COMPLETED
+      MISSED
+    }
+  }
+
+  package "events" {
+    class RoutineCreatedEvent <<DomainEvent>> {
+      + routineId: Long
+      + routineName: String
+      + clientId: Long
+    }
+
+    class ExerciseBlockAddedEvent <<DomainEvent>> {
+      + routineId: Long
+      + exerciseBlockId: Long
+      + exerciseName: String
+      + exerciseType: String
+    }
+
+    class RoutineStartedEvent <<DomainEvent>> {
+      + routineSessionId: Long
+      + routineId: Long
+      + clientId: Long
+    }
+
+    class RoutineCompletedEvent <<DomainEvent>> {
+      + routineSessionId: Long
+      + routineId: Long
+    }
+
+    class RoutineMissedEvent <<DomainEvent>> {
+      + routineSessionId: Long
+      + routineId: Long
+    }
+  }
+
+  package "repositories" {
+    interface RoutineRepository <<Repository>> {
+      + findById(id: Long): Optional<Routine>
+      + findAllByClientId(clientId: ClientId): List<Routine>
+      + save(routine: Routine): Routine
+      + existsById(id: Long): boolean
+    }
+
+    interface RoutineSessionRepository <<Repository>> {
+      + findById(id: Long): Optional<RoutineSession>
+      + findAllByClientId(clientId: ClientId): List<RoutineSession>
+      + save(session: RoutineSession): RoutineSession
+    }
+  }
+}
+
+' Inheritance from shared kernel
+Routine --|> AbstractDomainAggregateRoot
+RoutineSession --|> AbstractDomainAggregateRoot
+
+' Composition: aggregate roots own their entities/value objects
+Routine *-- "0..*" ExerciseBlock
+Routine *-- RoutineName
+Routine *-- ClientId
+
+RoutineSession *-- "0..*" SessionExerciseCompletion
+RoutineSession *-- ClientId
+
+ExerciseBlock *-- ExerciseName
+ExerciseBlock --> ExerciseType
+
+RoutineSession --> RoutineSessionStatus
+
+' Repositories manage aggregates
+RoutineRepository ..> Routine
+RoutineSessionRepository ..> RoutineSession
+
+' Domain events raised by aggregates
+Routine ..> RoutineCreatedEvent
+Routine ..> ExerciseBlockAddedEvent
+RoutineSession ..> RoutineStartedEvent
+RoutineSession ..> RoutineCompletedEvent
+RoutineSession ..> RoutineMissedEvent
+
+note right of RoutineSession
+  completedExercises is a lazily-loaded
+  collection; must be accessed within an
+  open persistence session (infra concern,
+  not a domain-model flaw).
+end note
+
+@enduml

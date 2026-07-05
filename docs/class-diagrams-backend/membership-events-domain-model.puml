@@ -1,0 +1,167 @@
+@startuml membership-events-domain-model
+title Spottrack — Membership Bounded Context — Domain Model (Domain Events)
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "Aggregates (see membership-core-domain-model.puml)" {
+  class Membership <<AggregateRoot>>
+  class Payment <<AggregateRoot>>
+  class BranchAccess <<AggregateRoot>>
+}
+
+package "Membership Events" {
+  class MembershipCreatedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    membershipTier: MembershipTier
+  }
+
+  class GymMembershipActivatedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    membershipTier: MembershipTier
+  }
+
+  class GymMembershipRenewedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    membershipTier: MembershipTier
+  }
+
+  class MembershipCancellationRequestedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    accessUntil: LocalDate
+  }
+
+  class MembershipCancellationUndoneEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+  }
+
+  class MembershipCancelledEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+  }
+
+  class MembershipSuspendedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+  }
+
+  class MembershipExpiredEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+  }
+
+  class MembershipDowngradeRequestedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    currentTier: MembershipTier
+    pendingDowngradeTier: MembershipTier
+    effectiveDate: LocalDate
+  }
+
+  class PlanDowngradedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    newTier: MembershipTier
+    newPeriodStart: LocalDate
+    newPeriodEnd: LocalDate
+  }
+
+  class PlanUpgradedEvent <<DomainEvent>> {
+    id: Long
+    membershipId: UUID
+    clientId: Long
+    newTier: MembershipTier
+  }
+}
+
+package "Payment Events" {
+  class MembershipPayedEvent <<DomainEvent>> {
+    id: Long
+    paymentId: UUID
+    userId: Long
+    pendingRegistrationId: UUID
+    membershipTier: MembershipTier
+  }
+
+  class PaymentConfirmedEvent <<DomainEvent>> {
+    id: Long
+    paymentId: UUID
+    userId: Long
+    pendingRegistrationId: UUID
+    membershipId: UUID
+    membershipTier: MembershipTier
+    amount: Money
+    gatewayTransactionId: String
+    paymentPurpose: PaymentPurpose
+  }
+
+  class PaymentFailedEvent <<DomainEvent>> {
+    id: Long
+    paymentId: UUID
+    userId: Long
+    pendingRegistrationId: UUID
+    membershipId: UUID
+    paymentPurpose: PaymentPurpose
+  }
+}
+
+package "BranchAccess Events" {
+  class BranchAccessGrantedEvent <<DomainEvent>> {
+    id: Long
+    branchAccessId: UUID
+    membershipId: Long
+    branchId: Long
+  }
+
+  class BranchAccessDeniedEvent <<DomainEvent>> {
+    id: Long
+    branchAccessId: UUID
+    membershipId: Long
+    branchId: Long
+  }
+}
+
+Membership ..> MembershipCreatedEvent
+Membership ..> GymMembershipActivatedEvent
+Membership ..> GymMembershipRenewedEvent
+Membership ..> MembershipCancellationRequestedEvent
+Membership ..> MembershipCancellationUndoneEvent
+Membership ..> MembershipCancelledEvent
+Membership ..> MembershipSuspendedEvent
+Membership ..> MembershipExpiredEvent
+Membership ..> MembershipDowngradeRequestedEvent
+Membership ..> PlanDowngradedEvent
+Membership ..> PlanUpgradedEvent
+
+Payment ..> MembershipPayedEvent
+Payment ..> PaymentConfirmedEvent
+Payment ..> PaymentFailedEvent
+
+BranchAccess ..> BranchAccessGrantedEvent
+BranchAccess ..> BranchAccessDeniedEvent
+
+note bottom of MembershipPayedEvent
+  Despite its name, this event is raised
+  from Payment.onCreated(), not from
+  Membership — naming suggests it belongs
+  to the Membership lifecycle but it is a
+  Payment-aggregate event ("Payed" is also
+  a grammar issue: should be "Paid").
+end note
+
+@enduml
