@@ -1788,7 +1788,7 @@ Frontend:
 ## Database Design
 
 ### Database Diagrams
-![db_opensource.png](../docs/database/db_opensource.png)
+![spottrack-platform.png](../docs/database/spottrack-platform.png)
 
 # Capítulo V: Product Implementation, Validation & Deployment
 

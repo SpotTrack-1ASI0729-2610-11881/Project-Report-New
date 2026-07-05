@@ -749,4 +749,4 @@ Flujos dinámicos del ciclo de vida del mantenimiento, abarcando desde la detecc
 ## Database Design
 
 ### Database Diagrams
-![db_opensource.png](../docs/database/db_opensource.png)
+![spottrack-platform.png](../docs/database/spottrack-platform.png)
