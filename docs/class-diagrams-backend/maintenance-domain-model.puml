@@ -1,0 +1,246 @@
+@startuml maintenance-domain-model
+title Spottrack — Maintenance Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+hide empty members
+
+package "Shared Kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>>
+}
+
+package "Aggregates" {
+
+  class Maintenance <<AggregateRoot>> {
+    - id: MaintenanceId
+    - equipmentId: EquipmentId
+    - requestedBy: String
+    - description: String
+  }
+  note right of Maintenance
+    @Getter @Setter on ALL fields:
+    invariants (e.g. id/equipmentId
+    immutability) are not enforced
+    by the aggregate itself.
+  end note
+
+  class MaintenanceJob <<AggregateRoot>> {
+    - jobId: MaintenanceJobId
+    - technicianId: String
+    - maintenanceId: String
+    - accepted: boolean
+    + accept(command: AcceptMaintenance): void
+  }
+
+  class MaintenanceLog <<AggregateRoot>> {
+    - logId: MaintenanceLogId
+    - ticketId: String
+    - maintenanceId: String
+    - notes: String
+    - cost: BigDecimal
+    - completedAt: LocalDateTime
+  }
+
+  class TechnicalTicket <<AggregateRoot>> {
+    - ticketId: TechnicalTicketId
+    - maintenanceId: String
+    - equipmentId: String
+    - technicianId: String
+    - description: String
+    - priority: TicketPriority
+    - type: TicketType
+    - ticketStatus: TicketStatus
+    - maintenanceStatus: MaintenanceStatus
+    - createdAt: LocalDateTime
+    + assign(command: AssignTechnicalTicket): void
+    + markAsResolved(): void
+    + modifyStatus(command: ModifyTicketStatus): void
+    + requestStatusUpdate(command: RequestUpdateMaintenanceStatus): void
+    + updateMaintenanceStatus(command: UpdateMaintenanceStatus): void
+  }
+
+  class Technician <<AggregateRoot>> {
+    - technicianId: TechnicianId
+    - name: String
+  }
+}
+
+package "Value Objects" {
+  class MaintenanceId <<ValueObject>> {
+    uuid: String
+  }
+  class MaintenanceJobId <<ValueObject>> {
+    uuid: String
+  }
+  class MaintenanceLogId <<ValueObject>> {
+    uuid: String
+  }
+  class TechnicalTicketId <<ValueObject>> {
+    uuid: String
+  }
+  class TechnicianId <<ValueObject>> {
+    uuid: String
+  }
+  class EquipmentId <<ValueObject>> {
+    uuid: String
+  }
+
+  enum MaintenanceStatus {
+    REQUESTED
+    IN_PROGRESS
+    COMPLETED
+  }
+  enum TicketStatus {
+    OPEN
+    IN_PROGRESS
+    RESOLVED
+    MODIFIED
+  }
+  enum TicketPriority {
+    LOW
+    MEDIUM
+    HIGH
+    URGENT
+  }
+  enum TicketType {
+    CORRECTIVE
+    PREVENTIVE
+  }
+}
+
+package "Domain Events" {
+  class MaintenanceRequestedEvent <<DomainEvent>> {
+    maintenanceId: String
+    equipmentId: EquipmentId
+    requestedBy: String
+  }
+  class MaintenanceJobAcceptedEvent <<DomainEvent>> {
+    maintenanceJobId: String
+    maintenanceId: String
+    technicianId: String
+  }
+  class MaintenanceCompletionRegisteredToLogEvent <<DomainEvent>> {
+    logId: String
+    ticketId: String
+    maintenanceId: String
+  }
+  class TechnicalTicketCreatedEvent <<DomainEvent>> {
+    ticketId: String
+    maintenanceId: String
+    equipmentId: String
+  }
+  class TechnicalTicketAssignedEvent <<DomainEvent>> {
+    ticketId: String
+    technicianId: String
+    equipmentId: String
+  }
+  class TicketStatusMarkedAsResolvedEvent <<DomainEvent>> {
+    ticketId: String
+    equipmentId: String
+  }
+  class TicketStatusModifiedEvent <<DomainEvent>> {
+    ticketId: String
+    newStatus: String
+  }
+  class MaintenanceStatusUpdateRequestedEvent <<DomainEvent>> {
+    ticketId: String
+    requestedStatus: String
+  }
+  class MaintenanceStatusUpdatedEvent <<DomainEvent>> {
+    ticketId: String
+    newStatus: String
+  }
+  class TechnicianCreatedEvent <<DomainEvent>> {
+    technicianId: String
+    name: String
+  }
+  class EquipmentTransferRecommendedEvent <<DomainEvent>> {
+    equipmentId: String
+    reason: String
+  }
+}
+note bottom of EquipmentTransferRecommendedEvent
+  Not registered by any aggregate root
+  in this context (registerDomainEvent
+  is never called for it here) — it is
+  raised directly from the application
+  command service instead, consistent
+  with the known "event published from
+  the wrong object" bug.
+end note
+
+package "Repositories" {
+  interface MaintenanceRepository <<Repository>> {
+    + findByMaintenanceId(id: MaintenanceId): Optional<Maintenance>
+    + findById(id: Long): Optional<Maintenance>
+    + findAll(): List<Maintenance>
+    + save(maintenance: Maintenance): Maintenance
+  }
+  interface MaintenanceJobRepository <<Repository>> {
+    + findById(id: MaintenanceJobId): Optional<MaintenanceJob>
+    + save(job: MaintenanceJob): MaintenanceJob
+  }
+  interface MaintenanceLogRepository <<Repository>> {
+    + save(log: MaintenanceLog): MaintenanceLog
+    + findByTicketId(ticketId: String): List<MaintenanceLog>
+    + findAll(): List<MaintenanceLog>
+  }
+  interface TechnicalTicketRepository <<Repository>> {
+    + findById(id: TechnicalTicketId): Optional<TechnicalTicket>
+    + findByMaintenanceId(maintenanceId: String): Optional<TechnicalTicket>
+    + save(ticket: TechnicalTicket): TechnicalTicket
+  }
+  interface TechnicianRepository <<Repository>> {
+    + findById(id: TechnicianId): Optional<Technician>
+    + existsById(id: TechnicianId): boolean
+    + findAll(): List<Technician>
+    + save(technician: Technician): Technician
+  }
+}
+
+' --- Inheritance from shared kernel ---
+Maintenance --|> AbstractDomainAggregateRoot
+MaintenanceJob --|> AbstractDomainAggregateRoot
+MaintenanceLog --|> AbstractDomainAggregateRoot
+TechnicalTicket --|> AbstractDomainAggregateRoot
+Technician --|> AbstractDomainAggregateRoot
+
+' --- Composition: aggregate roots own their identity/value objects ---
+Maintenance *-- MaintenanceId
+Maintenance *-- EquipmentId
+MaintenanceJob *-- MaintenanceJobId
+MaintenanceLog *-- MaintenanceLogId
+TechnicalTicket *-- TechnicalTicketId
+TechnicalTicket *-- TicketPriority
+TechnicalTicket *-- TicketType
+TechnicalTicket *-- TicketStatus
+TechnicalTicket *-- MaintenanceStatus
+Technician *-- TechnicianId
+
+' --- Associations: cross-aggregate references (mostly weakly-typed Strings) ---
+MaintenanceJob --> "maintenanceId : String" Maintenance
+MaintenanceLog --> "maintenanceId : String" Maintenance
+MaintenanceLog --> "ticketId : String" TechnicalTicket
+TechnicalTicket --> "maintenanceId : String" Maintenance
+TechnicalTicket --> "technicianId : String" Technician
+
+' --- Dependencies: aggregates raise domain events ---
+Maintenance ..> MaintenanceRequestedEvent
+MaintenanceJob ..> MaintenanceJobAcceptedEvent
+MaintenanceLog ..> MaintenanceCompletionRegisteredToLogEvent
+TechnicalTicket ..> TechnicalTicketCreatedEvent
+TechnicalTicket ..> TechnicalTicketAssignedEvent
+TechnicalTicket ..> TicketStatusMarkedAsResolvedEvent
+TechnicalTicket ..> TicketStatusModifiedEvent
+TechnicalTicket ..> MaintenanceStatusUpdateRequestedEvent
+TechnicalTicket ..> MaintenanceStatusUpdatedEvent
+Technician ..> TechnicianCreatedEvent
+
+' --- Repositories manage aggregates ---
+MaintenanceRepository ..> Maintenance
+MaintenanceJobRepository ..> MaintenanceJob
+MaintenanceLogRepository ..> MaintenanceLog
+TechnicalTicketRepository ..> TechnicalTicket
+TechnicianRepository ..> Technician
+
+@enduml

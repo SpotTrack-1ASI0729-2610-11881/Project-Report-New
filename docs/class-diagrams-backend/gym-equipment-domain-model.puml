@@ -1,0 +1,113 @@
+@startuml gym-equipment-domain-model
+title Spottrack — Gym Bounded Context — Domain Model (Equipment cluster)
+
+skinparam classAttributeIconSize 0
+hide empty members
+
+package "gym.equipment" {
+
+  class Equipment <<AggregateRoot>> {
+    - persistenceId: Long
+    - id: EquipmentId
+    - status: EquipmentStatus
+    - equipmentName: String
+    - model: String
+    - purchasePrice: Money
+    - manufacturerId: ManufacturerId
+    - maintenanceThreshold: LocalDate
+    - maintenanceAlertSent: boolean
+    - zoneId: ZoneId
+    --
+    + markEquipmentOutOfService()
+    + updateStatus(status: EquipmentStatus)
+    + relocateEquipment(zoneId: ZoneId)
+    + defineMaintenanceThreshold(date: LocalDate)
+    + markMaintenanceThresholdReached()
+  }
+
+  class Manufacturer <<Entity>> {
+    - id: ManufacturerId
+    - name: String
+    - country: String
+    - website: String
+  }
+
+  record EquipmentId <<ValueObject>> {
+    + uuid: String
+  }
+
+  record ManufacturerId <<ValueObject>> {
+    + uuid: String
+  }
+
+  enum EquipmentStatus <<ValueObject>> {
+    AVAILABLE
+    OUT_OF_SERVICE
+    MAINTENANCE
+    ACTIVE
+    OCCUPIED
+    DECOMMISSIONED
+  }
+
+  class EquipmentRegistered <<DomainEvent>> {
+    + equipmentId: EquipmentId
+  }
+
+  class EquipmentStatusUpdatedEvent <<DomainEvent>> {
+    + equipmentId: String
+    + status: EquipmentStatus
+  }
+
+  class MaintenanceThresholdDefinedEvent <<DomainEvent>> {
+    + equipmentId: String
+    + threshold: LocalDate
+  }
+
+  class MaintenanceThresholdReachedEvent <<DomainEvent>> {
+    + equipmentId: String
+    + threshold: LocalDate
+  }
+
+  interface EquipmentRepository <<Repository>> {
+    + findById(equipmentId: EquipmentId): Optional<Equipment>
+    + findByStatus(status: EquipmentStatus): List<Equipment>
+    + findByName(equipmentName: String): List<Equipment>
+    + findAll(): List<Equipment>
+    + findByMaintenanceThresholdLessThanEqualAndMaintenanceAlertSentFalse(date: LocalDate): List<Equipment>
+    + save(equipment: Equipment): Equipment
+  }
+}
+
+package "shared kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>>
+  class Money <<shared kernel>>
+}
+
+package "external context: gym.facility" {
+  class ZoneId <<external context: gym.facility>>
+}
+
+Equipment --|> AbstractDomainAggregateRoot
+Equipment *-- EquipmentId : id
+Equipment *-- Money : purchasePrice
+Equipment --> ManufacturerId : manufacturerId
+Equipment --> ZoneId : zoneId
+Equipment ..> EquipmentStatusUpdatedEvent : publishes
+Equipment ..> MaintenanceThresholdDefinedEvent : publishes
+Equipment ..> MaintenanceThresholdReachedEvent : publishes
+Equipment ..> EquipmentRegistered : publishes\n(from application layer)
+
+Manufacturer *-- ManufacturerId : id
+
+EquipmentRepository --> Equipment : manages
+
+note bottom of Manufacturer
+  Manufacturer is annotated @Entity and referenced
+  by Equipment only via ManufacturerId — a de facto
+  separate aggregate, yet it has no domain
+  ManufacturerRepository in this bounded context.
+  Code comment also flags a missing contactEmail
+  value object.
+end note
+
+@enduml

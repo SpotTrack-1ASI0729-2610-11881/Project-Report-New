@@ -1,0 +1,108 @@
+@startuml gym-facility-domain-model
+title Spottrack — Gym Bounded Context — Domain Model (Facility cluster: Gym / Branch / Zone)
+
+skinparam classAttributeIconSize 0
+hide empty members
+
+package "gym.facility" {
+
+  class Gym <<AggregateRoot>> {
+    - id: GymId
+    - name: String
+    - adminUserId: Long
+    - branchList: List<Branch>
+    --
+    + validateIfzoneExists(zoneId: ZoneId)
+  }
+
+  class Branch <<Entity>> {
+    - id: BranchId
+    - gymId: String
+    - name: String
+    - address: String
+    - zoneList: List<Zone>
+  }
+
+  class Zone <<Entity>> {
+    - id: ZoneId
+    - name: String
+    - maximumOccupancy: int
+    - branchId: BranchId
+    - equipmentList: List<EquipmentId>
+  }
+
+  class GymWhitelistEntry <<Entity>> {
+    - id: Long
+    - gymId: String
+    - dni: Dni
+  }
+
+  record GymId <<ValueObject>> {
+    + uuid: String
+  }
+
+  record BranchId <<ValueObject>> {
+    + uuid: String
+  }
+
+  record ZoneId <<ValueObject>> {
+    + uuid: String
+  }
+
+  record Dni <<ValueObject>> {
+    + value: String
+  }
+
+  interface GymRepository <<Repository>> {
+    + save(gym: Gym): Gym
+    + findById(gymId: GymId): Optional<Gym>
+    + findByAdminUserId(adminUserId: Long): List<Gym>
+    + findAll(): List<Gym>
+  }
+
+  interface ZoneRepository <<Repository>> {
+    + save(zone: Zone): Zone
+    + findById(zoneId: String): Optional<Zone>
+    + findByName(zoneName: String): Optional<Zone>
+  }
+}
+
+package "shared kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>>
+}
+
+package "external context: gym.equipment" {
+  class EquipmentId <<external context: gym.equipment>>
+}
+
+Gym --|> AbstractDomainAggregateRoot
+Gym *-- GymId : id
+Gym *-- Branch : branchList
+Branch *-- BranchId : id
+Branch *-- Zone : zoneList
+Zone *-- ZoneId : id
+Zone --> EquipmentId : equipmentList
+
+GymWhitelistEntry *-- Dni : dni
+Gym ..> GymWhitelistEntry : linked only by\nraw gymId String (no object ref)
+
+GymRepository --> Gym : manages
+ZoneRepository --> Zone : manages
+
+note bottom of ZoneRepository
+  Zone is composed inside Gym -> Branch -> Zone
+  yet also has its own top-level repository.
+  This breaks the "one repository per aggregate"
+  rule: Zone is reachable and persisted both as
+  part of Gym's consistency boundary and as an
+  independent root.
+end note
+
+note right of Branch
+  Branch.gymId and GymWhitelistEntry.gymId are raw
+  Strings, not the GymId value object used
+  everywhere else — primitive obsession /
+  inconsistent identity modeling.
+end note
+
+@enduml
