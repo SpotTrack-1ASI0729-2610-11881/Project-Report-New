@@ -1023,6 +1023,18 @@ Durante el Sprint 4, la colaboración del equipo se concentró en tres repositor
 
 En conjunto, el Sprint 4 acumuló 132 Pull Requests fusionados en `spottrack-platform`, 72 en `spottrack-webapp` y 11 en `spottrack-website`. La distribución evidencia que Fernández y Azama concentraron la mayor parte de la implementación de los nuevos Bounded Contexts (Membership y Monitoring, respectivamente), mientras que Limache Coronel se integró productivamente al proyecto a mitad de ciclo tomando ownership del módulo de Alertas, y Espinoza sostuvo su rol de cierre de documentación y corrección de los módulos de Analítica heredados de Sprints anteriores.
 
+#### Platform
+![alt text](../assets/Insights/sprint4/platform-insights.png)
+
+#### Report
+![alt text](../assets/Insights/sprint4/report-insights.png)
+
+#### Webapp
+![alt text](../assets/Insights/sprint4/webapp-insights.png)
+
+#### Website
+![alt text](../assets/Insights/sprint4/website-insights.png)
+
 ---
 
 ## Validation Interviews
