@@ -681,7 +681,7 @@ Los Bounded Contexts se comunicaron mediante eventos de integración, implementa
 
 La integración frontend-backend se logró sin modificaciones a los componentes Angular del Sprint 2, al respetar el contrato de API documentado desde la etapa de Fake API. Únicamente fue necesario actualizar la URL base en `environment.ts`.
 
-Link del video:
+Link del video: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202411310_upc_edu_pe/IQAmkUSHJN8lS4mvzoEyBucuAUqh5hJe9wrQA8COdFcSUaQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=GWuXN8
 
 #### Services Documentation for Sprint Review
 
