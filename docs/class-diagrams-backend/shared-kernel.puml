@@ -47,11 +47,11 @@ package "shared.application.result" {
     +recover(f): Result<T, E>
   }
 
-  class "Result.Success<T, E>" <<record>> {
+  class "Result.Success<T, E>" as ResultSuccess <<record>> {
     +value: T
   }
 
-  class "Result.Failure<T, E>" <<record>> {
+  class "Result.Failure<T, E>" as ResultFailure <<record>> {
     +error: E
   }
 
@@ -68,8 +68,8 @@ package "shared.application.result" {
     +{static} unexpected(context, reason): ApplicationError
   }
 
-  Result <|.. "Result.Success"
-  Result <|.. "Result.Failure"
+  Result <|.. ResultSuccess
+  Result <|.. ResultFailure
   Result ..> ApplicationError : typically E =
 }
 
