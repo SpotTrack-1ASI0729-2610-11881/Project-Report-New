@@ -681,72 +681,35 @@ Flujos dinámicos del ciclo de vida del mantenimiento, abarcando desde la detecc
 
 ### Class Diagrams
 
-#### Frontend
+![Bounded Context Map](../assets/CLASS-DIAGRAMS/00-bounded-context-map.png)
 
-![class-diagram-auth](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-auth.puml)
+![Shared Kernel](../assets/CLASS-DIAGRAMS/shared-kernel.png)
 
-![class-diagram-asset](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-asset-management.puml)
+![IAM Domain Model](../assets/CLASS-DIAGRAMS/iam-domain-model.png)
 
+![Profiles Domain Model](../assets/CLASS-DIAGRAMS/profiles-domain-model.png)
 
-![class-diagram-availability](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-availability.puml)
+![Gym Facility Domain Model](../assets/CLASS-DIAGRAMS/gym-facility-domain-model.png)
 
+![Gym Equipment Domain Model](../assets/CLASS-DIAGRAMS/gym-equipment-domain-model.png)
 
+![Membership Core Domain Model](../assets/CLASS-DIAGRAMS/membership-core-domain-model.png)
 
-![class-diagram-financial-impact](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-finantial-impact.puml)
+![Membership Events Domain Model](../assets/CLASS-DIAGRAMS/membership-events-domain-model.png)
 
-![class-diagram-maintenance](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-matainance.puml)
+![Reservation Domain Model](../assets/CLASS-DIAGRAMS/reservation-domain-model.png)
 
-![class-diagram-monitoring](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-monitoring.puml)
+![Routine Domain Model](../assets/CLASS-DIAGRAMS/routine-domain-model.png)
 
+![Monitoring Domain Model](../assets/CLASS-DIAGRAMS/monitoring-domain-model.png)
 
-![class-diagram-notifications](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-notifications.puml)
+![Alert Domain Model](../assets/CLASS-DIAGRAMS/alert-domain-model.png)
 
+![Maintenance Domain Model](../assets/CLASS-DIAGRAMS/maintenance-domain-model.png)
 
-![class-diagram-profiles](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-profiles.puml)
-
-
-
-![class-diagram-reports](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-reports.puml)
-
-
-
-![class-diagram-routines](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-routines.puml)
-
-
-
-![class-diagram-settings](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-frontend/class-diagram-settings.puml)
-
-#### Backend
-
-![00-bounded-context-map](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/00-bounded-context-map.puml)
-
-![shared-kernel](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/shared-kernel.puml)
-
-![iam-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/iam-domain-model.puml)
-
-![profiles-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/profiles-domain-model.puml)
-
-![membership-core-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/membership-core-domain-model.puml)
-
-![membership-events-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/membership-events-domain-model.puml)
-
-![gym-facility-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/gym-facility-domain-model.puml)
-
-![gym-equipment-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/gym-equipment-domain-model.puml)
-
-![monitoring-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/monitoring-domain-model.puml)
-
-![reservation-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/reservation-domain-model.puml)
-
-![routine-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/routine-domain-model.puml)
-
-![maintenance-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/maintenance-domain-model.puml)
-
-![analytics-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/analytics-domain-model.puml)
-
-![alert-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/alert-domain-model.puml)
+![Analytics Domain Model](../assets/CLASS-DIAGRAMS/analytics-domain-model.png)
 
 ## Database Design
 
 ### Database Diagrams
-![spottrack-platform.png](../docs/database/spottrack-platform.png)
+![spottrack-platform](../assets/spottrack-platform.png)
