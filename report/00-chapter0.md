@@ -48,7 +48,7 @@
 
 <p align="center"><strong>Período 202610</strong></p>
 
-<p align="center"><strong>Junio 2026</strong></p>
+<p align="center"><strong>Julio 2026</strong></p>
 
 </div>
 
