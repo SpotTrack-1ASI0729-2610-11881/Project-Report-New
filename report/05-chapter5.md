@@ -775,7 +775,9 @@ Durante el Sprint 3, la colaboración del equipo se concentró principalmente en
 
 #### Sprint Planning 4
 
-El presente apartado detalla los acuerdos y objetivos definidos durante el Sprint Planning Meeting de nuestra cuarta y última iteración. Para este Sprint final, el equipo se concentrará en dos frentes de trabajo: (1) completar los Bounded Contexts de Analytics e IoT/Telemetría del backend con Spring Boot, cerrando así la cobertura total del dominio de SpotTrack; y (2) lograr la integración plena del frontend Angular con el backend real desplegado en producción, subsanando las correcciones identificadas en el Sprint 3 y consolidando la versión final definitiva de todos los productos digitales de la plataforma.
+El presente apartado detalla los acuerdos y objetivos definidos durante el Sprint Planning Meeting de nuestra cuarta y última iteración, así como los resultados alcanzados al cierre del ciclo de vida del proyecto. Para este Sprint final, el equipo se concentró en tres frentes de trabajo: (1) completar los Bounded Contexts de Analytics, IoT/Monitoring y Membership del backend con Spring Boot; (2) incorporar un modelo de negocio de suscripción real, integrando Stripe como servicio de pago de terceros para la activación y facturación de cuentas de administrador; y (3) lograr la integración plena del frontend Angular con el backend real desplegado en producción, subsanando las correcciones identificadas en el Sprint 3 y consolidando la versión final de todos los productos digitales de la plataforma.
+
+**Cambio en la composición del equipo:** al inicio de este Sprint, Atoche Gonzales, Nicolas Fernando y Cataño Zarate, Jesus Miguel se retiraron del curso. Se incorporó al equipo **Limache Coronel, Imanol Fabrizio** (GitHub: `ImaLi06`), quien asumió trabajo en los Bounded Contexts de Monitoring, Maintenance y Routines, además del módulo de Alertas en el frontend.
 
 | Aspect | Details |
 | :--- | :--- |
@@ -784,12 +786,12 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 | **Time** | 09:00 AM |
 | **Location** | Reunión Virtual (Discord) |
 | **Prepared By** | Azama Fukuda, Juan Pablo |
-| **Attendees (to planning meeting)** |  Azama Fukuda, Juan Pablo / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
+| **Attendees (to planning meeting)** | Azama Fukuda, Juan Pablo / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian / Limache Coronel, Imanol Fabrizio |
 | **Sprint 3 Review Summary** | Sprint 3 entregó el backend completo con Spring Boot para los Bounded Contexts IAM, Gym, Equipment, Maintenance, Reservation, Profiles y Routines, todos desplegados en Azure App Service conectado a Azure MySQL Flexible Database. Se realizaron seis entrevistas de validación con representantes de ambos segmentos objetivo y se documentó la evaluación heurística del producto, identificando seis áreas de mejora en usabilidad y diseño inclusivo. Sin embargo, quedaron pendientes los Bounded Contexts de Analytics e IoT/Telemetría, la conexión total del frontend Angular al backend real en producción, y la producción del Video About-the-Product. |
 | **Sprint 3 Retrospective Summary** | El equipo reconoció que la amplitud del dominio del backend fue subestimada durante la planificación del Sprint 3, lo que impidió completar los Bounded Contexts de Analytics y Telemetría en el tiempo previsto. Como aciertos se destacaron la correcta arquitectura DDD con comunicación entre BCs mediante eventos de integración (TicketCreatedEvent / TicketResolvedEvent) y el despliegue exitoso de los tres productos en la nube. Para el Sprint 4 se establecerán check-ins diarios de progreso, criterios de aceptación explícitos por endpoint antes de comenzar su implementación, y un responsable de integración que valide el contrato de API entre frontend y backend antes del cierre de cada tarea. El despliegue de la versión final de todos los productos se tratará como tarea crítica de primer orden. |
-| **Sprint Goal** | Nuestro enfoque es que los administradores de gimnasios puedan tomar decisiones informadas sobre la rentabilidad y el estado de sus equipos, y anticiparse a fallas antes de que afecten la experiencia de sus clientes, a través de reportes de uso, indicadores financieros y alertas de monitoreo disponibles en una plataforma ya completamente operativa. Creemos que esto les entrega control total sobre sus operaciones —desde identificar qué equipos conviene reubicar o reemplazar, hasta detectar de forma temprana un mal funcionamiento— sin depender de reportes manuales ni de la inspección física de cada máquina. Esto se confirmará cuando los administradores puedan consultar sus analíticas de negocio, recibir alertas de estado de sus equipos y gestionar todas sus operaciones diarias desde la plataforma final de SpotTrack, disponible en producción sin bloqueos críticos. |
-| **Sprint 4 Velocity** | 40 Story Points |
-| **Sum of Story Points** | 40 |
+| **Sprint Goal** | Nuestro enfoque es que los administradores de gimnasios puedan suscribirse, pagar y operar la plataforma de punta a punta —desde el registro de su negocio hasta la gestión financiera y predictiva de sus activos— mientras los clientes cuentan con una red de sensores IoT ampliada y un centro de alertas que los mantiene informados en tiempo real. Creemos que esto entrega un modelo de negocio SaaS completo y autosostenible a los administradores, y mayor confianza y capacidad de respuesta a los clientes ante eventos del sistema. Esto se confirmará cuando un administrador nuevo pueda registrar su gimnasio, pagar su membresía mediante Stripe, y operar sin bloqueos críticos desde la plataforma final de SpotTrack, disponible en producción. |
+| **Sprint 4 Velocity** | 117 Story Points |
+| **Sum of Story Points** | 117 |
 
 ##### Sprint 3 Retrospective — Individual Feedback
 
@@ -801,49 +803,218 @@ Durante la reunión de retrospectiva del Sprint 3, el equipo coincidió en que e
 | Fernández Linares, Alvaro Sebastian | Hubo un objetivo macro que funcionó como motor de avance. | Podríamos haber tenido más cuidado con el backend, mejor definición de objetivos. |
 | Espinoza Orrego, Valentino Andre | Sintió mejor definición de qué tenía que hacer. | Revisar bien la delegación que cada uno tiene, mejora en QA. |
 
+##### Sprint 4 Retrospective Summary
+
+Al cierre del Sprint 4, el equipo identificó que el alcance real superó ampliamente la estimación inicial de 40 Story Points: la incorporación de un modelo de suscripción de pago (Membership & Billing con Stripe) resultó ser una precondición no anticipada para que un administrador pudiera operar la plataforma, lo que arrastró consigo el onboarding de gimnasios, la gestión de sedes y la lista blanca de clientes. De forma similar, la ampliación de la red de sensores IoT (movimiento, cámara y seguimiento de sesión) generó la necesidad de un centro de alertas unificado que no había sido considerado en el Sprint 3. Como acierto principal, la salida de dos integrantes del equipo no detuvo el ritmo de entrega gracias a la incorporación oportuna de Limache Coronel, Imanol Fabrizio y a la arquitectura por Bounded Contexts, que permitió que el nuevo integrante tomara ownership de módulos delimitados (Monitoring, Alerts, parte de Maintenance y Routines) sin fricción con el resto del código. Como oportunidad de mejora, el equipo reconoce que no se implementó cobertura de pruebas automatizadas (unitarias o de integración) para los nuevos Bounded Contexts, ni un pipeline de CI/CD para el repositorio del backend, quedando ambos como recomendaciones para una eventual continuidad del producto.
 
 #### Aspect Leaders and Collaborators
 
-Para este Sprint 4 final, el equipo organizó su trabajo en cuatro frentes simultáneos: completar los Bounded Contexts de Analytics e IoT/Telemetría del backend, lograr la integración total del frontend con el backend real, y aplicar las correcciones y documentación final pendientes del Sprint 3. Esta estructura garantiza avance paralelo con ownership claro sobre cada frente, asegurando la entrega definitiva del proyecto.
+Para este Sprint 4 final, el equipo organizó su trabajo en cuatro frentes simultáneos: Membership & Billing (incluyendo la integración de pagos con Stripe), IoT Monitoring/Anomalías y el nuevo Centro de Alertas, Mantenimiento (gestión de técnicos) y Analítica/ROI, y la integración final del frontend junto con el cierre de la Landing Page. Esta estructura garantiza avance paralelo con ownership claro sobre cada frente, asegurando la entrega definitiva del proyecto.
 
-| Team Member (Last Name, First Name) | GitHub Username | Aspect 1: Analytics BC Backend Leader (L) / Collaborator (C) | Aspect 2: IoT/Telemetry BC Backend Leader (L) / Collaborator (C) | Aspect 3: Frontend-Backend Full Integration Leader (L) / Collaborator (C) | Aspect 4: Sprint 3 Corrections & Final Documentation Leader (L) / Collaborator (C) |
+| Team Member (Last Name, First Name) | GitHub Username | Aspect 1: Membership & Billing (Stripe) Leader (L) / Collaborator (C) | Aspect 2: IoT Monitoring, Anomalies & Alerts Center Leader (L) / Collaborator (C) | Aspect 3: Maintenance Technicians & Analytics/ROI Leader (L) / Collaborator (C) | Aspect 4: Frontend Integration & Landing Page Finalization Leader (L) / Collaborator (C) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Azama Fukuda, Juan Pablo | llummo | Analytics BC (C) | IoT/Telemetry BC (L) | Heatmap & IoT Integration (C) | (C) |
-| Atoche Gonzales, Nicolas Fernando | THECOMAX | Analytics BC (L) | (C) | (C) | (C) |
-| Cataño Zarate, Jesus Miguel | jcuz1510 | (C) | (C) | Frontend Integration (L) | (C) |
-| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Analytics BC (C) | (C) | (C) | Final Documentation (L) |
-| Fernández Linares, Alvaro Sebastian | ORION-tech-c | (C) | IoT/Telemetry BC (C) | (C) | Corrections & Swagger Docs (L) |
+| Azama Fukuda, Juan Pablo | llummo | (C) | Monitoring & Session Tracking (L) | Maintenance Technicians & Analytics/ROI (L) | Stripe checkout & QR check-in (C) |
+| Fernández Linares, Alvaro Sebastian | ORION-tech-c | Membership BC & Gym Onboarding (L) | (C) | Notification Preferences & Auth hardening (C) | (C) |
+| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | (C) | (C) | Analytics frontend refactor (C) | Landing Page finalization (L) |
+| Limache Coronel, Imanol Fabrizio | ImaLi06 | (C) | Alerts Center & Anomaly reporting (L) | Technician assignment UI & Routine sessions (C) | (C) |
 
+Nota: los commits de Limache Coronel Imanol Fabrizio aparecen en el historial de los repositorios `spottrack-platform` y `spottrack-webapp` bajo los identificadores de Git `ImaLi06` e `Imanol`.
 
 #### Sprint Backlog 4
 
+El Sprint 4 incorporó al backlog los User Stories y Technical Stories US31–US50 y TS62–TS102 (ver Capítulo III, sección 3.1). Este conjunto combina las historias documentadas de forma independiente por Valentino Espinoza (PR #164, cubriendo el ciclo completo de Membership & Billing con Stripe, onboarding multi-gimnasio, lista blanca, personal técnico, recuperación de contraseña y seguimiento de rutinas en vivo) con las historias de IoT Monitoring, Alertas, Analítica y gestión de técnicos de mantenimiento incorporadas en paralelo, tras reconciliar duplicados y renumerar IDs en conflicto. A continuación se detalla la descomposición en tasks de dichos artefactos, junto con tasks adicionales de cierre de sprint (prefijo `SF4-`).
+
 | Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| - | Analytics BC | T01 | Analytics BC domain layer (AnalyticsSummary aggregate, UsageStat & PeakHourData value objects) | Definir el agregado AnalyticsSummary, los value objects UsageStat y PeakHourData, y los comandos de consulta del Bounded Context Analytics. | 4 hrs | Atoche | To-do |
-| TS14 | Obtener picos de afluencia por día API | T02 | Implement GET /api/v1/analytics/peak-hours | Retornar los bloques horarios por sede que superan el umbral de ocupación configurado (90% de capacidad). | 4 hrs | Atoche | To-do |
-| US17 | Acumulación automática de horas de uso | T03 | Implement GET /api/v1/analytics/usage-stats | Retornar estadísticas acumuladas de horas de uso y conteo diario por equipo con filtro de rango de fechas. | 4 hrs | Atoche | To-do |
-| US18 | Identificación de equipos subutilizados | T04 | Implement GET /api/v1/analytics/underutilized-equipment | Retornar listado de equipos que no alcanzan el umbral mínimo de uso en el período analizado. | 3 hrs | Espinoza | To-do |
-| US27 | Estadísticas de reubicación multisede | T05 | Implement GET /api/v1/analytics/relocation-recommendations | Comparar utilización entre sedes y retornar sugerencias de transferencia de equipos con estimación de ingresos adicionales por mes. | 4 hrs | Espinoza | To-do |
-| TS26 | Calcular impacto financiero API | T06 | Implement GET /api/v1/analytics/financial-impact | Calcular la pérdida monetaria estimada por horas de inactividad de cada equipo en el período seleccionado. | 4 hrs | Atoche | To-do |
-| TS27 | Simular ROI API | T07 | Implement POST /api/v1/analytics/roi-projection | Ejecutar la simulación de ROI basada en el costo de adquisición de un equipo y la demanda insatisfecha registrada por telemetría. | 4 hrs | Espinoza | To-do |
-| TS15 | Exportar reporte gerencial API | T08 | Implement GET /api/v1/analytics/export | Generar el reporte de analíticas en formato PDF/CSV para descarga directa desde el portal de administración. | 3 hrs | Atoche | To-do |
-| - | IoT/Telemetry BC | T09 | IoT/Telemetry BC domain layer (IoTDevice aggregate, SensorReading entity, commands) | Definir el agregado IoTDevice, la entidad SensorReading con datos de telemetría (ocupación, vibración, nivel de señal y batería), y los comandos RegisterDevice y RecordReading. | 4 hrs | Azama | To-do |
-| TS12 | Registrar evento de telemetría IoT API | T10 | Implement POST /api/v1/telemetry | Recibir y procesar el evento de estado del sensor IoT proveniente del dispositivo Edge y disparar el OccupancyChangedEvent hacia el Equipment BC. | 4 hrs | Azama | To-do |
-| TS13 | Listar historial de uso general API | T11 | Implement GET /api/v1/telemetry/history | Retornar el historial de lecturas de telemetría por dispositivo con filtro de rango de fechas y paginación. | 3 hrs | Azama | To-do |
-| US21 | Monitoreo de estado de hardware Edge IoT | T12 | Implement GET /api/v1/iot-devices | Retornar todos los dispositivos IoT registrados con su estado de conexión, nivel de batería y señal actualizado. | 3 hrs | Fernández | To-do |
-| - | IoT/Telemetry BC | T13 | Implement PATCH /api/v1/iot-devices/{id}/status | Actualizar el estado de conexión de un dispositivo IoT (ACTIVE / DISCONNECTED) desde el panel de administración. | 2 hrs | Fernández | To-do |
-| - | IoT/Telemetry BC | T14 | Integrate telemetry events with Equipment BC | Publicar OccupancyChangedEvent cuando el sensor detecta un cambio de estado de ocupación; actualizar el estado del equipo en el Gym BC para reflejar disponibilidad en tiempo real en el mapa de calor. | 4 hrs | Azama | To-do |
-| - | Frontend Integration | T15 | Connect Analytics module to real backend | Reemplazar las llamadas a JSON Server en los servicios Angular de analytics por los endpoints reales del backend en producción. | 4 hrs | Cataño | To-do |
-| - | Frontend Integration | T16 | Connect IoT Monitoring module to real backend | Conectar el componente de monitoreo IoT al endpoint GET /api/v1/iot-devices del backend real, eliminando datos hardcodeados. | 3 hrs | Cataño | To-do |
-| - | Frontend Integration | T17 | Update heatmap polling to consume real equipment status | Actualizar el mecanismo de polling del mapa de calor para consumir el estado real de equipos desde el backend en lugar de la Fake API. | 3 hrs | Azama | To-do |
-| - | Frontend Integration | T18 | Connect financial impact and ROI views to analytics endpoints | Conectar los módulos de impacto financiero y simulador de ROI del frontend Angular a los endpoints reales del Bounded Context Analytics. | 3 hrs | Cataño | To-do |
-| - | Frontend Integration | T19 | Final environment.ts update and optimized production build | Verificar que todas las variables de entorno apunten a las URLs de producción del backend y generar el build optimizado para Azure Static Web Apps. | 2 hrs | Azama | To-do |
-| - | Sprint 3 Corrections | T20 | Complete Sprint 3 execution evidence video | Grabar y publicar el video de evidencia de ejecución del Sprint 3 en Microsoft Stream e incluir el enlace en el informe del proyecto. | 3 hrs | Espinoza | To-do |
-| - | Sprint 3 Corrections | T21 | Fix heuristic issue #1: add text/icon indicators to heatmap | Añadir indicadores iconográficos (ícono check / x) o etiquetas de texto breve al mapa de calor para complementar los indicadores de color y garantizar accesibilidad para personas con daltonismo. | 3 hrs | Cataño | To-do |
-| - | Sprint 3 Corrections | T22 | Fix heuristic issue #2: add clear filters button on heatmap | Implementar el botón "Limpiar filtros" en el panel de filtrado del mapa de calor, visible únicamente cuando hay al menos un filtro activo. | 2 hrs | Cataño | To-do |
-| - | Sprint 3 Corrections | T23 | Complete Swagger documentation for all backend endpoints | Añadir anotaciones OpenAPI a todos los endpoints del backend e incluir ejemplos de request/response en el Swagger UI de producción. | 3 hrs | Fernández | To-do |
-| - | Final Deployment | T24 | Final deployment verification of all products | Validar que los tres productos (Landing Page, Web Application y Backend API) son accesibles y funcionales en sus URLs de producción para la versión final del proyecto. | 2 hrs | Azama | To-do |
-| - | Final Deployment | T25 | Document Sprint 4 in project report | Redactar las secciones de Sprint Planning 4, Aspect Leaders, Sprint Backlog y evidencias en el Capítulo V del informe del proyecto. | 4 hrs | Espinoza | To-do |
+| TS62 | Registrar alta de negocio y pago inicial API | T01 | Membership BC domain layer (Membership aggregate, MembershipTier enum, BranchAccess) | Definir el agregado Membership, el enum MembershipTier (Basic/Mid/Platinum) y el value object BranchAccess con el límite de sedes por plan. | 5 hrs | Fernández | Done |
+| TS62 | Registrar alta de negocio y pago inicial API | T02 | Implement POST /api/v1/register-business | Registrar los datos personales y de empresa de un nuevo administrador en un registro pendiente previo al pago. | 4 hrs | Fernández | Done |
+| TS63 | Iniciar pago de membresía API | T03 | Integrate Stripe Java SDK and configure API keys/webhook secret | Añadir la dependencia stripe-java, configurar las variables de entorno STRIPE_SECRET_API_KEY y STRIPE_WEBHOOK_SECRET en application-prod.properties. | 4 hrs | Azama | Done |
+| TS63 | Iniciar pago de membresía API | T04 | Implement POST /api/v1/payments | Crear la sesión de pago en Stripe Checkout para el plan seleccionado y retornar el checkoutUrl al cliente. | 5 hrs | Azama | Done |
+| TS64 | Confirmar pago mediante webhook de Stripe API | T05 | Implement POST /api/v1/webhooks/stripe with signature verification | Verificar la firma del header Stripe-Signature mediante Webhook.constructEvent antes de procesar cualquier evento recibido. | 5 hrs | Azama | Done |
+| TS64 | Confirmar pago mediante webhook de Stripe API | T06 | Handle checkout.session.completed / expired events | Disparar ConfirmPaymentCommand al completarse el pago y FailPaymentCommand ante una sesión expirada. | 4 hrs | Azama | Done |
+| US31 | Selección de plan y pago inicial en el alta de negocio | T07 | Build plan selection screen (Basic $69 / Mid $109 / Platinum $189) | Construir la pantalla de selección de planes con comparativa de características sustentada en un dato compartido plan-features.data.ts. | 5 hrs | Fernández | Done |
+| US31 | Selección de plan y pago inicial en el alta de negocio | T08 | Implement Stripe Checkout handoff and success/cancel pages | Conectar el flujo de registro con Stripe Checkout mediante un borrador en sessionStorage, y construir las pantallas /payment/success y /payment/cancel. | 5 hrs | Azama | Done |
+| US31 | Selección de plan y pago inicial en el alta de negocio | T09 | Build business registration form | Reescribir el formulario de registro para capturar datos personales (nombre, DNI, teléfono) y datos de empresa, con selección de rol administrador/cliente. | 5 hrs | Fernández | Done |
+| TS66 | Obtener membresía del cliente autenticado API | T10 | Implement GET /api/v1/memberships/me | Retornar el estado y tier de la membresía del administrador autenticado. | 4 hrs | Fernández | Done |
+| US33 | Gestión del ciclo de vida de la membresía | T11 | Build "My Membership" section | Construir la sección de perfil con estado de membresía, badge de plan y acciones de cancelar, deshacer cancelación, pagar deuda y cambiar de plan. | 5 hrs | Fernández | Done |
+| TS67, TS68 | Cancelar / Deshacer cancelación de membresía API | T12 | Implement PATCH /memberships/{id}/cancel and /undo-cancel | Marcar la membresía como Pendiente de Cancelación y permitir revertir el estado antes de la fecha de corte. | 4 hrs | Fernández | Done |
+| TS70, TS71 | Degradar / Mejorar plan de membresía API | T13 | Implement POST /memberships/{id}/upgrade-plan and /downgrade-plan | Actualizar el tier de membresía validando el límite de sedes activas contra el nuevo plan solicitado. | 5 hrs | Fernández | Done |
+| TS69 | Pagar deuda de membresía suspendida API | T14 | Implement POST /memberships/{id}/pay-debt | Generar una nueva sesión de pago Stripe para regularizar una membresía morosa. | 4 hrs | Fernández | Done |
+| US35 | Alta del primer gimnasio por el administrador | T15 | Build GymCreateComponent and hasGymGuard | Construir la pantalla de creación del primer gimnasio y el guard que redirige a administradores sin gimnasio asociado. | 5 hrs | Fernández | Done |
+| US44 | Gestión de sedes adicionales según límite del plan | T16 | Build branch management screen (/gym/branches) | Construir la pantalla de gestión de sedes con validación del límite de sedes según el plan de membresía activo. | 5 hrs | Fernández | Done |
+| US38 | Control de acceso mediante lista blanca de DNI | T17 | Build gym whitelist management screen | Construir la pantalla de administración de la lista blanca de DNIs autorizados para asociación de clientes. | 5 hrs | Fernández | Done |
+| US36 | Asociación de un cliente a un gimnasio | T18 | Build /gym/associate screen and GymSwitcherComponent | Construir la pantalla de asociación de clientes a un gimnasio autorizado y el selector de sede en el perfil. | 5 hrs | Fernández | Done |
+| US37 | Cambio entre gimnasios asociados | T19 | Implement hasClientGymGuard and ActiveGymStore | Implementar el guard de asociación de cliente y el store de gimnasio activo para cargar el mapa de calor de la sede correcta. | 4 hrs | Azama | Done |
+| TS92 | Registrar y listar sensores de movimiento API | T20 | Monitoring BC domain layer (MotionSensor aggregate) | Definir el agregado MotionSensor, sus eventos de conexión/desconexión y el value object de estado. | 5 hrs | Azama | Done |
+| TS92 | Registrar y listar sensores de movimiento API | T21 | Implement POST/GET /monitoring/motion-sensors and /me | Registrar sensores de movimiento y exponer el listado propio del administrador autenticado. | 4 hrs | Azama | Done |
+| TS93 | Registrar y listar sensores de cámara API | T22 | Implement POST/GET /monitoring/camera-sensors and capture-motion | Registrar cámaras Edge y exponer el endpoint de captura de estado de movimiento detectado. | 5 hrs | Azama | Done |
+| US45 | Monitoreo de sensores de movimiento y cámara | T23 | Build IoT Monitoring page | Construir la vista unificada de monitoreo IoT que reemplaza el mock de dispositivos, mostrando estado de conexión en vivo de cámaras y sensores de movimiento. | 5 hrs | Azama | Done |
+| US45 | Monitoreo de sensores de movimiento y cámara | T24 | Implement MotionSensorConnectivityScheduler | Implementar el scheduler de conectividad que marca sensores como Desconectado tras vencer el período de tolerancia y dispara la alerta correspondiente. | 5 hrs | Azama | Done |
+| TS94 | Gestionar session trackers API | T25 | SessionTracker aggregate and SessionTrackerScheduler | Definir el agregado SessionTracker y el scheduler que cierra automáticamente sesiones inactivas. | 5 hrs | Azama | Done |
+| TS94 | Gestionar session trackers API | T26 | Implement create/verify/{id}/end/{id}/time endpoints | Exponer el ciclo de vida completo del session tracker bajo /monitoring/session-trackers. | 4 hrs | Azama | Done |
+| US46 | Registro automático de sesión de uso vía sensor IoT | T27 | Implement live session tracking in the client app | Construir el polling de sesiones activas con badges en tiempo real, reemplazando la creación manual de sesiones. | 5 hrs | Limache Coronel | Done |
+| TS91 | Registrar reporte de anomalía API | T28 | Anomaly aggregate and POST /api/v1/anomalies | Definir el agregado Anomaly, validar la pertenencia de la reserva al cliente que reporta, y publicar el evento de alerta. | 5 hrs | Azama | Done |
+| US42 | Reporte estructurado de anomalías de equipo | T29 | Rework anomaly report flow with reservation dropdown | Reemplazar los campos manuales de reserva/equipo por un desplegable de reservas activas del cliente. | 4 hrs | Limache Coronel | Done |
+| TS102 | Listar y resolver alertas API | T30 | Shared Alert aggregate with AlertSeverity | Definir el agregado Alert transversal con niveles de severidad, consumido por eventos de Monitoring y Gym. | 5 hrs | Limache Coronel | Done |
+| TS102 | Listar y resolver alertas API | T31 | Implement GET /api/v1/alerts and PATCH /{id}/resolve | Exponer el listado de alertas por rol y la acción de resolución. | 4 hrs | Limache Coronel | Done |
+| US47 | Centro de alertas unificado | T32 | Build unified alerts inbox with resolve and clear-all actions | Construir la bandeja de notificaciones con severidad, resolución individual y limpieza masiva de alertas resueltas. | 5 hrs | Limache Coronel | Done |
+| US47 | Centro de alertas unificado | T33 | Fix AuthStore/AlertsStore circular dependency (NG0200) | Resolver la dependencia circular que rompía la carga de alertas al iniciar sesión, y reiniciar el estado de alertas al cerrar sesión. | 4 hrs | Limache Coronel | Done |
+| TS101 | Configurar preferencias de notificación API | T34 | Implement PATCH /api/v1/users/me/notification-preferences | Persistir las preferencias de notificación del usuario autenticado en la tabla de usuarios de IAM. | 4 hrs | Fernández | Done |
+| US48 | Preferencias de notificación | T35 | Build notification preferences settings card | Construir la tarjeta de configuración de preferencias de notificación dentro del módulo de Ajustes. | 4 hrs | Limache Coronel | Done |
+| TS98 | Registrar y listar técnicos API | T36 | Technician aggregate, value object and persistence stack | Definir el agregado Technician, su value object de identidad y la capa de persistencia correspondiente. | 4 hrs | Azama | Done |
+| TS98 | Registrar y listar técnicos API | T37 | Implement POST/GET /api/v1/maintenance/technicians | Registrar técnicos de mantenimiento y exponer su listado para asignación. | 4 hrs | Azama | Done |
+| TS99 | Asignar técnico y aceptar trabajo de mantenimiento API | T38 | Implement PATCH tickets/{id}/assign/{technicianId} and jobs/{id}/accept/{technicianId} | Vincular un técnico a un ticket técnico y permitir que acepte y active el trabajo de mantenimiento asignado. | 5 hrs | Azama | Done |
+| US49 | Gestión de técnicos de mantenimiento | T39 | Build technician management screen and assignment dropdown | Construir la pantalla de gestión de técnicos en Ajustes y el desplegable de asignación de técnico en los tickets, reemplazando el campo de texto libre. | 5 hrs | Limache Coronel | Done |
+| TS100 | Registrar bitácora de finalización de ticket API | T40 | Implement POST /maintenance/tickets/{id}/completion-log | Registrar el costo y las notas de la intervención técnica al completar un ticket. | 4 hrs | Azama | Done |
+| US50 | Registro de bitácora y costo de finalización de ticket | T41 | Add completion cost field to the ticket completion modal | Añadir el campo de costo de finalización al modal de cierre de ticket, tipado como número y conectado al store y API. | 4 hrs | Limache Coronel | Done |
+| US41 | Check-in por código QR para activar reserva exprés | T42 | Integrate html5-qrcode scanner for reservation check-in | Integrar el escáner de código QR para validar la presencia del cliente frente a la máquina reservada y confirmar la ocupación. | 5 hrs | Azama | Done |
+| TS95 | Registrar reporte de actividad API | T43 | Analytics BC domain layer (ActivityReport aggregate) | Definir el agregado ActivityReport con las métricas de horas de uso total y costo por inactividad. | 5 hrs | Azama | Done |
+| TS95 | Registrar reporte de actividad API | T44 | Implement POST/GET /api/v1/activity-reports and /me | Generar y consultar reportes de actividad filtrados por el administrador autenticado. | 4 hrs | Azama | Done |
+| TS96 | Generar cotización de mantenimiento API | T45 | MaintenanceQuote aggregate and cost endpoints | Definir el agregado MaintenanceQuote y los endpoints PATCH de repuestos, costo preventivo y costo total. | 5 hrs | Azama | Done |
+| TS97 | Calcular proyección de ROI y detectar demanda API | T46 | ROIProjection aggregate and roi-projections endpoint | Definir el agregado ROIProjection y el endpoint POST /api/v1/roi-projections. | 5 hrs | Azama | Done |
+| TS97 | Calcular proyección de ROI y detectar demanda API | T47 | Implement detect-low-demand/detect-high-demand/recommend-transfer actions | Detectar demanda baja/alta a partir del signo de la proyección de ROI y generar la recomendación de traslado de equipo. | 5 hrs | Azama | Done |
+| US43 | Seguimiento de ejecución de rutina en vivo | T48 | Implement exercise-block completion tracking | Implementar el marcado de bloques de ejercicio completados dentro de una sesión de rutina activa, con historial de sesión. | 5 hrs | Limache Coronel | Done |
+| TS82, TS83 | Solicitar / Verificar restablecimiento de contraseña API | T49 | Implement POST /authentication/forgot-password and /verify | Generar y validar un código de verificación de dos pasos para el restablecimiento de contraseña. | 4 hrs | Fernández | Done |
+| TS82, TS83 | Solicitar / Verificar restablecimiento de contraseña API | T50 | Build two-step forgot-password flow in the UI | Construir el flujo de recuperación de contraseña en dos pasos y el cambio de contraseña en línea desde el perfil. | 4 hrs | Fernández | Done |
+| - | Sprint 4 Closure | SF4-01 | Rebuild dashboard analytics from real data | Reconstruir el gráfico de picos de afluencia, la tabla de uso de máquinas y equipos subutilizados a partir de los endpoints reales de Analytics, retirando datos hardcodeados. | 5 hrs | Espinoza | Done |
+| - | Sprint 4 Closure | SF4-02 | Fix financial-impact/inactivity-loss analytics filter | Corregir el filtro de pérdida por inactividad que descartaba datos reales del equipo actual. | 4 hrs | Espinoza | Done |
+| - | Sprint 4 Closure | SF4-03 | Add global HTTP 401/403 interceptor | Implementar el interceptor HTTP que fuerza el cierre de sesión ante credenciales expiradas o inválidas. | 4 hrs | Fernández | Done |
+| - | Sprint 4 Closure | SF4-04 | Finalize Landing Page v3.0.1 release | Consolidar la versión final de la Landing Page: video en el Hero Section, animaciones de Features y Pricing, formulario de contacto vía EmailJS, y corrección del build-size budget que bloqueaba el pipeline de despliegue. | 5 hrs | Azama | Done |
+| - | Sprint 4 Closure | SF4-05 | Add mobile hamburger navigation and full responsive pass | Implementar el menú de navegación móvil tipo hamburguesa y ajustar los media queries de todas las secciones de la Landing Page. | 4 hrs | Azama | Done |
+| - | Sprint 4 Closure | SF4-06 | Embed "About the Product" demo video section | Integrar la sección de video demostrativo (YouTube) debajo de Features en la Landing Page. | 4 hrs | Espinoza | Done |
+| - | Sprint 4 Closure | SF4-07 | Final production deployment verification | Validar que los tres productos (Landing Page, Web Application y Backend API) son accesibles y funcionales en sus URLs de producción para la versión final del proyecto. | 4 hrs | Azama | Done |
+| - | Sprint 4 Closure | SF4-08 | Document Sprint 4 in project report | Redactar las secciones de Sprint Planning 4, Aspect Leaders, Sprint Backlog y evidencias en el Capítulo V del informe del proyecto, junto con los nuevos User Stories y Technical Stories del Capítulo III. | 5 hrs | Espinoza | Done |
+
+#### Development Evidence for Sprint Review
+
+El Sprint 4 concentró el mayor volumen de trabajo del proyecto: **825 commits (132 Pull Requests fusionados)** en `spottrack-platform`, **466 commits (72 Pull Requests fusionados)** en `spottrack-webapp` y **37 commits (11 Pull Requests fusionados)** en `spottrack-website`, entre el 2026-06-19 y el 2026-07-04. A continuación se presenta una muestra representativa de los commits más relevantes por repositorio.
+
+Backend (`spottrack-platform`):
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/membership-stripe | 9be57b8 | feat(membership): implemented stripe | - | 2026-06-27 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/branch-limit-by-plan | 6550d2a | feat(gym): return 409 Conflict when branch limit is reached | - | 2026-07-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/membership-undo-cancellation | 72b7150 | feat(membership): add PATCH undo-cancel endpoint | - | 2026-07-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/technician-management | f5a990f | feat(maintenance): add Technician aggregate, value object, and domain events | - | 2026-07-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/reservation-request-fulfillment | 231aa31 | feat(reservation): auto-create a Reservation when a request is submitted | - | 2026-07-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/analytics-demand-transfer-policies | c4f32b9 | feat(analytics): recommend equipment transfer on low demand and notify for relocation | - | 2026-07-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/routine-session-completion | 7f05507 | feat(routine): add setExerciseBlockCompletion endpoint to RoutineSessionsController | - | 2026-07-03 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feature/notification-preferences | 160fd5a | feat(iam): add GET/PATCH endpoints for notification preferences | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | fix/silent-alert-notification-failures | edf0001 | fix(monitoring): log every silent-drop path in anomaly alert creation | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform | feat/gym-scoped-equipment-endpoint | 939b7d6 | feat(gym): expose client-accessible gym-scoped equipment endpoint | - | 2026-07-04 |
+
+Frontend (`spottrack-webapp`):
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | feat/technician-management | e95a9b0 | Merge pull request #134 feat/technician-assignment-dropdown | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | feat/settings-technicians | 431f9f8 | Merge pull request #132 feat/settings-technicians | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | feat/settings-notification-preferences | 22dbd56 | Merge pull request #133 feat/settings-notification-preferences | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | feat/anomaly-report-reservation-dropdown | 951af78 | Merge pull request #138 feat/anomaly-report-reservation-dropdown | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | feat/clear-all-notifications | 45b94c8 | Merge pull request #140 feat/clear-all-notifications | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | feat/dashboard-peak-hours-chart-v2 | 3ad091e | Merge pull request #139 feat/dashboard-peak-hours-chart-v2 | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | fix/authstore-circular-dependency | 900a8ca | Merge pull request #127 fix/authstore-circular-dependency | - | 2026-07-04 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp | fix/financial-impact-inactivity-filter | d9cdc0f | Merge pull request #124 fix/financial-impact-inactivity-filter | - | 2026-07-04 |
+
+Landing Page (`spottrack-website`):
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | feat/stripe-checkout | 9be57b8 | implemented stripe | - | (posterior al release v3.0.1, fecha exacta a confirmar por el equipo) |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | feature/hero | c5469c6 | feat: add stock video to hero-section | - | 2026-06-21 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | feat/pricing | a6f0236 | feat(pricing): add graph animations to pricing section and card overhaul | - | 2026-06-21 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | feat/contact | 89c5454 | feat: reworked contact form | - | 2026-06-21 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | fix/build-size-budget | d8c366e | fix: istok web-font size budget glitched the github actions | - | 2026-06-21 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | feature/mobile-nav | 1a27d9c | feat: add hamburger mobile navigation menu | - | 2026-07-01 |
+| upc-pre-202610-1asi0729-11881-spottrack/spottrack-website | feature/add-about-the-product | fddaeec | feat(video): add YouTube demo section below Features | - | 2026-07-04 |
+
+#### Execution Evidence for Sprint Review
+
+Al cierre del Sprint 4, SpotTrack alcanzó su versión final como plataforma SaaS B2B2C completa: un administrador puede registrar su negocio, seleccionar un plan de membresía (Basic/Mid/Platinum), pagar mediante Stripe Checkout, crear su gimnasio y sedes respetando el límite de su plan, gestionar una lista blanca de clientes autorizados, monitorear en tiempo real sensores de movimiento y cámara, recibir y resolver alertas centralizadas (mantenimiento, sensores, anomalías, reservas), asignar técnicos a tickets con bitácora de costos, y proyectar el ROI de nuevas inversiones o reubicaciones de equipos. Los clientes, por su parte, pueden asociarse a un gimnasio autorizado, hacer check-in de sus reservas exprés mediante código QR, reportar anomalías desde una reserva activa, y llevar seguimiento del progreso de sus rutinas por bloque de ejercicio. La Landing Page cerró su versión final (v3.0.1) con una sección de video demostrativo, navegación móvil y un formulario de contacto funcional vía EmailJS.
+
+*Video de evidencia de ejecución:* pendiente de grabación y publicación en Microsoft Stream por el equipo; se incluirá el enlace en la siguiente actualización de este informe.
+
+#### Services Documentation Evidence for Sprint Review
+
+A continuación se detallan los principales endpoints implementados durante el Sprint 4, agrupados por Bounded Context.
+
+##### Bounded Context: Membership (Suscripción y Facturación)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/register-business` | Registrar negocio | `POST` | `/api/v1/register-business` | `{ "registrationId": "uuid", "status": "PENDING" }` | Registra los datos personales y de empresa de un administrador antes del pago. |
+| `/api/v1/payments` | Crear sesión de pago | `POST` | `/api/v1/payments` | `{ "checkoutUrl": "https://checkout.stripe.com/..." }` | Genera una sesión de pago en Stripe Checkout para el plan elegido. |
+| `/api/v1/webhooks/stripe` | Confirmar pago | `POST` | `/api/v1/webhooks/stripe` | `{ "received": true }` | Verifica la firma del evento Stripe y activa la membresía tras el pago. |
+| `/api/v1/memberships/me` | Consultar membresía propia | `GET` | `/api/v1/memberships/me` | `{ "tier": "MID", "status": "ACTIVE", "maxBranches": 3 }` | Retorna el estado y tier de la membresía del administrador autenticado. |
+| `/api/v1/memberships/{id}/cancel` | Cancelar membresía | `PATCH` | `/api/v1/memberships/{id}/cancel` | `{ "status": "PENDING_CANCELLATION" }` | Marca la membresía para cancelación al finalizar el período pagado. |
+| `/api/v1/memberships/{id}/undo-cancel` | Deshacer cancelación | `PATCH` | `/api/v1/memberships/{id}/undo-cancel` | `{ "status": "ACTIVE" }` | Revierte una cancelación pendiente antes de la fecha de corte. |
+| `/api/v1/memberships/{id}/upgrade-plan` | Aumentar plan | `POST` | `/api/v1/memberships/{id}/upgrade-plan` | `{ "tier": "PLATINUM" }` | Cambia la membresía a un tier superior. |
+| `/api/v1/memberships/{id}/downgrade-plan` | Reducir plan | `POST` | `/api/v1/memberships/{id}/downgrade-plan` | `{ "tier": "BASIC" }` | Cambia la membresía a un tier inferior, validando el límite de sedes activas. |
+| `/api/v1/memberships/{id}/pay-debt` | Pagar deuda | `POST` | `/api/v1/memberships/{id}/pay-debt` | `{ "checkoutUrl": "https://checkout.stripe.com/..." }` | Genera una nueva sesión de pago para regularizar una membresía morosa. |
+
+##### Bounded Context: Monitoring (Sensores IoT y Anomalías)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/monitoring/motion-sensors` | Registrar / Listar | `POST`, `GET` | `/api/v1/monitoring/motion-sensors` | `{ "id": "uuid", "equipmentId": "uuid", "online": true }` | Registra y consulta sensores de movimiento instalados. |
+| `/api/v1/monitoring/motion-sensors/me` | Listar propios | `GET` | `/api/v1/monitoring/motion-sensors/me` | `[{ "id": "uuid", "online": false }]` | Retorna los sensores de movimiento del administrador autenticado. |
+| `/api/v1/monitoring/camera-sensors` | Registrar / Listar | `POST`, `GET` | `/api/v1/monitoring/camera-sensors` | `{ "id": "uuid", "equipmentId": "uuid", "online": true }` | Registra y consulta cámaras Edge instaladas. |
+| `/api/v1/monitoring/camera-sensors/capture-motion` | Capturar estado | `POST` | `/api/v1/monitoring/camera-sensors/capture-motion` | `{ "occupancyDetected": true }` | Recibe la señal de detección de ocupación desde una cámara Edge. |
+| `/api/v1/monitoring/session-trackers` | Crear sesión | `POST` | `/api/v1/monitoring/session-trackers/create` | `{ "id": "uuid", "status": "ACTIVE" }` | Crea un session tracker al detectar uso continuo de un equipo. |
+| `/api/v1/monitoring/session-trackers/{id}/end` | Finalizar sesión | `PATCH` | `/api/v1/monitoring/session-trackers/{id}/end` | `{ "status": "ENDED", "durationMinutes": 32 }` | Cierra la sesión de uso y calcula su duración. |
+| `/api/v1/anomalies` | Reportar anomalía | `POST` | `/api/v1/anomalies` | `{ "id": "uuid", "status": "OPEN" }` | Registra una anomalía asociada a una reserva y dispara una alerta. |
+
+##### Bounded Context: Analytics & Maintenance (Técnicos, Cotizaciones y ROI)
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/activity-reports` | Registrar / Listar | `POST`, `GET` | `/api/v1/activity-reports` | `{ "id": "uuid", "totalUsageTime": 128.5 }` | Genera reportes de actividad con horas de uso y costo por inactividad. |
+| `/api/v1/maintenance-quotes` | Registrar / Listar | `POST`, `GET` | `/api/v1/maintenance-quotes` | `{ "id": "uuid", "totalCost": 350.0 }` | Calcula el costo de repuestos, mano de obra preventiva y total de una intervención. |
+| `/api/v1/roi-projections` | Crear proyección | `POST` | `/api/v1/roi-projections` | `{ "id": "uuid", "roiMonths": 7.2 }` | Simula el retorno de inversión de un equipo nuevo o reubicado. |
+| `/api/v1/roi-projections/{id}/recommend-transfer` | Recomendar traslado | `PATCH` | `/api/v1/roi-projections/{id}/recommend-transfer` | `{ "recommended": true, "targetBranchId": "uuid" }` | Genera una recomendación de reubicación basada en demanda detectada. |
+| `/api/v1/maintenance/technicians` | Registrar / Listar | `POST`, `GET` | `/api/v1/maintenance/technicians` | `{ "id": "uuid", "name": "Carlos Ruiz" }` | Registra técnicos y expone el listado disponible para asignación. |
+| `/api/v1/maintenance/tickets/{id}/assign/{technicianId}` | Asignar técnico | `PATCH` | `/api/v1/maintenance/tickets/{id}/assign/{technicianId}` | `{ "status": "ASSIGNED" }` | Vincula un técnico a un ticket técnico. |
+| `/api/v1/maintenance/tickets/{id}/completion-log` | Registrar bitácora | `POST` | `/api/v1/maintenance/tickets/{id}/completion-log` | `{ "cost": 150.0, "notes": "Reemplazo de faja" }` | Registra el costo y las notas de finalización de una intervención. |
+
+##### Bounded Context: IAM y Alertas
+
+| Endpoint | Acción | Verbo HTTP | Sintaxis de Llamada | Ejemplo de Response | Explicación |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `/api/v1/users/me/notification-preferences` | Configurar preferencias | `GET`, `PATCH` | `/api/v1/users/me/notification-preferences` | `{ "maintenance": true, "sensors": false }` | Consulta y actualiza los tipos de notificación que el usuario desea recibir. |
+| `/api/v1/authentication/forgot-password` | Solicitar código | `POST` | `/api/v1/authentication/forgot-password` | `{ "message": "Verification code sent" }` | Envía un código de verificación al correo del usuario. |
+| `/api/v1/authentication/forgot-password/verify` | Verificar y restablecer | `POST` | `/api/v1/authentication/forgot-password/verify` | `{ "message": "Password reset successfully" }` | Valida el código y actualiza la contraseña. |
+| `/api/v1/alerts` | Listar alertas | `GET` | `/api/v1/alerts` | `[{ "id": "uuid", "severity": "CRITICAL", "resolved": false }]` | Retorna las alertas activas asociadas al rol del usuario autenticado. |
+| `/api/v1/alerts/{id}/resolve` | Resolver alerta | `PATCH` | `/api/v1/alerts/{id}/resolve` | `{ "resolved": true }` | Marca una alerta como resuelta. |
+
+Repositorio de Web Services: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform — documentación interactiva disponible en Swagger UI (`/swagger-ui/index.html`), configurada mediante `springdoc-openapi-starter-webmvc-ui` con esquema de seguridad JWT Bearer.
+
+#### Software Deployment Evidence for Sprint Review
+
+El backend (`spottrack-platform`) se mantiene contenedorizado mediante un `Dockerfile` multi-stage (build con Maven 3.9/Eclipse Temurin 26, ejecución sobre `eclipse-temurin:26-jre`) y un `docker-compose.yml` que expone las variables de entorno de base de datos, `JWT_SECRET` y las credenciales de Stripe (`STRIPE_SECRET_API_KEY`, `STRIPE_WEBHOOK_SECRET`), desplegado en Azure App Service conectado a Azure MySQL Flexible Database con `useSSL=true`. **Se identifica como pendiente la ausencia de un pipeline de CI/CD** (no existe carpeta `.github/workflows` en este repositorio); el despliegue del backend se realiza de forma manual a partir de la imagen Docker.
+
+La Web Application (`spottrack-webapp`) se despliega en Azure Static Web Apps mediante GitHub Actions (`azure-static-web-apps-kind-desert-06c07fc10.yml`), activado en cada push a `develop`. El archivo `staticwebapp.config.json` reescribe las peticiones `/api/*` hacia `https://spottrack-platform-os.azurewebsites.net/api/*`, evitando problemas de CORS mediante proxy inverso. El archivo `environment.ts` de producción confirma que la aplicación consume exclusivamente el backend real; no queda ninguna referencia a Fake API/JSON Server en la configuración de entornos.
+
+La Landing Page (`spottrack-website`) continúa desplegada en GitHub Pages mediante el workflow `jekyll-gh-pages.yml` (que en realidad ejecuta un build de Angular), mismo que se activa en cada push a `develop`. El último despliegue exitoso corresponde a la fusión del PR #33 (2026-07-01); el despliegue más reciente, correspondiente a la sección de video "About the Product" (PR #34, 2026-07-04), presentó un error transitorio de infraestructura de GitHub Pages ("Deployment failed, try again later") tras un build exitoso, pendiente de reintento por el equipo antes del cierre del proyecto.
+
+| Producto | Entorno | Tecnología | Enlace |
+| :--- | :--- | :--- | :-- |
+| SpotTrack Backend API | Docker + Azure App Service + Azure MySQL Flexible Database | Spring Boot + Java | https://spottrack-platform-os.azurewebsites.net/swagger-ui/index.html |
+| SpotTrack Web Application | Azure Static Web Apps (producción) | Angular | https://ashy-meadow-0d9e60a10.7.azurestaticapps.net |
+| SpotTrack Landing Page | GitHub Pages (producción) | Angular | https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/ |
+
+#### Team Collaboration Insights during Sprint
+
+Durante el Sprint 4, la colaboración del equipo se concentró en tres repositorios activos. La siguiente tabla resume los commits por integrante en la ventana del sprint (2026-06-19 a 2026-07-04):
+
+| Integrante | GitHub Username(s) | Commits `spottrack-platform` | Commits `spottrack-webapp` | Commits `spottrack-website` | Foco principal |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Fernández Linares, Alvaro Sebastian | ORION-tech-c | 395 | 186 | 0 | Membership BC, onboarding de gimnasios, sedes, lista blanca, IAM |
+| Azama Fukuda, Juan Pablo | llummo | 348 | 210 | 35 | Monitoring/IoT, Maintenance (técnicos), Analytics/ROI, pagos Stripe, Landing Page |
+| Limache Coronel, Imanol Fabrizio | ImaLi06 / Imanol | 73 | 59 | 0 | Alerts, Monitoring, Routines, Maintenance (asignación de técnicos) |
+| Espinoza Orrego, Valentino Andre | valentinoespinoza13 / Valentino Espinoza | 9 | 11 | 2 | Refactor de Analytics (frontend), video "About the Product", correcciones de análisis financiero |
+
+En conjunto, el Sprint 4 acumuló 132 Pull Requests fusionados en `spottrack-platform`, 72 en `spottrack-webapp` y 11 en `spottrack-website`. La distribución evidencia que Fernández y Azama concentraron la mayor parte de la implementación de los nuevos Bounded Contexts (Membership y Monitoring, respectivamente), mientras que Limache Coronel se integró productivamente al proyecto a mitad de ciclo tomando ownership del módulo de Alertas, y Espinoza sostuvo su rol de cierre de documentación y corrección de los módulos de Analítica heredados de Sprints anteriores.
 
 ---
 
