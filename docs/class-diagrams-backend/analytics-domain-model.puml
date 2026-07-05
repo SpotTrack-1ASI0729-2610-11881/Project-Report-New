@@ -1,0 +1,239 @@
+@startuml analytics-domain-model
+title Spottrack — Analytics Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam wrapWidth 250
+
+package "Shared Kernel" {
+  class AbstractDomainAggregateRoot<<shared kernel>>
+}
+
+package "Aggregates" {
+
+  class ActivityReport <<AggregateRoot>> {
+    - id: Long
+    - activityReportId: ActivityReportId
+    - equipmentId: String
+    - totalUsageTime: Long
+    - downtimeCost: Long
+    - percentageComparison: Double
+    --
+    + updateTotalUsageTime(Long)
+    + updateDowntimeCost(Long)
+    + updatePercentageComparison(Double)
+  }
+
+  class MaintenanceQuote <<AggregateRoot>> {
+    - id: Long
+    - maintenanceQuoteId: MaintenanceQuoteId
+    - equipmentId: String
+    - correctiveActionsCost: Double
+    - sparePartsCost: Double
+    - preventiveCost: Double
+    - totalMaintenanceCost: Double
+    --
+    + updateCorrectiveActionsCost(Double)
+    + updateSparePartsCost(Double)
+    + updatePreventiveCost(Double)
+    + calculateTotalMaintenanceCost(Double)
+    - recalculateTotal()
+  }
+
+  class ROIProjection <<AggregateRoot>> {
+    - id: Long
+    - roiProjectionId: ROIProjectionId
+    - requestedDowntimeCost: Double
+    - requestedEarnings: Double
+    - roiIndex: Double
+    - demandStatus: String
+    --
+    + updateDowntimeCost(Double)
+    + updateEarnings(Double)
+    + generateROIProjection(Double)
+    + markAsLowDemand(String)
+    + markAsHighDemand(String)
+    + recommendEquipmentTransfer(String)
+  }
+}
+
+package "Identity Value Objects" {
+  class ActivityReportId <<ValueObject>> {
+    + value: Long
+  }
+  class MaintenanceQuoteId <<ValueObject>> {
+    + value: Long
+  }
+  class ROIProjectionId <<ValueObject>> {
+    + value: Long
+  }
+}
+
+package "Other Value Objects (defined, not referenced by any aggregate field)" {
+  class UsageTime <<ValueObject>> {
+    + minutesActive: Integer
+  }
+  class Downtime <<ValueObject>> {
+    + minutesInactive: Integer
+    + reason: String
+  }
+  class PercentageComparison <<ValueObject>> {
+    + percentageChange: Double
+  }
+  class CostType <<ValueObject>> {
+    + value: String
+  }
+  class MaintenanceCost <<ValueObject>> {
+    + amount: Double
+    + currency: String
+  }
+  class SparePartDetail <<ValueObject>> {
+    + partName: String
+    + quantity: Integer
+    + unitPrice: Double
+  }
+  class FinancialMetric <<ValueObject>> {
+    + expectedRoiPercentage: Double
+    + projectedRevenue: Double
+  }
+  class DemandSlot <<ValueObject>> {
+    + timeSlot: String
+    + estimatedUsers: Integer
+  }
+  class TransferRecommendation <<ValueObject>> {
+    + operationalAdvice: String
+    + targetZone: String
+  }
+}
+
+note bottom of "Other Value Objects (defined, not referenced by any aggregate field)"
+  These 9 records are fully validated VOs (Embeddable)
+  but no aggregate field actually has their type —
+  aggregates store the equivalent data as raw
+  Long/Double/String instead (primitive obsession).
+end note
+
+package "Domain Events" {
+  class TotalUsageTimeRequestedEvent <<DomainEvent>> {
+    + activityReportId: ActivityReportId
+    + totalUsageTime: Long
+  }
+  class DowntimeRequestEvent <<DomainEvent>> {
+    + activityReportId: ActivityReportId
+    + downtimeCost: Long
+  }
+  class PercentageComparisonWithPreviousReportRequestedEvent <<DomainEvent>> {
+    + activityReportId: ActivityReportId
+    + percentageComparison: Double
+  }
+
+  class CostOfTheCorrectiveActionsRequestedEvent <<DomainEvent>> {
+    + maintenanceQuoteId: MaintenanceQuoteId
+    + correctiveActionsCost: Double
+  }
+  class CostOfSparePartsRequestedEvent <<DomainEvent>> {
+    + maintenanceQuoteId: MaintenanceQuoteId
+    + sparePartsCost: Double
+  }
+  class PreventiveCostRequestedEvent <<DomainEvent>> {
+    + maintenanceQuoteId: MaintenanceQuoteId
+    + preventiveCost: Double
+  }
+  class MaintenanceCostRequestedEvent <<DomainEvent>> {
+    + maintenanceQuoteId: MaintenanceQuoteId
+    + totalMaintenanceCost: Double
+  }
+
+  class RequestedDowntimeCostEvent <<DomainEvent>> {
+    + roiProjectionId: ROIProjectionId
+    + requestedDowntimeCost: Double
+  }
+  class RequestedEarningsEvent <<DomainEvent>> {
+    + roiProjectionId: ROIProjectionId
+    + requestedEarnings: Double
+  }
+  class ROIProjectionGeneratedEvent <<DomainEvent>> {
+    + roiProjectionId: ROIProjectionId
+    + roiIndex: Double
+  }
+  class LowDemandSlotDetectedEvent <<DomainEvent>> {
+    + roiProjectionId: ROIProjectionId
+    + slotInfo: String
+  }
+  class HighDemandSlotDetectedEvent <<DomainEvent>> {
+    + roiProjectionId: ROIProjectionId
+    + slotInfo: String
+  }
+  class EquipmentTransferRecommendedEvent <<DomainEvent>> {
+    + roiProjectionId: ROIProjectionId
+    + detail: String
+  }
+}
+
+package "Repositories" {
+  interface ActivityReportRepository <<Repository>> {
+    + save(ActivityReport): ActivityReport
+    + findByActivityReportId(ActivityReportId): Optional<ActivityReport>
+    + findById(Long): Optional<ActivityReport>
+    + findByEquipmentId(String): Optional<ActivityReport>
+    + findAll(): List<ActivityReport>
+  }
+  interface MaintenanceQuoteRepository <<Repository>> {
+    + save(MaintenanceQuote): MaintenanceQuote
+    + findByMaintenanceQuoteId(MaintenanceQuoteId): Optional<MaintenanceQuote>
+    + findById(Long): Optional<MaintenanceQuote>
+    + findAll(): List<MaintenanceQuote>
+  }
+  interface ROIProjectionRepository <<Repository>> {
+    + save(ROIProjection): ROIProjection
+    + findByRoiProjectionId(ROIProjectionId): Optional<ROIProjection>
+    + findById(Long): Optional<ROIProjection>
+    + findAll(): List<ROIProjection>
+  }
+}
+
+ActivityReport --|> AbstractDomainAggregateRoot
+MaintenanceQuote --|> AbstractDomainAggregateRoot
+ROIProjection --|> AbstractDomainAggregateRoot
+
+ActivityReport *-- ActivityReportId
+MaintenanceQuote *-- MaintenanceQuoteId
+ROIProjection *-- ROIProjectionId
+
+ActivityReport ..> TotalUsageTimeRequestedEvent
+ActivityReport ..> DowntimeRequestEvent
+ActivityReport ..> PercentageComparisonWithPreviousReportRequestedEvent
+
+MaintenanceQuote ..> CostOfTheCorrectiveActionsRequestedEvent
+MaintenanceQuote ..> CostOfSparePartsRequestedEvent
+MaintenanceQuote ..> PreventiveCostRequestedEvent
+MaintenanceQuote ..> MaintenanceCostRequestedEvent
+
+ROIProjection ..> RequestedDowntimeCostEvent
+ROIProjection ..> RequestedEarningsEvent
+ROIProjection ..> ROIProjectionGeneratedEvent
+ROIProjection ..> LowDemandSlotDetectedEvent
+ROIProjection ..> HighDemandSlotDetectedEvent
+ROIProjection ..> EquipmentTransferRecommendedEvent
+
+TotalUsageTimeRequestedEvent --> ActivityReportId
+DowntimeRequestEvent --> ActivityReportId
+PercentageComparisonWithPreviousReportRequestedEvent --> ActivityReportId
+
+CostOfTheCorrectiveActionsRequestedEvent --> MaintenanceQuoteId
+CostOfSparePartsRequestedEvent --> MaintenanceQuoteId
+PreventiveCostRequestedEvent --> MaintenanceQuoteId
+MaintenanceCostRequestedEvent --> MaintenanceQuoteId
+
+RequestedDowntimeCostEvent --> ROIProjectionId
+RequestedEarningsEvent --> ROIProjectionId
+ROIProjectionGeneratedEvent --> ROIProjectionId
+LowDemandSlotDetectedEvent --> ROIProjectionId
+HighDemandSlotDetectedEvent --> ROIProjectionId
+EquipmentTransferRecommendedEvent --> ROIProjectionId
+
+ActivityReportRepository ..> ActivityReport
+MaintenanceQuoteRepository ..> MaintenanceQuote
+ROIProjectionRepository ..> ROIProjection
+
+@enduml

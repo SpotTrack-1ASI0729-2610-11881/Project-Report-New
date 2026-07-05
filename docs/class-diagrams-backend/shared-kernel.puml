@@ -1,0 +1,101 @@
+@startuml shared-kernel
+title Spottrack — Shared Kernel
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "shared.domain" {
+
+  abstract class AbstractDomainAggregateRoot<T> <<abstract>> {
+    #registerDomainEvent(event: Object): void
+    +domainEvents(): Collection<Object>
+    +clearDomainEvents(): void
+  }
+  note right of AbstractDomainAggregateRoot
+    Extends Spring Data's
+    AbstractAggregateRoot<T>.
+    Extended by every aggregate
+    root across all bounded contexts.
+  end note
+
+  class Money <<ValueObject>> {
+    +amount: BigDecimal
+    +currency: String
+    --
+    Money(amount, currency)
+  }
+  note right of Money
+    Validates: amount non-null
+    and >= 0; currency is a
+    3-letter uppercase code.
+  end note
+
+}
+
+package "shared.application.result" {
+
+  interface Result<T, E> <<sealed>> {
+    +{static} success(value: T): Result<T, E>
+    +{static} failure(error: E): Result<T, E>
+    +isSuccess(): boolean
+    +isFailure(): boolean
+    +toOptional(): Optional<T>
+    +getOrElse(default: T): T
+    +map(f): Result<T2, E>
+    +flatMap(f): Result<T2, E>
+    +mapError(f): Result<T, E2>
+    +recover(f): Result<T, E>
+  }
+
+  class "Result.Success<T, E>" as ResultSuccess <<record>> {
+    +value: T
+  }
+
+  class "Result.Failure<T, E>" as ResultFailure <<record>> {
+    +error: E
+  }
+
+  class ApplicationError <<ValueObject>> {
+    +code: String
+    +message: String
+    +details: String
+    --
+    +{static} validationError(field, reason): ApplicationError
+    +{static} notFound(resourceType, id): ApplicationError
+    +{static} businessRuleViolation(rule, reason): ApplicationError
+    +{static} conflict(resource, reason): ApplicationError
+    +{static} forbidden(resource, reason): ApplicationError
+    +{static} unexpected(context, reason): ApplicationError
+  }
+
+  Result <|.. ResultSuccess
+  Result <|.. ResultFailure
+  Result ..> ApplicationError : typically E =
+}
+
+package "shared.infrastructure.persistence" {
+
+  abstract class AuditableAbstractPersistenceEntity <<abstract>> {
+    #id: Long
+    #createdAt: Date
+    #updatedAt: Date
+    --
+    +setId(id: Long): void
+    +setCreatedAt(createdAt: Date): void
+  }
+  note right of AuditableAbstractPersistenceEntity
+    @MappedSuperclass
+    Extended by every JPA
+    persistence entity across
+    all bounded contexts.
+  end note
+
+}
+
+class "e.g. Equipment, Membership,\nReservation, RoutineSession, ..." as BoundedContextAggregates <<many aggregates>> #line.dashed
+class "e.g. EquipmentPersistenceEntity,\nMembershipPersistenceEntity, ..." as BoundedContextEntities <<many entities>> #line.dashed
+
+AbstractDomainAggregateRoot <|-- BoundedContextAggregates : extended by all aggregate\nroots across bounded contexts
+AuditableAbstractPersistenceEntity <|-- BoundedContextEntities : extended by all JPA persistence\nentities across bounded contexts
+
+@enduml

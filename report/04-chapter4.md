@@ -718,27 +718,35 @@ Flujos dinámicos del ciclo de vida del mantenimiento, abarcando desde la detecc
 
 #### Backend
 
-![00_shared_kernel](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/00_shared_kernel.puml)
+![00-bounded-context-map](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/00-bounded-context-map.puml)
 
-![01_authentication_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/01_authentication_bc.puml)
+![shared-kernel](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/shared-kernel.puml)
 
-![02_iot_sensor_ingestion_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/02_iot_sensor_ingestion_bc.puml)
+![iam-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/iam-domain-model.puml)
 
-![03_monitoring_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/03_monitoring_bc.puml)
+![profiles-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/profiles-domain-model.puml)
 
-![04_equipment_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/04_equipment_bc.puml)
+![membership-core-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/membership-core-domain-model.puml)
 
-![05_reservation_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/05_reservation_bc.puml)
+![membership-events-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/membership-events-domain-model.puml)
 
-![06_membership_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/06_membership_bc.puml)
+![gym-facility-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/gym-facility-domain-model.puml)
 
-![07_maintenance_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/07_maintenance_bc.puml)
+![gym-equipment-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/gym-equipment-domain-model.puml)
 
-![08_analytics_bc](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/08_analytics_bc.puml)
+![monitoring-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/monitoring-domain-model.puml)
 
-![09_inter_context_event_flows](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/SpotTrack-1ASI0729-2610-11881/Project-Report-New/refs/heads/develop/docs/class-diagrams-backend/09_inter_context_event_flows.puml)
+![reservation-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/reservation-domain-model.puml)
+
+![routine-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/routine-domain-model.puml)
+
+![maintenance-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/maintenance-domain-model.puml)
+
+![analytics-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/analytics-domain-model.puml)
+
+![alert-domain-model](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report/refs/heads/develop/docs/class-diagrams-backend/alert-domain-model.puml)
 
 ## Database Design
 
 ### Database Diagrams
-![db_opensource.png](../docs/database/db_opensource.png)
+![spottrack-platform.png](../docs/database/spottrack-platform.png)

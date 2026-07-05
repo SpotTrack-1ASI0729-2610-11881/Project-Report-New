@@ -1,0 +1,230 @@
+@startuml monitoring-domain-model
+title Spottrack — Monitoring Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+hide empty members
+
+package "shared kernel" {
+  abstract class AbstractDomainAggregateRoot<T> <<shared kernel>> {
+  }
+}
+
+package "monitoring.aggregates" {
+
+  class Anomaly <<AggregateRoot>> {
+    id: Long
+    anomalyId: AnomalyId
+    reservationId: ReservationId
+    equipmentId: EquipmentId
+    zoneId: ZoneId
+    anomalyDescription: String
+    emissionDate: LocalDate
+    --
+    onCreated()
+  }
+
+  class CameraSensor <<AggregateRoot>> {
+    id: Long
+    cameraSensorId: CameraSensorId
+    equipmentId: EquipmentId
+    registeredAt: LocalDateTime
+    --
+    onCreated()
+  }
+
+  class MotionSensor <<AggregateRoot>> {
+    id: Long
+    motionSensorId: MotionSensorId
+    equipmentId: EquipmentId
+    registeredAt: LocalDateTime
+    online: boolean
+    lastStatusChangeAt: LocalDateTime
+    --
+    onCreated()
+    markDisconnected()
+    markReconnected()
+  }
+
+  class SessionTracker <<AggregateRoot>> {
+    id: Long
+    sessionTrackerId: SessionTrackerId
+    equipmentId: EquipmentId
+    reservationId: ReservationId
+    usageActivity: UsageActivity
+    sessionIsActive: boolean
+    sessionIsInactive: boolean
+    lastActivityAt: LocalDateTime
+    createdAt: LocalDateTime
+    --
+    recordActivity()
+    captureCameraMotion(detected: boolean)
+    captureMotionSensorReading(detected: boolean)
+    verifyUsageSession(): boolean
+    endSession()
+    peekTrueActivity(): LocalTime
+    calculateSessionTime(): LocalTime
+  }
+}
+
+package "monitoring.valueobjects" {
+  class AnomalyId <<ValueObject>> {
+    uuid: String
+  }
+  class CameraSensorId <<ValueObject>> {
+    uuid: String
+  }
+  class MotionSensorId <<ValueObject>> {
+    uuid: String
+  }
+  class SessionTrackerId <<ValueObject>> {
+    uuid: String
+  }
+  class EquipmentId <<ValueObject>> {
+    uuid: String
+  }
+  class ReservationId <<ValueObject>> {
+    uuid: String
+  }
+  class ZoneId <<ValueObject>> {
+    uuid: String
+  }
+  class ReportId <<ValueObject>> {
+    Id: Long
+  }
+  class UsageActivity <<ValueObject>> {
+    continuousActivity: LocalTime
+    seconds: LocalTime
+  }
+}
+
+package "monitoring.events" {
+  class EquipmentAnomalyReportSubmitted <<DomainEvent>> {
+    reservationId: String
+    equipmentId: String
+    zoneId: String
+    anomalyDescription: String
+    emissionDate: LocalDate
+  }
+  class CameraSensorRegisteredEvent <<DomainEvent>> {
+    cameraSensorId: CameraSensorId
+    equipmentId: EquipmentId
+  }
+  class MotionSensorRegisteredEvent <<DomainEvent>> {
+    motionSensorId: MotionSensorId
+    equipmentId: EquipmentId
+  }
+  class MotionSensorDisconnectedEvent <<DomainEvent>> {
+    motionSensorId: MotionSensorId
+    equipmentId: EquipmentId
+  }
+  class MotionSensorReconnectedEvent <<DomainEvent>> {
+    motionSensorId: MotionSensorId
+    equipmentId: EquipmentId
+  }
+  class CameraMotionCapturedEvent <<DomainEvent>> {
+    sessionTrackerId: SessionTrackerId
+    movementDetectedViaCamera: boolean
+  }
+  class MotionCapturedEvent <<DomainEvent>> {
+    sessionTrackerId: SessionTrackerId
+    movementDetectedViaSensor: boolean
+  }
+  class UsageSessionVerifiedEvent <<DomainEvent>> {
+    sessionTrackerId: SessionTrackerId
+  }
+  class UsageSessionEndedEvent <<DomainEvent>> {
+    sessionTrackerId: SessionTrackerId
+    reservationId: String
+  }
+  class SessionTimeCalculatedEvent <<DomainEvent>> {
+    sessionTrackerId: SessionTrackerId
+    equipmentId: EquipmentId
+    trueActivity: LocalTime
+  }
+}
+
+package "monitoring.repositories" {
+  interface AnomalyRepository <<Repository>> {
+    save(anomaly: Anomaly): Anomaly
+  }
+  interface CameraSensorRepository <<Repository>> {
+    existsByEquipmentId(equipmentId: EquipmentId): boolean
+    findAll(): List<CameraSensor>
+    save(cameraSensor: CameraSensor): CameraSensor
+  }
+  interface MotionSensorRepository <<Repository>> {
+    existsByEquipmentId(equipmentId: EquipmentId): boolean
+    findAll(): List<MotionSensor>
+    findById(id: Long): Optional<MotionSensor>
+    findAllOnline(): List<MotionSensor>
+    findAllOfflineSince(threshold: LocalDateTime): List<MotionSensor>
+    save(motionSensor: MotionSensor): MotionSensor
+  }
+  interface SessionTrackerRepository <<Repository>> {
+    findSessionByUuid(uuid: SessionTrackerId): Optional<SessionTracker>
+    findByReservationId(reservationId: ReservationId): Optional<SessionTracker>
+    findActiveByEquipmentId(equipmentId: EquipmentId): Optional<SessionTracker>
+    findAllBySessionIsActive(uuid: SessionTrackerId, active: boolean): List<SessionTracker>
+    findAll(): List<SessionTracker>
+    save(sessionTracker: SessionTracker): SessionTracker
+    deleteBySessionTrackerId(sessionTrackerId: SessionTrackerId)
+  }
+}
+
+' --- Inheritance from shared kernel ---
+Anomaly --|> AbstractDomainAggregateRoot
+CameraSensor --|> AbstractDomainAggregateRoot
+MotionSensor --|> AbstractDomainAggregateRoot
+SessionTracker --|> AbstractDomainAggregateRoot
+
+' --- Composition: aggregate roots own their value objects ---
+Anomaly *-- AnomalyId
+Anomaly *-- ReservationId
+Anomaly *-- EquipmentId
+Anomaly *-- ZoneId
+
+CameraSensor *-- CameraSensorId
+CameraSensor *-- EquipmentId
+
+MotionSensor *-- MotionSensorId
+MotionSensor *-- EquipmentId
+
+SessionTracker *-- SessionTrackerId
+SessionTracker *-- EquipmentId
+SessionTracker *-- ReservationId
+SessionTracker *-- UsageActivity
+
+' --- Repositories operate on their aggregate ---
+AnomalyRepository ..> Anomaly
+CameraSensorRepository ..> CameraSensor
+MotionSensorRepository ..> MotionSensor
+SessionTrackerRepository ..> SessionTracker
+
+' --- Domain events raised by aggregates ---
+Anomaly ..> EquipmentAnomalyReportSubmitted
+CameraSensor ..> CameraSensorRegisteredEvent
+MotionSensor ..> MotionSensorRegisteredEvent
+MotionSensor ..> MotionSensorDisconnectedEvent
+MotionSensor ..> MotionSensorReconnectedEvent
+SessionTracker ..> CameraMotionCapturedEvent
+SessionTracker ..> MotionCapturedEvent
+SessionTracker ..> UsageSessionVerifiedEvent
+SessionTracker ..> UsageSessionEndedEvent
+SessionTracker ..> SessionTimeCalculatedEvent
+
+note right of ReportId
+  Unused value object: no aggregate,
+  event, command or repository in this
+  context references ReportId. Likely
+  dead code or an unfinished feature.
+end note
+
+note bottom of SessionTracker
+  extends the raw (non-generic)
+  AbstractDomainAggregateRoot, unlike
+  the other three aggregates here which
+  parameterize it with their own type.
+end note
+
+@enduml

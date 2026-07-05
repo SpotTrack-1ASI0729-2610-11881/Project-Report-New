@@ -1,0 +1,175 @@
+@startuml reservation-domain-model
+title Spottrack — Reservation Bounded Context — Domain Model
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+package "Shared Kernel" {
+  class AbstractDomainAggregateRoot<T> <<shared kernel>> {
+  }
+}
+
+package "Reservation Request" {
+
+  class ReservationRequest <<AggregateRoot>> {
+    - persistenceId: Long
+    - id: ReservationRequestId
+    - clientId: ClientId
+    - equipmentId: EquipmentId
+    - status: ReservationRequestStatus
+    - requestedAt: LocalDateTime
+    --
+    + onSubmitted()
+    + requestAlternative(command)
+    + requestEquipmentRelease(command)
+  }
+
+  class ReservationRequestId <<ValueObject>> {
+    + uuid: String
+  }
+
+  enum ReservationRequestStatus <<enum>> {
+    PENDING
+    SUBMITTED
+    ALTERNATIVE_REQUESTED
+    AVAILABLE_REQUESTED
+  }
+
+  interface ReservationRequestRepository <<Repository>> {
+    + findById(id: Long): Optional<ReservationRequest>
+    + findByUuid(uuid: String): Optional<ReservationRequest>
+    + save(request: ReservationRequest): ReservationRequest
+  }
+
+  class RequestOccupyEquipmentSubmittedEvent <<DomainEvent>> {
+    + requestId: String
+    + equipmentId: String
+    + clientId: Long
+  }
+
+  class AlternativeEquipmentRequestedEvent <<DomainEvent>> {
+    + requestId: String
+    + equipmentId: String
+    + reason: String
+  }
+
+  class EquipmentStatusChangeToAvailableRequestedEvent <<DomainEvent>> {
+    + requestId: String
+    + equipmentId: String
+  }
+}
+
+package "Reservation" {
+
+  class Reservation <<AggregateRoot>> {
+    - persistenceId: Long
+    - id: ReservationId
+    - clientId: ClientId
+    - equipmentId: EquipmentId
+    - status: ReservationStatus
+    - startedAt: LocalDateTime
+    - timerExpiry: LocalDateTime
+    - timeInterval: TimeInterval
+    - expressInitiated: boolean
+    --
+    + onInitiated()
+    + startTimer(durationMinutes: int)
+    + cancel()
+    + end()
+  }
+
+  class ReservationId <<ValueObject>> {
+    + uuid: String
+  }
+
+  class TimeInterval <<ValueObject>> {
+    + startTime: Time
+    + endTime: Time
+  }
+
+  enum ReservationStatus <<enum>> {
+    ACTIVE
+    EXPIRED
+    CANCELLED
+    ENDED
+  }
+
+  interface ReservationRepository <<Repository>> {
+    + findByUuid(id: String): Optional<Reservation>
+    + findById(id: Long): Optional<Reservation>
+    + findAll(): List<Reservation>
+    + findByClientId(clientId: Long): List<Reservation>
+    + existsByClientIdAndStatus(clientId, status): boolean
+    + existsByEquipmentIdAndStatus(equipmentId, status): boolean
+    + findByStatus(status: ReservationStatus): Optional<Reservation>
+    + save(reservation: Reservation): Reservation
+  }
+
+  class ExpressReservationInitiatedEvent <<DomainEvent>> {
+    + reservationId: String
+    + equipmentId: String
+    + clientId: Long
+  }
+
+  class ReservationTimerStartedEvent <<DomainEvent>> {
+    + reservationId: String
+    + equipmentId: String
+    + timerExpiry: LocalDateTime
+  }
+
+  class ReservationCancelledEvent <<DomainEvent>> {
+    + reservationId: String
+    + equipmentId: String
+    + clientId: Long
+  }
+
+  class ReservationEndedEvent <<DomainEvent>> {
+    + reservationId: String
+    + equipmentId: String
+    + clientId: Long
+  }
+}
+
+package "Shared Identity Value Objects" {
+  ' Referenced by both aggregates — modeled once, shown attached to Reservation for clarity
+  class ClientId <<ValueObject>> {
+    + clientId: Long
+  }
+
+  class EquipmentId <<ValueObject>> {
+    + uuid: String
+  }
+}
+
+' -------- Composition: aggregate roots own their identity/value objects --------
+Reservation *-- ReservationId
+Reservation *-- ClientId
+Reservation *-- EquipmentId
+Reservation *-- ReservationStatus
+Reservation *-- TimeInterval
+
+ReservationRequest *-- ReservationRequestId
+ReservationRequest *-- ClientId
+ReservationRequest *-- EquipmentId
+ReservationRequest *-- ReservationRequestStatus
+
+' -------- Inheritance --------
+Reservation --|> AbstractDomainAggregateRoot
+ReservationRequest --|> AbstractDomainAggregateRoot
+
+' -------- Repositories --------
+ReservationRepository ..> Reservation
+ReservationRequestRepository ..> ReservationRequest
+
+' -------- Domain events raised by aggregates --------
+Reservation ..> ExpressReservationInitiatedEvent
+Reservation ..> ReservationTimerStartedEvent
+Reservation ..> ReservationCancelledEvent
+Reservation ..> ReservationEndedEvent
+
+ReservationRequest ..> RequestOccupyEquipmentSubmittedEvent
+ReservationRequest ..> AlternativeEquipmentRequestedEvent
+ReservationRequest ..> EquipmentStatusChangeToAvailableRequestedEvent
+
+@enduml
