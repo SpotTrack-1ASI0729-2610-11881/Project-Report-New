@@ -1355,6 +1355,16 @@ Las entrevistas de validación realizadas con representantes de ambos segmentos 
 
 La arquitectura de Bounded Contexts definida mediante EventStorming en el Sprint 1 y actualizada en el sprint 3, demostró su valor end-to-end al guiar también la organización del backend en Spring Boot: cada contexto delimitado (Gym, Monitoring, Maintenance, Reservation, Analytics, and the rest) se tradujo en un módulo de backend independiente con sus propios controladores, commandos, queries, servicios y repositorios. Esta coherencia entre el modelo de dominio, la estructura del frontend Angular y la arquitectura del backend redujo la fricción de comunicación entre subequipos y facilitó la integración de los tres sprints en una plataforma funcional y coherente.
 
+#### Sprint 4
+
+El desbordamiento del alcance estimado (40 Story Points planificados frente a 117 Story Points de velocidad real) reveló que ciertas funcionalidades no son incrementales sino precondiciones estructurales: el modelo de Membership & Billing con Stripe no era una mejora aislada, sino el requisito que habilita que un administrador pueda operar la plataforma, arrastrando consigo el onboarding de gimnasios, la gestión de sedes y la lista blanca de clientes. De forma análoga, ampliar la red de sensores IoT (movimiento, cámara y seguimiento de sesión) hizo evidente la necesidad de un Centro de Alertas unificado que no había sido dimensionado en el Sprint 3. Este patrón confirma que la arquitectura por Bounded Contexts, si bien facilita el desarrollo paralelo, no exime al equipo de mapear las dependencias funcionales entre contextos durante la planificación.
+
+La arquitectura por Bounded Contexts volvió a demostrar su valor durante la incorporación de Limache Coronel, Imanol Fabrizio a mitad de ciclo, tras la salida de dos integrantes del equipo: los límites de dominio ya establecidos (Monitoring, Alerts, Maintenance y Routines) permitieron que el nuevo integrante tomara ownership de módulos delimitados sin fricción con el código existente ni ralentización del ritmo de entrega, validando que el diseño de dominio robusto es también una estrategia de mitigación de riesgo ante cambios de composición del equipo.
+
+Las entrevistas de validación del Sprint 4 confirmaron que las funcionalidades de mayor valor percibido por los administradores son las recomendaciones de reubicación de equipos entre sedes y el simulador de ROI, ya que traducen datos de telemetría en decisiones financieras concretas. La misma validación expuso un defecto de datos no detectado en sprints anteriores: las lecturas de batería de los sensores IoT se muestran en 0% de forma consistente pese a que los dispositivos operan correctamente, evidenciando una brecha entre la cobertura funcional (features implementadas) y la calidad de los datos que esas features exponen.
+
+El cierre del proyecto con 132 Pull Requests fusionados en `spottrack-platform`, 72 en `spottrack-webapp` y 11 en `spottrack-website` durante un único sprint, sin cobertura de pruebas automatizadas ni pipeline de CI/CD en el backend, deja constancia de que el equipo priorizó consistentemente la entrega de funcionalidad completa sobre la inversión en infraestructura de calidad, una decisión sostenible para un proyecto académico de alcance fijo pero que representa el principal riesgo técnico heredado para una eventual continuidad del producto.
+
 ---
 
 ### Recomendaciones
@@ -1383,6 +1393,16 @@ Se recomienda extender el pipeline CI/CD al repositorio del backend Spring Boot,
 
 
 Se recomienda finalizar los bounded contexts faltantes para el sprint final.
+
+#### Sprint 4
+
+Se recomienda implementar cobertura de pruebas automatizadas (unitarias e integración) para los Bounded Contexts incorporados en este sprint (Membership, Monitoring, Alerts y Analytics/ROI), priorizando los flujos con impacto financiero directo como el checkout de Stripe y el cálculo de proyecciones de ROI, dado que actualmente no cuentan con ninguna red de seguridad automatizada ante regresiones.
+
+Se recomienda extender al repositorio `spottrack-platform` el mismo modelo de pipeline de CI/CD ya implementado en `spottrack-webapp` y `spottrack-website` mediante GitHub Actions, de modo que cada Pull Request fusionado a `develop` ejecute build y pruebas antes de habilitar el despliegue manual a Azure App Service, cerrando la brecha de automatización identificada en la evidencia de despliegue de este sprint.
+
+Se recomienda corregir la lectura de nivel de batería de los sensores IoT, reportada en 0% de forma constante durante la entrevista de validación con Percy Baraybar pese al funcionamiento correcto del hardware, ya que un dato de monitoreo incorrecto compromete la confianza del administrador en el resto del panel de Monitoreo IoT.
+
+Para una eventual continuidad del producto más allá del ciclo académico, se recomienda mapear explícitamente las dependencias funcionales entre Bounded Contexts durante la planificación de cada sprint (por ejemplo, Membership como precondición de Gym Onboarding), en lugar de descubrirlas durante la implementación, con el fin de acotar la brecha entre Story Points estimados y velocidad real observada en este sprint.
 
 ## Bibliography
 
