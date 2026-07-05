@@ -68,7 +68,7 @@ Su estructura jerárquica se divide de frente por módulos operativos (Inventari
 
 ![INFO-CLIENT](../assets/INFO/INFO-CLIENT.jpg)
 **Aplicación Móvil (Web App B2C)**
-Diseñada para la inmediatez. La jerarquía visual coloca el mapa de calor en tiempo real como el componente absoluto y principal de la pantalla, subordinando opciones secundarias (como el perfil o recompensas) a menús de navegación. El catálogo de máquinas aplica una categorización directa por tópicos (ej. "Fuerza", "Cardio") para que el cliente filtre y encuentre lo que busca sin dar tantas vueltas.
+Diseñada para la inmediatez. La jerarquía visual coloca el mapa de calor en tiempo real como el componente absoluto y principal de la pantalla, subordinando opciones secundarias (como el perfil) a menús de navegación. El catálogo de máquinas aplica una categorización directa por tópicos (ej. "Fuerza", "Cardio") para que el cliente filtre y encuentre lo que busca sin dar tantas vueltas.
 
 ![INFO-LANDING-PAGE](../assets/INFO/INFO-LANDING-PAGE.jpg)
 **Landing Page Comercial**
@@ -180,40 +180,38 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 
 ![US12 Notificaciones push de resolución de disponibilidad](../assets/WIREFRAMES/US12%20Notificaciones%20push%20de%20resolución%20de%20disponibilidad%20(Epic_%20EP03).png){width=600px}
 
-![US13 Reporte de máquina](../assets/WIREFRAMES/US13_%20Reporte%20de%20máquina.png){width=600px}
+![US13 Motor de sugerencia de rutinas alternativas](../assets/WIREFRAMES/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){width=600px}
 
-![US14 Motor de sugerencia de rutinas alternativas](../assets/WIREFRAMES/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){width=600px}
+![US14 Filtrado de alternativas por grupo muscular](../assets/WIREFRAMES/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-W.png)
 
-![US15 Filtrado de alternativas por grupo muscular](../assets/WIREFRAMES/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-W.png)
+![US15 Sistema de reserva exprés en horas pico](../assets/WIREFRAMES/S16%20-%20reserva%20express.png}
 
-![US16 Sistema de reserva exprés en horas pico](../assets/WIREFRAMES/S16%20-%20reserva%20express.png}
+![US16 Acumulación automática de horas de uso](../assets/WIREFRAMES/US17_Wireframe.png){width=600px}
 
-![US17 Acumulación automática de horas de uso](../assets/WIREFRAMES/US17_Wireframe.png){width=600px}
+![US17 Identificación de equipos subutilizados](../assets/WIREFRAMES/US18_Wireframe.png){width=600px}
 
-![US18 Identificación de equipos subutilizados](../assets/WIREFRAMES/US18_Wireframe.png){width=600px}
-
-![US19 Visualización de picos de estrés del local ](../assets/WIREFRAMES/US19_Wireframe.png){width=600px}
+![US18 Visualización de picos de estrés del local ](../assets/WIREFRAMES/US19_Wireframe.png){width=600px}
 
 
-![US20 Exportación de analíticas de uso](../assets/WIREFRAMES/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png){width=600px}
+![US19 Exportación de analíticas de uso](../assets/WIREFRAMES/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png){width=600px}
 
-![US21 Monitoreo de estado de hardware Edge IoT](../assets/WIREFRAMES/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png){width=600px}
+![US20 Monitoreo de estado de hardware Edge IoT](../assets/WIREFRAMES/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png){width=600px}
 
-![US22 Alerta predictiva de mantenimiento](../assets/WIREFRAMES/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png){width=600px}
+![US21 Alerta predictiva de mantenimiento](../assets/WIREFRAMES/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png){width=600px}
 
-![US23 Despacho automatizado de tickets técnicos](../assets/WIREFRAMES/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png){width=600px}
+![US22 Despacho automatizado de tickets técnicos](../assets/WIREFRAMES/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png){width=600px}
 
-![US24 Notificación de restablecimiento a los usuarios](../assets/WIREFRAMES/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png){width=600px}
+![US23 Notificación de restablecimiento a los usuarios](../assets/WIREFRAMES/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png){width=600px}
 
-![US25 Calendario inteligente de bloqueos de reserva](../assets/WIREFRAMES/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png){width=600px}
+![US24 Calendario inteligente de bloqueos de reserva](../assets/WIREFRAMES/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png){width=600px}
 
-![US26 Gestión de activos físicos y altas](../assets/WIREFRAMES/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png){width=600px}
+![US25 Gestión de activos físicos y altas](../assets/WIREFRAMES/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png){width=600px}
 
-![US27 Estadísticas de reubicación multisede](../assets/WIREFRAMES/US27%20Estadísticas%20de%20reubicación%20multisede%20(Epic_%20EP07).png){width=600px}
+![US26 Estadísticas de reubicación multisede](../assets/WIREFRAMES/US27%20Estadísticas%20de%20reubicación%20multisede%20(Epic_%20EP07).png){width=600px}
 
-![US29 Calculadora de impacto financiero por inactividad](../assets/WIREFRAMES/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png){width=600px}
+![US28 Calculadora de impacto financiero por inactividad](../assets/WIREFRAMES/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png){width=600px}
 
-![US30 Analítica predictiva de compras e inversión](../assets/WIREFRAMES/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png){width=600px}
+![US29 Analítica predictiva de compras e inversión](../assets/WIREFRAMES/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png){width=600px}
 
 
 ### Web Applications Wireflow Diagrams
@@ -236,99 +234,95 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 ![TASKFLOW-12](../assets/TASKFLOWS/TASKFLOW-12.jpg)
 ![WFM-12](../assets/WIREFLOWS%20MOBILE/US12%20Notificaciones%20push%20de%20resolución%20de%20disponibilidad%20(Epic_%20EP03).png)
 ![WF-12](../assets/WIREFLOWS/US12%20Notificaciones%20push%20de%20resolución%20de%20disponibilidad%20(Epic_%20EP03).png)
-![TASKFLOW-13](../assets/TASKFLOWS/TASKFLOW-13.jpg)
-![WFM-13](../assets/WIREFLOWS%20MOBILE/US13_%20Reporte%20de%20máquina.png)
-![WF-13](../assets/WIREFLOWS/US13_%20Reporte%20de%20máquina.png)
-![TASKFLOW-14](../assets/TASKFLOWS/TASKFLOW-14.jpg)
-![WFM-14](../assets/WIREFLOWS%20MOBILE/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
-![WF-14](../assets/WIREFLOWS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
+![TASKFLOW-13](../assets/TASKFLOWS/TASKFLOW-14.jpg)
+![WFM-13](../assets/WIREFLOWS%20MOBILE/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
+![WF-13](../assets/WIREFLOWS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
 
-![TASKFLOW-15](../assets/TASKFLOWS/TASKFLOW-15.png)
-![WFM-15](../assets/WIREFLOWS%20MOBILE/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-WFM.png)
-![WF-15](../assets/WIREFLOWS/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-WF.png)
+![TASKFLOW-14](../assets/TASKFLOWS/TASKFLOW-15.png)
+![WFM-14](../assets/WIREFLOWS%20MOBILE/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-WFM.png)
+![WF-14](../assets/WIREFLOWS/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-WF.png)
 
 ![task16.png](../assets/TASKFLOWS/TASKFLOW-16.png)
-![WF-16](../assets/WIREFLOWS/S16%20-%20reserva%20express.png)
-![WFM-16](../assets/WIREFLOWS%20MOBILE/S16%20-%20reserva%20express.png)
+![WF-15](../assets/WIREFLOWS/S16%20-%20reserva%20express.png)
+![WFM-15](../assets/WIREFLOWS%20MOBILE/S16%20-%20reserva%20express.png)
 
 ![task17.png](../assets/TASKFLOWS/TASKFLOW-17.png)
-![WFM-17](../assets/WIREFLOWS%20MOBILE/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
-![WF-17](../assets/WIREFLOWS/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
+![WFM-16](../assets/WIREFLOWS%20MOBILE/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
+![WF-16](../assets/WIREFLOWS/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
 
 ![task18.png](../assets/TASKFLOWS/TASKFLOW-17.png)
-![WFM-018](../assets/WIREFLOWS%20MOBILE/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
-![WF-18](../assets/WIREFLOWS/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
+![WFM-17](../assets/WIREFLOWS%20MOBILE/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
+![WF-17](../assets/WIREFLOWS/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
 
 ![task19.png](../assets/TASKFLOWS/TASKFLOW-19.png)
-![WFM-019](../assets/WIREFLOWS%20MOBILE/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
-![WF-19](../assets/WIREFLOWS/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
+![WFM-18](../assets/WIREFLOWS%20MOBILE/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
+![WF-18](../assets/WIREFLOWS/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
 
 
 
 ![task20.png](../assets/TASKFLOWS/TASKFLOW-20.png)
-![WF-20](../assets/WIREFLOWS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
-![WFM-20](../assets/WIREFLOWS%20MOBILE/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
+![WF-19](../assets/WIREFLOWS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
+![WFM-19](../assets/WIREFLOWS%20MOBILE/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
 
-![TASKFLOW-21](../assets/TASKFLOWS/TASKFLOW-21.png)
-![WF-21](../assets/WIREFLOWS/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png)
-![WFM-21](../assets/WIREFLOWS%20MOBILE/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png)
+![TASKFLOW-20](../assets/TASKFLOWS/TASKFLOW-21.png)
+![WF-20](../assets/WIREFLOWS/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png)
+![WFM-20](../assets/WIREFLOWS%20MOBILE/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png)
 
-![TASKFLOW-22](../assets/TASKFLOWS/TASKFLOW-22.png)
-![WF-22-UMBRAL](../assets/WIREFLOWS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png)
-![WF-22](../assets/WIREFLOWS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06).png)
-![WFM-22-UMBRAL](../assets/WIREFLOWS%20MOBILE/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png)
-![WFM-22](../assets/WIREFLOWS%20MOBILE/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06).png)
+![TASKFLOW-21](../assets/TASKFLOWS/TASKFLOW-22.png)
+![WF-21-UMBRAL](../assets/WIREFLOWS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png)
+![WF-21](../assets/WIREFLOWS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06).png)
+![WFM-21-UMBRAL](../assets/WIREFLOWS%20MOBILE/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png)
+![WFM-21](../assets/WIREFLOWS%20MOBILE/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06).png)
 
-![TASKFLOW-23](../assets/TASKFLOWS/TASKFLOW-23.png)
-![WF-23](../assets/WIREFLOWS/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png)
-![WFM-23](../assets/WIREFLOWS%20MOBILE/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png)
+![TASKFLOW-22](../assets/TASKFLOWS/TASKFLOW-23.png)
+![WF-22](../assets/WIREFLOWS/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png)
+![WFM-22](../assets/WIREFLOWS%20MOBILE/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png)
 
-![TASKFLOW-24](../assets/TASKFLOWS/TASKFLOW-24.png)
-![WF-24](../assets/WIREFLOWS/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png)
-![WFM-24](../assets/WIREFLOWS%20MOBILE/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png)
+![TASKFLOW-23](../assets/TASKFLOWS/TASKFLOW-24.png)
+![WF-23](../assets/WIREFLOWS/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png)
+![WFM-23](../assets/WIREFLOWS%20MOBILE/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png)
 
-![TASKFLOW-25](../assets/TASKFLOWS/TASKFLOW-25.png)
-![WF-25](../assets/WIREFLOWS/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png)
-![WFM-25](../assets/WIREFLOWS%20MOBILE/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png)
+![TASKFLOW-24](../assets/TASKFLOWS/TASKFLOW-25.png)
+![WF-24](../assets/WIREFLOWS/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png)
+![WFM-24](../assets/WIREFLOWS%20MOBILE/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png)
 
-![TASKFLOW-26](../assets/TASKFLOWS/TASKFLOW-26.png)
-![WF-26](../assets/WIREFLOWS/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png)
-![WFM-26](../assets/WIREFLOWS%20MOBILE/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png)
+![TASKFLOW-25](../assets/TASKFLOWS/TASKFLOW-26.png)
+![WF-25](../assets/WIREFLOWS/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png)
+![WFM-25](../assets/WIREFLOWS%20MOBILE/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png)
 
-![TASKFLOW-29](../assets/TASKFLOWS/TASKFLOW-29.png)
-![WF-29](../assets/WIREFLOWS/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png)
-![WFM-29](../assets/WIREFLOWS%20MOBILE/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png)
+![TASKFLOW-28](../assets/TASKFLOWS/TASKFLOW-29.png)
+![WF-28](../assets/WIREFLOWS/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png)
+![WFM-28](../assets/WIREFLOWS%20MOBILE/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png)
 
-![TASKFLOW-30](../assets/TASKFLOWS/TASKFLOW-30.png)
-![WF-30](../assets/WIREFLOWS/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png)
-![WFM-30](../assets/WIREFLOWS%20MOBILE/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png)
+![TASKFLOW-29](../assets/TASKFLOWS/TASKFLOW-30.png)
+![WF-29](../assets/WIREFLOWS/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png)
+![WFM-29](../assets/WIREFLOWS%20MOBILE/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png)
 
 ### Web Applications Mock-ups
 
 ![MOCKUP-FRAME-17](../assets/MOCKUPS/Frame%2017.png)
 ![MOCKUP-LANDING](../assets/MOCKUPS/landing_mockup.png)
-![MOCKUP-S16](../assets/MOCKUPS/S16%20-%20reserva%20express.png)
+![MOCKUP-S15](../assets/MOCKUPS/S16%20-%20reserva%20express.png)
 ![MOCKUP-US07](../assets/MOCKUPS/US07%20Inicio%20de%20sesión%20con%20validación%20JWT%20(Epic_%20EP02).png)
 ![MOCKUP-US08](../assets/MOCKUPS/US08%20Gestión%20de%20preferencias%20y%20perfil%20(Epic_%20EP02).png)
 ![MOCKUP-US09-US10](../assets/MOCKUPS/US09%20Y%20US10_%20MAPA%20DE%20CALOR%20Y%20FILTROS.png)
 ![MOCKUP-US11](../assets/MOCKUPS/US11%20Cambio%20de%20sucursal%20para%20revisión%20de%20aforo%20(Epic_%20EP03).png)
 ![MOCKUP-US12](../assets/MOCKUPS/US12%20Notificaciones%20push%20de%20resolución%20de%20disponibilidad%20(Epic_%20EP03).png)
-![MOCKUP-US13](../assets/MOCKUPS/US13_%20Reporte%20de%20máquina.png)
-![MOCKUP-US14](../assets/MOCKUPS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
-![MOCKUP-US17](../assets/MOCKUPS/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
-![MOCKUP-US18](../assets/MOCKUPS/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
-![MOCKUP-US19](../assets/MOCKUPS/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
-![MOCKUP-US20](../assets/MOCKUPS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
-![MOCKUP-US21](../assets/MOCKUPS/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png)
-![MOCKUP-US22-UMBRAL](../assets/MOCKUPS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png)
-![MOCKUP-US22](../assets/MOCKUPS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06).png)
-![MOCKUP-US23](../assets/MOCKUPS/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png)
-![MOCKUP-US24](../assets/MOCKUPS/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png)
-![MOCKUP-US25](../assets/MOCKUPS/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png)
-![MOCKUP-US26](../assets/MOCKUPS/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png)
-![MOCKUP-US27](../assets/MOCKUPS/US27%20Estadísticas%20de%20reubicación%20multisede%20(Epic_%20EP07).png)
-![MOCKUP-US29](../assets/MOCKUPS/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png)
-![MOCKUP-US30](../assets/MOCKUPS/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png)
+![MOCKUP-US13](../assets/MOCKUPS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png)
+![MOCKUP-US16](../assets/MOCKUPS/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png)
+![MOCKUP-US17](../assets/MOCKUPS/US18%20Identificación%20de%20equipos%20subutilizados%20.png)
+![MOCKUP-US18](../assets/MOCKUPS/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png)
+![MOCKUP-US19](../assets/MOCKUPS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png)
+![MOCKUP-US20](../assets/MOCKUPS/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png)
+![MOCKUP-US21-UMBRAL](../assets/MOCKUPS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png)
+![MOCKUP-US21](../assets/MOCKUPS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06).png)
+![MOCKUP-US22](../assets/MOCKUPS/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png)
+![MOCKUP-US23](../assets/MOCKUPS/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png)
+![MOCKUP-US24](../assets/MOCKUPS/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png)
+![MOCKUP-US25](../assets/MOCKUPS/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png)
+![MOCKUP-US26](../assets/MOCKUPS/US27%20Estadísticas%20de%20reubicación%20multisede%20(Epic_%20EP07).png)
+![MOCKUP-US28](../assets/MOCKUPS/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png)
+![MOCKUP-US29](../assets/MOCKUPS/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png)
 
 
 
@@ -371,7 +365,7 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 ![UFM-08](../assets/USERFLOW%20MOBILE/US08%20Gestión%20de%20preferencias%20y%20perfil%20(Epic_%20EP02).png){ width=50% }
 
 * **User Goal:** Como cliente, quiero actualizar mi información personal y cambiar el idioma del sistema, para mantener mis datos al día y usar la plataforma cómodamente.
-* **Happy Path:** Mediante el menú lateral, el usuario accede a "Mi Perfil" para consultar su plan actual, métricas y puntos acumulados. Puede actualizar configuraciones como el idioma de la interfaz. Al guardar, la plataforma registra y aplica los cambios instantáneamente.
+* **Happy Path:** Mediante el menú lateral, el usuario accede a "Mi Perfil" para consultar su plan actual y métricas de uso. Puede actualizar configuraciones como el idioma de la interfaz. Al guardar, la plataforma registra y aplica los cambios instantáneamente.
 * **Unhappy Path:** Ante un fallo de red o un error de validación en el backend durante el guardado, los cambios se descartan de forma segura. La UI mantiene el estado previo de la configuración y notifica al usuario sobre el fallo.
 
 ---
@@ -411,32 +405,21 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 
 ---
 
-## US13: Reporte de máquina
+## US13: Motor de sugerencia de rutinas alternativas
 
-![UF-13](../assets/USERFLOWS/US13_%20Reporte%20de%20máquina.png){ width=90% }
-![UFM-13](../assets/USERFLOW%20MOBILE/US13_%20Reporte%20de%20máquina.png){ width=50% }
-
-* **User Goal:** Como cliente frecuente, quiero ganar puntos canjeables en mi perfil, para motivarme a actualizar manualmente el estado de disponibilidad de los equipos.
-* **Happy Path:** El usuario levanta un ticket reportando un fallo en un equipo específico. El sistema procesa el reporte, valida su legitimidad cruzando la telemetría, confirma la recepción y recompensa al usuario sumando +25 puntos a su perfil.
-* **Unhappy Path:** Si el algoritmo de seguridad detecta un comportamiento anómalo (spam de reportes o falsos positivos recurrentes), la solicitud es rechazada. El sistema aplica una penalización automática, bloqueando la capacidad del usuario para emitir nuevos reportes durante 48 horas.
-
----
-
-## US14: Motor de sugerencia de rutinas alternativas
-
-![UF-14](../assets/USERFLOWS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){ width=90% }
-![UFM-14](../assets/USERFLOW%20MOBILE/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){ width=50% }
+![UF-13](../assets/USERFLOWS/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){ width=90% }
+![UFM-13](../assets/USERFLOW%20MOBILE/US14%20Motor%20de%20sugerencia%20de%20rutinas%20alternativas%20(Epic_%20EP04).png){ width=50% }
 
 * **User Goal:** Como cliente del gimnasio, quiero recibir recomendaciones de ejercicios alternativos cuando mi máquina esté ocupada, para no perder mi ritmo de entrenamiento.
 * **Happy Path:** Al encontrarse con una máquina inhabilitada u ocupada dentro de su rutina programada, el usuario solicita alternativas. El motor de recomendación mapea el grupo muscular y devuelve una lista de ejercicios biomecánicamente equivalentes (ej. sustituir press de banca por flexiones) utilizando el equipo disponible.
 * **Unhappy Path:** Si la base de datos no logra resolver una equivalencia factible para ese ejercicio dadas las restricciones actuales del entorno, la UI presenta un *empty state* comunicando que temporalmente no hay rutinas alternativas disponibles.
 
-## US15: Filtrado de alternativas por grupo muscular 
+## US14: Filtrado de alternativas por grupo muscular 
 
-![UF-15](../assets/USERFLOWS/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular.png){
+![UF-14](../assets/USERFLOWS/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular.png){
     width=90%
 }
-![UFM-15](../assets/USERFLOW%20MOBILE/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-UFM.png){
+![UFM-14](../assets/USERFLOW%20MOBILE/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-UFM.png){
     width=90%
 }
 
@@ -445,11 +428,11 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 * **Unhappy Path:** Si todos los equipos alternativos biomecánicamente válidos para ese grupo muscular se encuentran inhabilitados u ocupados, la UI muestra un empty state indicando que no hay sustitutos viables en ese momento.
 
 
-## US16: Sistema de reserva exprés en horas pico
-![UF-16](../assets/USERFLOWS/S16%20-%20reserva%20express.png){
+## US15: Sistema de reserva exprés en horas pico
+![UF-15](../assets/USERFLOWS/S16%20-%20reserva%20express.png){
     width=90%
 }
-![UFM-16](../assets/USERFLOW%20MOBILE/S16%20-%20reserva%20express.png){
+![UFM-15](../assets/USERFLOW%20MOBILE/S16%20-%20reserva%20express.png){
     width=90%
 }
 
@@ -457,37 +440,37 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 * **Happy Path:** Al seleccionar una máquina con estado libre en el mapa, el usuario activa la reserva exprés. El sistema cambia el estado del equipo a reservado y bloquea su uso para otros clientes, iniciando un temporizador de cuenta regresiva de 10 minutos hasta que el usuario llegue y valide su presencia.
 * **Unhappy Path:** Si el temporizador llega a cero antes de que el usuario valide su presencia en la máquina, el sistema cancela automáticamente la reserva, libera el equipo pasándolo a estado libre y emite una notificación de penalización o expiración al usuario.
 
-## US17: Acumulación automática de horas de uso (EP08)
-![UF-17](../assets/USERFLOWS/US17_%20Acumulación%20automática%20de%20horas%20de%20uso%20(EP08).png){ width=90% }
-![UFM-17](../assets/USERFLOW%20MOBILE/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png){ width=50% }
+## US16: Acumulación automática de horas de uso (EP08)
+![UF-16](../assets/USERFLOWS/US17_%20Acumulación%20automática%20de%20horas%20de%20uso%20(EP08).png){ width=90% }
+![UFM-16](../assets/USERFLOW%20MOBILE/US17%20Acumulación%20automática%20de%20horas%20de%20uso.png){ width=50% }
 * **User Goal:** Como administrador, quiero ver gráficos con la sumatoria de horas reales de uso de las máquinas, para comprender la demanda real sin tener que vigilar el local.
 * **Happy Path:** El administrador ingresa a Reportes y visualiza los gráficos de uso generados por los sensores IoT. Al revisar el tiempo inactivo, el sistema calcula y detalla automáticamente la pérdida monetaria por cada máquina. Finalmente, al aplicar un filtro de fechas, la plataforma recalcula y actualiza toda la información al instante.
 * **Unhappy Path:** El administrador ingresa a Reportes, pero el backend no logra comunicarse con los sensores IoT. El sistema no se cae, sino que muestra un estado de alerta ("Sin conexión con los equipos") y los gráficos aparecen en cero o con el último dato en caché.
 
 
-## US18: Identificación de equipos subutilizados (EP05)
+## US17: Identificación de equipos subutilizados (EP05)
 
-![UF-18](../assets/USERFLOWS/US18_%20Identificación%20de%20equipos%20subutilizados%20(EP05).png){ width=90% }
-![UFM-18](../assets/USERFLOW%20MOBILE/US18%20Identificación%20de%20equipos%20subutilizados%20.png){ width=50% }
+![UF-17](../assets/USERFLOWS/US18_%20Identificación%20de%20equipos%20subutilizados%20(EP05).png){ width=90% }
+![UFM-17](../assets/USERFLOW%20MOBILE/US18%20Identificación%20de%20equipos%20subutilizados%20.png){ width=50% }
 
 * **User Goal:** Como administrador, quiero que el sistema resalte en una tabla qué máquinas tienen una tasa de uso excepcionalmente baja, para evaluar su reubicación o descarte.
 * **Happy Path:** El administrador ingresa a la sección de Reportes para evaluar la ineficiencia operativa de la sede. El sistema procesa las estadísticas de ocupación recopiladas por los sensores y resalta automáticamente en una tabla aquellas máquinas cuya tasa de uso es inferior al parámetro base. Finalmente, el administrador hace clic en "Exportar CSV" y la plataforma descarga exitosamente un archivo con la data detallada para su análisis externo.
 * **Unhappy Path:** El administrador visualiza correctamente la tabla consolidada de equipos subutilizados y procede a hacer clic en "Exportar CSV". Debido a un error de conexión con el servidor, la generación del documento falla y el sistema despliega una notificación de error advirtiendo que no es posible descargar el archivo.
 
 
-## US19: Visualización de picos de estrés del local (EP05) 
+## US18: Visualización de picos de estrés del local (EP05) 
 
-![UF-19](../assets/USERFLOWS/US19_%20Visualización%20de%20picos%20de%20estrés%20del%20local%20(EP05)%20(1).png){ width=90% }
-![UFM-19](../assets/USERFLOW%20MOBILE/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png){ width=50% }
+![UF-18](../assets/USERFLOWS/US19_%20Visualización%20de%20picos%20de%20estrés%20del%20local%20(EP05)%20(1).png){ width=90% }
+![UFM-18](../assets/USERFLOW%20MOBILE/US19%20Visualización%20de%20picos%20de%20estrés%20del%20local.png){ width=50% }
 * **User Goal:** Como administrador, quiero que el sistema resalte en una tabla qué máquinas tienen una tasa de uso excepcionalmente baja, para evaluar su reubicación o descarte.
 * **Happy Path:** El administrador accede al módulo de Reportes en SpotTrack, donde el sistema genera automáticamente un gráfico de picos de estrés resaltando en rojo las horas con aforo superior al 90%. Al activar la comparativa intersemanal, la interfaz superpone dos líneas de tendencia, permitiendo al dueño del negocio identificar cuellos de botella diarios y comparar el comportamiento de la demanda entre distintos períodos de forma inmediata.
 * **Unhappy Path:** Debido a un error de red, el sistema no puede procesar el porcentaje de uso. En lugar del gráfico de estrés, se muestra un estado de carga infinito o un aviso de "Error al cargar analíticas de aforo", sugiriendo reintentar la consulta.
 
 
-## US20 Exportación de analíticas de uso (Epic: EP05)
+## US19 Exportación de analíticas de uso (Epic: EP05)
 
-![UF-20](../assets/USERFLOWS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png){ width=90% }
-![UFM-20](../assets/USERFLOW%20MOBILE/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png){ width=50% }
+![UF-19](../assets/USERFLOWS/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png){ width=90% }
+![UFM-19](../assets/USERFLOW%20MOBILE/US20%20Exportación%20de%20analíticas%20de%20uso%20(Epic_%20EP05).png){ width=50% }
 
 * **User Goal**: Como gerente de operaciones, quiero generar documentos formateados en PDF de los gráficos de uso, para presentar reportes formales de rendimiento.
   
@@ -496,72 +479,72 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 * **Unhappy Path:** Si no existen datos registrados para el período o la sede seleccionada, o si ocurre un fallo durante la generación del archivo, el sistema no puede completar la exportación y muestra un mensaje de error indicando la imposibilidad de generar el reporte, sin ofrecer archivo de descarga.
 
 
-## US21 Monitoreo de estado de hardware Edge IoT (Epic_ EP05)
+## US20 Monitoreo de estado de hardware Edge IoT (Epic_ EP05)
 
-![UF-21](../assets/USERFLOWS/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png){ width=90% }
-![UFM-21](../assets/USERFLOW%20MOBILE/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png){ width=50% }
+![UF-20](../assets/USERFLOWS/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png){ width=90% }
+![UFM-20](../assets/USERFLOW%20MOBILE/US21%20Monitoreo%20de%20estado%20de%20hardware%20Edge%20IoT%20(Epic_%20EP05).png){ width=50% }
 
 * **User Goal:** Como administrador, quiero revisar la salud de la red y el estado de los nodos IoT, para detectar si un sensor se ha desconectado.
 * **Happy Path:** El sistema detecta automáticamente la reconexión de un sensor IoT previamente desconectado y notifica al administrador mediante un mensaje de éxito con opción de descarga de reporte.
 * **Unhappy Path:** Si el sensor permanece desconectado tras el intento de sincronización, la interfaz alerta al administrador sobre la falla crítica de conexión, manteniendo el estado de "Desconectado" en el reporte de alertas.
 
-## US22 Alerta predictiva de mantenimiento (Epic_ EP06) CONFIGURAR UMBRAL
+## US21 Alerta predictiva de mantenimiento (Epic_ EP06) CONFIGURAR UMBRAL
 
 
-![UF-22](../assets/USERFLOWS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png){ width=90% }
-![UFM-22](../assets/USERFLOW%20MOBILE/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png){ width=50% }
+![UF-21](../assets/USERFLOWS/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png){ width=90% }
+![UFM-21](../assets/USERFLOW%20MOBILE/US22%20Alerta%20predictiva%20de%20mantenimiento%20(Epic_%20EP06)%20CONFIGURAR%20UMBRAL.png){ width=50% }
 
 * **User Goal:**
 * **Happy Path:** El administrador ajusta los parámetros de los umbrales (batería, tiempos de inactividad, horas críticas) en el panel de configuración, y el sistema guarda los cambios aplicando las nuevas reglas a los modelos predictivos.
 * **Unhappy Path:** Ante valores de configuración fuera de los rangos técnicos permitidos (ej. un intervalo de ping inexistente), el sistema bloquea la acción de guardado y requiere el ajuste de los parámetros.
 
-## US23 Despacho automatizado de tickets técnicos (Epic_ EP06)
+## US22 Despacho automatizado de tickets técnicos (Epic_ EP06)
 
-![UF-23](../assets/USERFLOWS/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png){ width=90% }
-![UFM-23](../assets/USERFLOW%20MOBILE/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png){ width=50% }
+![UF-22](../assets/USERFLOWS/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png){ width=90% }
+![UFM-22](../assets/USERFLOW%20MOBILE/US23%20Despacho%20automatizado%20de%20tickets%20técnicos%20(Epic_%20EP06).png){ width=50% }
 
 * **User Goal:**
 * **Happy Path:** El usuario técnico crea un ticket completando todos los campos requeridos (ID máquina, descripción, prioridad), y el sistema lo integra en el tablero de mantenimiento en tiempo real.
 * **Unhappy Path (Missing fields):** Si el formulario se envía sin descripción o prioridad, la UI invalida la creación del ticket y solicita completar la información obligatoria.
 * **Unhappy Path (Incorrect data):** Al ingresar datos técnicos inconsistentes o IDs de máquinas inexistentes, el sistema muestra un error de validación impidiendo el despacho del ticket.
 
-## US24 Notificación de restablecimiento a los usuarios (Epic_ EP06)
+## US23 Notificación de restablecimiento a los usuarios (Epic_ EP06)
 
-![UF-24](../assets/USERFLOWS/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png){ width=90% }
-![UFM-24](../assets/USERFLOW%20MOBILE/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png){ width=50% }
+![UF-23](../assets/USERFLOWS/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png){ width=90% }
+![UFM-23](../assets/USERFLOW%20MOBILE/US24%20Notificación%20de%20restablecimiento%20a%20los%20usuarios%20(Epic_%20EP06).png){ width=50% }
 * **User Goal:** Como administrador, quiero que el sistema notifique a los clientes cuando un equipo reportado es reparado, para mejorar su percepción del servicio.
 * **Happy Path:** Tras la resolución de una incidencia en el centro de mantenimiento, el sistema actualiza automáticamente el mapa de disponibilidad, habilitando nuevamente la máquina para los usuarios finales.
 * **Unhappy Path:** Si la resolución del ticket es parcial o el problema persiste tras la intervención técnica, la máquina permanece inhabilitada en el mapa de disponibilidad, manteniendo la alerta de estado crítico en el centro de mantenimiento.
 
-## US25 Calendario inteligente de bloqueos de reserva(Epic_ EP04)
+## US24 Calendario inteligente de bloqueos de reserva(Epic_ EP04)
 
-![UF-25](../assets/USERFLOWS/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png){ width=90% }
-![UFM-25](../assets/USERFLOW%20MOBILE/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png){ width=50% } 
+![UF-24](../assets/USERFLOWS/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png){ width=90% }
+![UFM-24](../assets/USERFLOW%20MOBILE/US25%20Calendario%20inteligente%20de%20bloqueos%20de%20reserva(Epic_%20EP04).png){ width=50% } 
 
 * **User Goal:** Como gerente de operaciones, quiero que el sistema agende los mantenimientos preventivos exclusivamente en horarios valle, para no afectar la disponibilidad en horas de alta demanda.
 * **Happy Path:** El usuario selecciona un activo desde el mapa de disponibilidad, completa el formulario de reserva con datos válidos y el sistema confirma la operación exitosamente.
 * **Unhappy Path:** Si el usuario intenta realizar una reserva con campos obligatorios vacíos o ingresa datos inválidos (como horarios conflictivos), la UI presenta validaciones en rojo indicando los errores específicos.
 
-## US26 Gestión de activos físicos y altas (Epic_ EP07)
+## US25 Gestión de activos físicos y altas (Epic_ EP07)
 
-![UF-26](../assets/USERFLOWS/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png){ width=90% }
-![UFM-26](../assets/USERFLOW%20MOBILE/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png){ width=50% }
+![UF-25](../assets/USERFLOWS/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png){ width=90% }
+![UFM-25](../assets/USERFLOW%20MOBILE/US26%20Gestión%20de%20activos%20físicos%20y%20altas%20(Epic_%20EP07).png){ width=50% }
 * **User Goal:**Como administrador, quiero registrar o dar de baja equipos vinculándolos a un sensor IoT, para actualizar el inventario digital y el mapa de calor. 
 * **Happy Path:** El administrador completa el formulario de registro de nueva máquina con datos correctos (nombre, tipo, sede, ID de sensor) y el sistema lo añade al inventario global.
 * **Unhappy Path:** Si existen campos faltantes o datos inválidos (como un ID de sensor ya existente), el flujo se detiene y la interfaz resalta los campos que requieren corrección antes de permitir el guardado.
 
-## US29 Calculadora de impacto financiero por inactividad (Epic: EP08)
+## US28 Calculadora de impacto financiero por inactividad (Epic: EP08)
 
-![UF-29](../assets/USERFLOWS/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png){ width=90% }
-![UFM-29](../assets/USERFLOW%20MOBILE/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png){ width=50% }
+![UF-28](../assets/USERFLOWS/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png){ width=90% }
+![UFM-28](../assets/USERFLOW%20MOBILE/US29%20Calculadora%20de%20impacto%20financiero%20por%20inactividad%20(Epic_%20EP08).png){ width=50% }
 * **User Goal:**
 * **Happy Path:** El sistema calcula y presenta automáticamente el impacto financiero de la inactividad de activos, mostrando métricas clave como la pérdida por inactividad ($1,872), el costo de mantenimiento ($5,150), el ahorro potencial con mantenimiento predictivo ($1,840) y el ROI promedio de recuperación de inversión (7.2 meses).
 * **Unhappy Path:** Si los activos no cuentan con datos de operación o historial de inactividad registrado, o si los parámetros financieros ingresados son incompletos o inválidos, la calculadora no puede generar los indicadores y muestra los campos vacíos o un mensaje de error indicando la imposibilidad de calcular el impacto financiero.
 
-## US30 Analítica predictiva de compras e inversión (Epic_ EP08)
+## US29 Analítica predictiva de compras e inversión (Epic_ EP08)
 
-![UF-30](../assets/USERFLOWS/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png){ width=90% }
-![UFM-30](../assets/USERFLOW%20MOBILE/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png){ width=50% }
+![UF-29](../assets/USERFLOWS/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png){ width=90% }
+![UFM-29](../assets/USERFLOW%20MOBILE/US30%20Analítica%20predictiva%20de%20compras%20e%20inversión%20(Epic_%20EP08).png){ width=50% }
 * **User Goal:**
 * **Happy Path:** El sistema procesa los datos financieros y de uso para generar proyecciones de ROI y recomendaciones de inversión automáticas basadas en la salud de los activos.
 * **Unhappy Path:** Ante la falta de datos históricos suficientes o la introducción de parámetros de cálculo inconsistentes en el simulador, el motor de análisis muestra un estado de error o campos vacíos informando la imposibilidad de generar la proyección.
