@@ -107,7 +107,7 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 | **Time** | 10:00 AM |
 | **Location** | Reunión Virtual (Discord / Microsoft Teams) |
 | **Prepared By** | Azama Fukuda, Juan Pablo |
-| **Attendees (to planning meeting)** | Atoche Gonzales, Nicolas Fernando / Azama Fukuda, Juan Pablo / Cataño Zarate, Jesus Miguel / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
+| **Attendees (to planning meeting)** | Azama Fukuda, Juan Pablo / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
 | **Sprint Goal** | Nuestro enfoque es que los administradores de gimnasios y centros deportivos puedan descubrir y evaluar SpotTrack como solución de monitoreo IoT a través de una Landing Page publicada en producción. Creemos que esto les entrega una primera impresión clara del valor del producto y los motiva a solicitar acceso o información adicional sobre la plataforma. Esto se confirmará cuando la Landing Page esté desplegada y accesible públicamente, y los prototipos de experiencia de usuario estén validados por representantes de los segmentos objetivo. |
 | **Sprint 1 Velocity** | 45 Story Points |
 | **Sum of Story Points** | 45 |
@@ -119,30 +119,28 @@ Durante este sprint, la dinámica de trabajo exigió una división estratégica 
 | Team Member (Last Name, First Name) | GitHub Username | Aspect Name 1 Leader (L) / Collaborator (C) | Aspect Name 2 Leader (L) / Collaborator (C) | Aspect Name 3 Leader (L) / Collaborator (C) | Aspect Name 4 Leader (L) / Collaborator (C) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Azama Fukuda, Juan Pablo | llummo | Landing Page Elaboration (L) | Bounded Context Development (C) | Prototyping (L) | Scrum Master Role (L) |
-| Atoche Gonzales, Nicolas Fernando | THECOMAX | Landing Page Elaboration (C) | Bounded Context Development (C) | Prototyping (C) | UX Research (L) |
-| Cataño Zarate, Jesus Miguel | jcuz1510 | Landing Page Elaboration (C) | Bounded Context Development (L) | Database & Class Diagram (L) | UX Research (C) |
-| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Landing Page Elaboration (C) | Bounded Context Development (C) | Database & Class Diagram (C) | UX Research (C) |
-| Fernández Linares, Alvaro Sebastian | ORION-tech-c | Landing Page Elaboration (C) | Bounded Context Development (C) | Prototyping (C) | UX Research (C) |
+| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Landing Page Elaboration (C) | Bounded Context Development (C) | Database & Class Diagram (L) | UX Research (L) |
+| Fernández Linares, Alvaro Sebastian | ORION-tech-c | Landing Page Elaboration (C) | Bounded Context Development (L) | Prototyping (C) | UX Research (C) |
 
 ### Sprint Backlog
 
 | Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| | | T01 | UX Research & Entrevistas | Realizar entrevistas a administradores de gimnasios y clientes frecuentes; crear User Personas y Empathy Maps orientados al dominio IoT de SpotTrack. | 6 hrs | Atoche / Espinoza / Azama / Fernández | Done |
-| | | T02 | Diseño UX/UI de Landing Page | Diseñar Wireframes, Mockups y User Flows para la presentación comercial web de SpotTrack dirigida a gimnasios B2B. | 5 hrs | Cataño / Azama / Espinoza | Done |
-| | | T03 | Domain-Driven Design Artifacts | Elaborar EventStorming, Bounded Contexts y Context Mapping para la lógica de telemetría IoT y gestión de activos. | 5 hrs | Fernández / Atoche | Done |
-| | | T04 | Database & Class Diagram | Diseñar el Diagrama de Clases (UML) y el Diagrama Entidad-Relación (ERD) del sistema SpotTrack. | 5 hrs | Fernández / Atoche | Done |
+| | | T01 | UX Research & Entrevistas | Realizar entrevistas a administradores de gimnasios y clientes frecuentes; crear User Personas y Empathy Maps orientados al dominio IoT de SpotTrack. | 6 hrs | Espinoza / Azama / Fernández | Done |
+| | | T02 | Diseño UX/UI de Landing Page | Diseñar Wireframes, Mockups y User Flows para la presentación comercial web de SpotTrack dirigida a gimnasios B2B. | 5 hrs | Azama / Espinoza | Done |
+| | | T03 | Domain-Driven Design Artifacts | Elaborar EventStorming, Bounded Contexts y Context Mapping para la lógica de telemetría IoT y gestión de activos. | 5 hrs | Fernández | Done |
+| | | T04 | Database & Class Diagram | Diseñar el Diagrama de Clases (UML) y el Diagrama Entidad-Relación (ERD) del sistema SpotTrack. | 5 hrs | Fernández | Done |
 | | | T05 | Software Development Environment | Configurar el entorno de desarrollo y dependencias locales para el framework Angular (frontend) y ASP.NET Core (backend). | 4 hrs | Azama | Done |
-| | | T06 | Source Code Management & Styles | Definir el Style Guide del código, convenciones de commits y la arquitectura de información base bajo GitFlow. | 4 hrs | Cataño | Done |
-| | | T07 | Segmento objetivo & Lean UX Process | Definir segmentos objetivo (administradores de gimnasios y clientes frecuentes), Lean UX Canvas y la matriz de tareas del usuario. | 4 hrs | Cataño | Done |
+| | | T06 | Source Code Management & Styles | Definir el Style Guide del código, convenciones de commits y la arquitectura de información base bajo GitFlow. | 4 hrs | Fernández | Done |
+| | | T07 | Segmento objetivo & Lean UX Process | Definir segmentos objetivo (administradores de gimnasios y clientes frecuentes), Lean UX Canvas y la matriz de tareas del usuario. | 4 hrs | Espinoza | Done |
 | | | T08 | Software Deployment Configuration | Configurar el servicio de hosting cloud estático para la Landing Page de SpotTrack (Vercel/Netlify/GitHub Pages). | 4 hrs | Azama | Done |
 | | | T09 | Sprint 1 Planning & Backlog | Redactar el Sprint Planning, Aspect Leaders y el Backlog en el documento académico del proyecto. | 4 hrs | Espinoza | Done |
-| | | T10 | Development & Execution Evidence | Recolectar capturas de commits y evidencia gráfica de la ejecución de la Landing Page de SpotTrack. | 4 hrs | Cataño | Done |
+| | | T10 | Development & Execution Evidence | Recolectar capturas de commits y evidencia gráfica de la ejecución de la Landing Page de SpotTrack. | 4 hrs | Fernández | Done |
 | | | T11 | Deployment & Services Evidence | Documentar los enlaces de producción desplegados y las métricas de colaboración del equipo en GitHub. | 4 hrs | Fernández | Done |
 | US-01 | Descripción principal en el Hero Section | T12 | Desarrollo: Hero Section | Maquetar en HTML/CSS/JS la cabecera principal con el mensaje sobre optimización IoT de gimnasios y los CTAs de acceso al portal. | 4 hrs | Azama | Done |
-| US-03 | Visualización de Soluciones y Características | T13 | Desarrollo: Módulos del Sistema | Programar la sección responsiva que detalla los seis módulos del sistema: telemetría, mapa de calor, analíticas, mantenimiento predictivo, reservas y reportes. | 4 hrs | Cataño | Done |
+| US-03 | Visualización de Soluciones y Características | T13 | Desarrollo: Módulos del Sistema | Programar la sección responsiva que detalla los seis módulos del sistema: telemetría, mapa de calor, analíticas, mantenimiento predictivo, reservas y reportes. | 4 hrs | Azama | Done |
 | US-04 | Selección de planes de suscripción SaaS | T14 | Desarrollo: Pricing Table | Maquetar la tabla de precios interactiva para los planes SaaS (Basic, Mid, Platinum) dirigidos a centros deportivos. | 4 hrs | Espinoza | Done |
-| US-05 | Envío de formulario de Contacto | T15 | Desarrollo: Formulario & Validaciones | Codificar el formulario de contacto para leads comerciales con validaciones en JavaScript. | 4 hrs | Atoche | Done |
+| US-05 | Envío de formulario de Contacto | T15 | Desarrollo: Formulario & Validaciones | Codificar el formulario de contacto para leads comerciales con validaciones en JavaScript. | 4 hrs | Espinoza | Done |
 | US-06 | Acceso al portal desde la navegación | T16 | Desarrollo: Navbar & Footer | Implementar la barra de navegación superior con botones de Login y Demo visibles, y el footer con enlaces institucionales. | 4 hrs | Fernández | Done |
 
 #### Development Evidence for Sprint Review
@@ -178,7 +176,7 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 | **Time** | 10:00 AM |
 | **Location** | Reunión Virtual (Discord / Microsoft Teams) |
 | **Prepared By** | Azama Fukuda, Juan Pablo |
-| **Attendees (to planning meeting)** | Atoche Gonzales, Nicolas Fernando / Azama Fukuda, Juan Pablo / Cataño Zarate, Jesus Miguel / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
+| **Attendees (to planning meeting)** | Azama Fukuda, Juan Pablo / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
 | **Sprint 1 Review Summary** | Sprint 1 entregó los artefactos fundacionales de Lean UX, DDD, diseño UX/UI en Figma y el inicio de la Landing Page (Hero Section y Header). Sin embargo, quedaron pendientes el despliegue, las secciones de módulos, precios y contacto de la Landing Page, así como diversas secciones de documentación del informe. |
 | **Sprint 1 Retrospective Summary** | El equipo identificó que la carga de trabajo de documentación y diseño subestimó el tiempo necesario. Para este Sprint 2 se priorizará paralelizar la corrección de Sprint 1 con el inicio del desarrollo de la Web App, asignando responsables claros por cada frente. |
 | **Sprint Goal** | Nuestro enfoque es que los administradores de gimnasios y los clientes frecuentes puedan explorar las funcionalidades principales de SpotTrack —como el mapa de calor de máquinas, la gestión de activos y las sugerencias de rutinas— navegando la aplicación web de la plataforma. Creemos que esto les entrega una experiencia tangible del flujo real del producto, permitiendo validar si la propuesta de valor responde a sus necesidades antes de conectar los servicios reales. Esto se confirmará cuando la aplicación web esté desplegada y ambos segmentos puedan completar los flujos principales sin bloqueos críticos. |
@@ -192,8 +190,6 @@ Para este Sprint 2, el equipo adoptó una estructura dual de trabajo: un subequi
 | Team Member (Last Name, First Name) | GitHub Username | Aspect 1: Sprint 1 Corrections Leader (L) / Collaborator (C) | Aspect 2: Angular App Setup & Auth Leader (L) / Collaborator (C) | Aspect 3: Client App Frontend (Heatmap & Routines) Leader (L) / Collaborator (C) | Aspect 4: Admin Dashboard Frontend Leader (L) / Collaborator (C) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Azama Fukuda, Juan Pablo | llummo | Corrections (C) | Angular App Setup (L) | Client App (C) | Admin Dashboard (C) |
-| Atoche Gonzales, Nicolas Fernando | THECOMAX | Corrections (C) | Fake API Config (L) | Client App (C) | Admin Dashboard (C) |
-| Cataño Zarate, Jesus Miguel | jcuz1510 | Landing Page Completion (L) | Angular App Setup (C) | Client App (C) | Admin Dashboard (C) |
 | Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Corrections (C) | Angular App Setup (C) | Client App (C) | Admin Dashboard (L) |
 | Fernández Linares, Alvaro Sebastian | ORION-tech-c | Corrections (L) | Angular App Setup (C) | Client App (L) | Admin Dashboard (C) |
 
@@ -203,23 +199,22 @@ Para este Sprint 2, el equipo adoptó una estructura dual de trabajo: un subequi
 
 | Id | Title | Task Id | Task Title | Description | Estimation (Hours) | Assigned To | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| - | Corrección Sprint 1 | CORR-01 | Completar sección "The Solution" en Landing Page | Maquetar las seis tarjetas de soluciones del sistema (US-03 pendiente) con HTML/CSS responsivo. | 4 hrs | Cataño | Done |
-| - | Corrección Sprint 1 | CORR-02 | Completar Pricing Table en Landing Page | Implementar la tabla comparativa de planes SaaS Basic/Mid/Platinum con CTAs (US-04 pendiente). | 4 hrs | Cataño | Done |
+| - | Corrección Sprint 1 | CORR-01 | Completar sección "The Solution" en Landing Page | Maquetar las seis tarjetas de soluciones del sistema (US-03 pendiente) con HTML/CSS responsivo. | 4 hrs | Azama | Done |
+| - | Corrección Sprint 1 | CORR-02 | Completar Pricing Table en Landing Page | Implementar la tabla comparativa de planes SaaS Basic/Mid/Platinum con CTAs (US-04 pendiente). | 4 hrs | Azama | Done |
 | - | Corrección Sprint 1 | CORR-03 | Completar formulario de Contacto en Landing Page | Codificar el formulario de contacto con validaciones JavaScript (US-05 pendiente). | 4 hrs | Espinoza | Done |
 | - | Corrección Sprint 1 | CORR-04 | Completar Navbar y Footer de Landing Page | Implementar la barra de navegación sticky con anchor links y el footer con enlaces institucionales (US-06 pendiente). | 4 hrs | Fernández | Done |
 | - | Corrección Sprint 1 | CORR-05 | Despliegue de Landing Page en producción | Configurar y publicar la Landing Page en GitHub Pages (T08 pendiente). Documentar el enlace de producción. | 4 hrs | Azama | Done |
-| - | Corrección Sprint 1 | CORR-06 | Completar Diagrama ERD y Diagrama de Clases | Finalizar y subir el ERD y el Diagrama de Clases UML al repositorio (T04 pendiente). Actualizar referencias en el informe. | 4 hrs | Atoche / Cataño | Done |
+| - | Corrección Sprint 1 | CORR-06 | Completar Diagrama ERD y Diagrama de Clases | Finalizar y subir el ERD y el Diagrama de Clases UML al repositorio (T04 pendiente). Actualizar referencias en el informe. | 4 hrs | Fernández / Espinoza | Done |
 | - | Corrección Sprint 1 | CORR-07 | Completar evidencias del Sprint 1 en el informe | Añadir capturas de pantalla de la Landing Page, commits reales y métricas de GitHub Insights en Development Evidence, Execution Evidence y Team Collaboration Insights. | 4 hrs | Espinoza / Fernández | Done |
-| - | Corrección Sprint 1 | CORR-08 | Completar Big Picture Event Storming (Capítulo II) | Elaborar y añadir el Big Picture Event Storming al Capítulo II (sección actualmente vacía). | 4 hrs | Atoche | Done |
+| - | Corrección Sprint 1 | CORR-08 | Completar Big Picture Event Storming (Capítulo II) | Elaborar y añadir el Big Picture Event Storming al Capítulo II (sección actualmente vacía). | 4 hrs | Fernández | Done |
 | - | Corrección Sprint 1 | CORR-09 | Completar sección Software Deployment Configuration (Capítulo V) | Redactar la descripción del entorno de despliegue, pipelines CI/CD y hosting utilizados. | 4 hrs | Azama | Done |
 | - | Corrección Sprint 1 | CORR-10 | Completar Project Report Collaboration Insights (Capítulo 0) | Añadir la descripción de la colaboración del equipo en el desarrollo del informe con evidencia de GitHub. | 4 hrs | Espinoza | Done |
-| - | Corrección Sprint 1 | CORR-11 | Agregar Student Outcome de Cataño Zárate (Capítulo 0) | Añadir las entradas de "Comunica oralmente" y "Comunica por escrito" para Jesús Miguel Cataño Zárate, actualmente ausentes de la tabla. | 4 hrs | Cataño | Done |
 | - | Corrección Sprint 1 | CORR-12 | Estandarizar análisis de entrevistas 4 y 5 | Añadir el campo "Resumen" completo a las entrevistas de Joan Steffano Quispe (Entrevistado 4) y Fabián Suárez (Entrevistado 5), siguiendo el mismo formato de las entrevistas 1–3. | 4 hrs | Fernández | Done |
-| - | Corrección Sprint 1 | CORR-13 | Subir fotos faltantes de integrantes del equipo | Agregar al repositorio las imágenes `foto-valentino.jpeg`, `foto-nicolas.png` y `foto-jesus-c.png`, referenciadas en el Capítulo I pero ausentes en la carpeta assets. | 4 hrs | Azama / Cataño | Done |
+| - | Corrección Sprint 1 | CORR-13 | Subir fotos faltantes de integrantes del equipo | Agregar al repositorio la imagen `foto-valentino.jpeg`, referenciada en el Capítulo I pero ausente en la carpeta assets. | 4 hrs | Azama | Done |
 | - | Corrección Sprint 1 | CORR-14 | Corregir inconsistencia de tech stack (ASP.NET vs Spring Boot) | En el Sprint 1 Backlog, la tarea T05 menciona "ASP.NET Core" como backend, pero el tech stack oficial declara Spring Boot. Corregir la descripción de T05 en el informe. | 4 hrs | Azama | Done |
 | - | Corrección Sprint 1 | CORR-15 | Corregir nombre de marca en análisis competitivo | La tabla de análisis competitivo usa "SpotTrack" (nombre antiguo) en lugar de "SpotTrack". Actualizar todas las instancias en el Capítulo II. | 4 hrs | Espinoza | Done |
 | - | Setup Web App | SETUP-01 | Crear proyecto Angular con estructura por Bounded Contexts | Inicializar el proyecto Angular (ng new spottrack-app), configurar la estructura de carpetas por bounded context: `auth/`, `heatmap/`, `admin/`, `maintenance/`, `equipment/`, `routines/`, `shared/`, `analytics/`. | 4 hrs | Azama | Done |
-| - | Setup Web App | SETUP-02 | Configurar JSON Server como Fake API | Instalar y configurar `json-server` con un `db.json` que contenga datos seed para: `users`, `equipments`, `IoT`, `alerts`, `tickets`, `reservations`, `routines/alternatives`, `analytics`. Exponer en `localhost:3000`. | 4 hrs | Atoche | Done |
+| - | Setup Web App | SETUP-02 | Configurar JSON Server como Fake API | Instalar y configurar `json-server` con un `db.json` que contenga datos seed para: `users`, `equipments`, `IoT`, `alerts`, `tickets`, `reservations`, `routines/alternatives`, `analytics`. Exponer en `localhost:3000`. | 4 hrs | Fernández | Done |
 | - | Setup Web App | SETUP-03 | Documentar Sprint 2 Planning, Backlog y evidencias en el informe | Redactar las secciones de Sprint Planning 2, Aspect Leaders y Sprint Backlog en el Capítulo V. Al finalizar el sprint, completar Development Evidence, Execution Evidence y Team Collaboration Insights. | 4 hrs | Espinoza | Done |
 | US25 | Gestión de activos físicos y altas | T01 | Implement equipment registration form | Build the UI form to register new equipment linked to an IoT sensor | 6 | Juan Pablo | Done |
 | US25 | Gestión de activos físicos y altas | T02 | Implement equipment decommission flow | Add decommission action and confirmation dialog | 4 | Juan Pablo | Done |
@@ -228,11 +223,11 @@ Para este Sprint 2, el equipo adoptó una estructura dual de trabajo: un subequi
 | TS12 | Registrar evento de telemetría IoT API | T05 | Implement POST /api/v1/telemetry endpoint | Receive and process IoT sensor state events | 5 | Juan Pablo | Done |
 | TS12 | Registrar evento de telemetría IoT API | T06 | Validate telemetry payload and auth | Return 400 on malformed or unauthorized payloads | 4 | Juan Pablo | Done |
 | TS13 | Listar historial de uso general API | T07 | Implement GET /api/v1/telemetry endpoint | Return usage history array filtered by date range | 4 | Juan Pablo | Done |
-| US08 | Gestión de preferencias y perfil | T08 | Build profile edit view | Allow user to update personal data and language preference | 4 | Jesús | Done |
-| US08 | Gestión de preferencias y perfil | T09 | Implement language toggle i18n | Wire language selector to i18n service | 4 | Jesús | Done |
-| US12 | Notificaciones push de disponibilidad | T10 | Build availability bell subscription UI | Allow client to subscribe to machine availability alert | 4 | Jesús | Done |
-| US12 | Notificaciones push de disponibilidad | T11 | Display push notification on machine release | Show notification when subscribed machine becomes free | 4 | Jesús | Done |
-| US23 | Notificación de restablecimiento a usuarios | T12 | Show restoration notification to clients | Notify clients when a repaired machine is back online | 4 | Nicolas | Done |
+| US08 | Gestión de preferencias y perfil | T08 | Build profile edit view | Allow user to update personal data and language preference | 4 | Álvaro | Done |
+| US08 | Gestión de preferencias y perfil | T09 | Implement language toggle i18n | Wire language selector to i18n service | 4 | Álvaro | Done |
+| US12 | Notificaciones push de disponibilidad | T10 | Build availability bell subscription UI | Allow client to subscribe to machine availability alert | 4 | Juan Pablo | Done |
+| US12 | Notificaciones push de disponibilidad | T11 | Display push notification on machine release | Show notification when subscribed machine becomes free | 4 | Juan Pablo | Done |
+| US23 | Notificación de restablecimiento a usuarios | T12 | Show restoration notification to clients | Notify clients when a repaired machine is back online | 4 | Juan Pablo | Done |
 | US09 | Visualización del mapa de calor en vivo | T13 | Build interactive heatmap component | Render machine availability map with green/red indicators | 8 | Juan Pablo | Done |
 | US09 | Visualización del mapa de calor en vivo | T14 | Implement real-time status update via polling | Auto-update machine icons without page reload | 6 | Juan Pablo | Done |
 | US10 | Filtrado del inventario por tipo de máquina | T15 | Implement filter tags component | Add Fuerza/Cardio filter tags to heatmap | 4 | Juan Pablo | Done |
@@ -247,26 +242,26 @@ Para este Sprint 2, el equipo adoptó una estructura dual de trabajo: un subequi
 | US15 | Sistema de reserva exprés en horas pico | T24 | Implement reservation expiry release flow | Return machine to free state when timer runs out | 4 | Álvaro | Done |
 | US24 | Calendario inteligente de bloqueos | T25 | Build smart schedule view with peak-hour warnings | Show warning when client selects high-demand slot | 5 | Álvaro | Done |
 | US24 | Calendario inteligente de bloqueos | T26 | Implement valley-hour suggestion on conflict | Suggest off-peak alternative when peak slot is selected | 4 | Álvaro | Done |
-| TS16 | Crear reserva exprés API | T27 | Implement POST /api/v1/reservations endpoint | Execute logical machine block during high demand | 5 | Nicolas | Done |
-| TS17 | Cancelar reserva exprés API | T28 | Implement PUT /api/v1/reservations/{id}/cancel endpoint | Release machine block on timer expiry or user abort | 4 | Nicolas | Done |
-| TS18 | Obtener sugerencias de rutinas API | T29 | Implement GET /api/v1/routines/alternatives endpoint | Run replacement algorithm by muscle group and availability | 5 | Nicolas | Done |
-| TS18 | Obtener sugerencias de rutinas API | T30 | Handle bodyweight fallback in suggestions | Return bodyweight alternatives when no machines are free | 4 | Nicolas | Done |
-| TS14 | Obtener picos de afluencia por día API | T31 | Implement GET /api/v1/analytics/peak-hours endpoint | Identify hourly blocks exceeding 90% capacity | 5 | Nicolas | Done |
-| TS15 | Exportar reporte gerencial API | T32 | Implement GET /api/v1/analytics/export/pdf endpoint | Generate binary PDF stream of monthly usage report | 5 | Nicolas | Done |
-| TS19 | Crear ticket de mantenimiento API | T33 | Implement POST /api/v1/tickets endpoint | Register incident and set machine to In Maintenance | 4 | Nicolas | Done |
-| TS20 | Listar tickets activos/históricos API | T34 | Implement GET /api/v1/tickets endpoint | Return filtered ticket backlog by branch or status | 4 | Nicolas | Done |
-| TS21 | Resolver ticket técnico API | T35 | Implement PUT /api/v1/tickets/{id}/resolve endpoint | Close ticket and return machine to free status | 4 | Nicolas | Done |
-| TS22 | Generar alerta predictiva API | T36 | Implement POST /api/v1/alerts endpoint | Auto-generate alert when usage exceeds safe threshold | 5 | Nicolas | Done |
-| TS23 | Programar bloqueo de mantenimiento API | T37 | Implement POST /api/v1/maintenance-blocks endpoint | Validate maintenance schedule against peak-hour conflicts | 5 | Nicolas | Done |
-| TS24 | Calcular impacto financiero API | T38 | Implement GET /api/v1/analytics/financial-impact endpoint | Convert downtime hours to monetary loss estimate | 5 | Nicolas | Done |
-| TS25 | Simular ROI API | T39 | Implement POST /api/v1/analytics/roi-projection endpoint | Run ROI simulation based on stress telemetry | 5 | Nicolas | Done |
-| TS05 | Crear nueva máquina API | T40 | Implement POST /api/v1/machines endpoint | Register new equipment linked to IoT sensor | 4 | Nicolas | Done |
-| TS06 | Listar máquinas por sede API | T41 | Implement GET /api/v1/machines endpoint | Return full inventory filtered by branchId | 4 | Nicolas | Done |
-| TS07 | Mostrar máquina por Id API | T42 | Implement GET /api/v1/machines/{id} endpoint | Return detailed physical and logical machine data | 4 | Nicolas | Done |
-| TS08 | Actualizar/Reubicar máquina API | T43 | Implement PUT /api/v1/machines/{id} endpoint | Allow branch reassignment or attribute update | 4 | Nicolas | Done |
-| TS09 | Dar de baja máquina API | T44 | Implement DELETE /api/v1/machines/{id} endpoint | Apply soft-delete and unlink IoT sensor | 4 | Nicolas | Done |
-| TS10 | Registrar repuesto en inventario API | T45 | Implement POST /api/v1/inventory endpoint | Add new spare part to maintenance stock | 4 | Nicolas | Done |
-| TS11 | Actualizar stock de repuesto API | T46 | Implement PUT /api/v1/inventory/{id}/stock endpoint | Discount materials when a ticket is resolved | 4 | Nicolas | Done |
+| TS16 | Crear reserva exprés API | T27 | Implement POST /api/v1/reservations endpoint | Execute logical machine block during high demand | 5 | Álvaro | Done |
+| TS17 | Cancelar reserva exprés API | T28 | Implement PUT /api/v1/reservations/{id}/cancel endpoint | Release machine block on timer expiry or user abort | 4 | Álvaro | Done |
+| TS18 | Obtener sugerencias de rutinas API | T29 | Implement GET /api/v1/routines/alternatives endpoint | Run replacement algorithm by muscle group and availability | 5 | Álvaro | Done |
+| TS18 | Obtener sugerencias de rutinas API | T30 | Handle bodyweight fallback in suggestions | Return bodyweight alternatives when no machines are free | 4 | Álvaro | Done |
+| TS14 | Obtener picos de afluencia por día API | T31 | Implement GET /api/v1/analytics/peak-hours endpoint | Identify hourly blocks exceeding 90% capacity | 5 | Valentino | Done |
+| TS15 | Exportar reporte gerencial API | T32 | Implement GET /api/v1/analytics/export/pdf endpoint | Generate binary PDF stream of monthly usage report | 5 | Valentino | Done |
+| TS19 | Crear ticket de mantenimiento API | T33 | Implement POST /api/v1/tickets endpoint | Register incident and set machine to In Maintenance | 4 | Juan Pablo | Done |
+| TS20 | Listar tickets activos/históricos API | T34 | Implement GET /api/v1/tickets endpoint | Return filtered ticket backlog by branch or status | 4 | Juan Pablo | Done |
+| TS21 | Resolver ticket técnico API | T35 | Implement PUT /api/v1/tickets/{id}/resolve endpoint | Close ticket and return machine to free status | 4 | Juan Pablo | Done |
+| TS22 | Generar alerta predictiva API | T36 | Implement POST /api/v1/alerts endpoint | Auto-generate alert when usage exceeds safe threshold | 5 | Juan Pablo | Done |
+| TS23 | Programar bloqueo de mantenimiento API | T37 | Implement POST /api/v1/maintenance-blocks endpoint | Validate maintenance schedule against peak-hour conflicts | 5 | Juan Pablo | Done |
+| TS24 | Calcular impacto financiero API | T38 | Implement GET /api/v1/analytics/financial-impact endpoint | Convert downtime hours to monetary loss estimate | 5 | Valentino | Done |
+| TS25 | Simular ROI API | T39 | Implement POST /api/v1/analytics/roi-projection endpoint | Run ROI simulation based on stress telemetry | 5 | Valentino | Done |
+| TS05 | Crear nueva máquina API | T40 | Implement POST /api/v1/machines endpoint | Register new equipment linked to IoT sensor | 4 | Álvaro | Done |
+| TS06 | Listar máquinas por sede API | T41 | Implement GET /api/v1/machines endpoint | Return full inventory filtered by branchId | 4 | Álvaro | Done |
+| TS07 | Mostrar máquina por Id API | T42 | Implement GET /api/v1/machines/{id} endpoint | Return detailed physical and logical machine data | 4 | Álvaro | Done |
+| TS08 | Actualizar/Reubicar máquina API | T43 | Implement PUT /api/v1/machines/{id} endpoint | Allow branch reassignment or attribute update | 4 | Álvaro | Done |
+| TS09 | Dar de baja máquina API | T44 | Implement DELETE /api/v1/machines/{id} endpoint | Apply soft-delete and unlink IoT sensor | 4 | Álvaro | Done |
+| TS10 | Registrar repuesto en inventario API | T45 | Implement POST /api/v1/inventory endpoint | Add new spare part to maintenance stock | 4 | Valentino | Done |
+| TS11 | Actualizar stock de repuesto API | T46 | Implement PUT /api/v1/inventory/{id}/stock endpoint | Discount materials when a ticket is resolved | 4 | Valentino | Done |
 | US16 | Acumulación automática de horas de uso | T47 | Build equipment usage hours chart | Display cumulative usage minutes per machine | 5 | Valentino | Done |
 | US16 | Acumulación automática de horas de uso | T48 | Implement date range filter on usage chart | Recalculate totals based on selected period | 4 | Valentino | Done |
 | US17 | Identificación de equipos subutilizados | T49 | Build underutilized equipment table | Highlight machines below usage threshold | 4 | Valentino | Done |
@@ -275,14 +270,14 @@ Para este Sprint 2, el equipo adoptó una estructura dual de trabajo: un subequi
 | US18 | Visualización de picos de estrés del local | T52 | Implement intersemanal comparison overlay | Superimpose two trend lines for weekly comparison | 4 | Valentino | Done |
 | US19 | Exportación de analíticas de uso | T53 | Build PDF export button on dashboard | Trigger formatted PDF download from analytics view | 4 | Valentino | Done |
 | US19 | Exportación de analíticas de uso | T54 | Handle export delay with email fallback notice | Show deferred notice when server is under load | 4 | Valentino | Done |
-| US21 | Alerta predictiva de mantenimiento | T55 | Build maintenance alert banner component | Display predictive alert when threshold is exceeded | 5 | Nicolas | Done |
-| US21 | Alerta predictiva de mantenimiento | T56 | Implement manual threshold configuration UI | Allow manager to set safe hours limit per machine | 4 | Nicolas | Done |
-| US22 | Despacho automatizado de tickets técnicos | T57 | Build assign-to-support action on alert | Convert alert to ticket and notify technician | 4 | Nicolas | Done |
-| US22 | Despacho automatizado de tickets técnicos | T58 | Update machine status to In Maintenance on ticket creation | Reflect maintenance state on public heatmap | 4 | Nicolas | Done |
+| US21 | Alerta predictiva de mantenimiento | T55 | Build maintenance alert banner component | Display predictive alert when threshold is exceeded | 5 | Juan Pablo | Done |
+| US21 | Alerta predictiva de mantenimiento | T56 | Implement manual threshold configuration UI | Allow manager to set safe hours limit per machine | 4 | Juan Pablo | Done |
+| US22 | Despacho automatizado de tickets técnicos | T57 | Build assign-to-support action on alert | Convert alert to ticket and notify technician | 4 | Álvaro | Done |
+| US22 | Despacho automatizado de tickets técnicos | T58 | Update machine status to In Maintenance on ticket creation | Reflect maintenance state on public heatmap | 4 | Álvaro | Done |
 | US26 | Estadísticas de reubicación multisede | T59 | Build cross-branch utilization stats view | Show demand comparison between branches | 6 | Valentino | Done |
 | US26 | Estadísticas de reubicación multisede | T60 | Display relocation recommendation card | Show transfer suggestion when demand imbalance is detected | 4 | Valentino | Done |
-| US27 | Gestión automatizada de stock de repuestos | T61 | Build spare parts inventory table | Show current stock per part with restock alert indicator | 4 | Nicolas | Done |
-| US27 | Gestión automatizada de stock de repuestos | T62 | Implement restock alert notification display | Show alert when part reaches minimum stock level | 4 | Nicolas | Done |
+| US27 | Gestión automatizada de stock de repuestos | T61 | Build spare parts inventory table | Show current stock per part with restock alert indicator | 4 | Valentino | Done |
+| US27 | Gestión automatizada de stock de repuestos | T62 | Implement restock alert notification display | Show alert when part reaches minimum stock level | 4 | Valentino | Done |
 | US28 | Calculadora de impacto financiero | T63 | Build financial impact module view | Display estimated monetary loss per machine downtime | 5 | Valentino | Done |
 | US28 | Calculadora de impacto financiero | T64 | Show monthly inefficiency cost chart | Render total hidden cost from equipment inactivity | 4 | Valentino | Done |
 | US29 | Analítica predictiva de compras e inversión | T65 | Build ROI projection simulation view | Allow manager to input acquisition cost and see ROI estimate | 5 | Valentino | Done |
@@ -540,7 +535,7 @@ El presente apartado detalla los acuerdos y objetivos definidos durante el Sprin
 | **Time** | 22:18 PM |
 | **Location** | Reunión Virtual (Discord) |
 | **Prepared By** | Azama Fukuda, Juan Pablo |
-| **Attendees (to planning meeting)** | Atoche Gonzales, Nicolas Fernando / Azama Fukuda, Juan Pablo / Cataño Zarate, Jesus Miguel / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
+| **Attendees (to planning meeting)** | Azama Fukuda, Juan Pablo / Espinoza Orrego, Valentino Andre / Fernández Linares, Alvaro Sebastian |
 | **Sprint 2 Review Summary** | Sprint 2 entregó una primera versión del frontend de la aplicación web desplegada correctamente. Asimismo, se desplegó una versión de la Landing Page culminada en un 90%. Sin embargo, solo se aplicó el 60% de las correcciones indicadas en el Sprint 1, quedando pendiente completar las correcciones restantes. |
 | **Sprint 2 Retrospective Summary** | El equipo identificó la ausencia de un proceso de QA formal como principal área de mejora, originada porque no todo estuvo terminado a tiempo. Se resaltó la necesidad de establecer deadlines claros, rastrear el progreso por capítulo y realizar releases oportunos. Se reconoció una mejora en el equilibrio de la carga de trabajo respecto al Sprint 1, aunque persistieron errores arrastrados del sprint anterior. También se señaló la falta de comunicación en la delegación de tareas y la importancia de que todos los integrantes se mantengan al tanto del avance general del equipo para facilitar un mejor QA colectivo. Como aciertos, se destacaron el cumplimiento de entregas por miembro en su mayoría, la mejora en el uso de GitFlow y el despliegue correcto del frontend con progreso decente. |
 | **Sprint Goal** | Nuestro enfoque es habilitar a los administradores de gimnasios para gestionar sus operaciones y a los clientes de gimnasio para registrar su actividad física a través de una plataforma web completamente conectada. Creemos que esto entrega una experiencia integral y sin fricciones —desde la gestión de cuentas hasta el seguimiento de sesiones— a administradores y clientes de gimnasio. Esto se confirmará cuando los participantes de las entrevistas de validación de ambos segmentos puedan completar exitosamente sus tareas principales en la aplicación desplegada sin bloqueos críticos. |
@@ -556,9 +551,7 @@ Para este Sprint 3, el equipo concentró sus esfuerzos en el desarrollo del back
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Azama Fukuda, Juan Pablo | llummo | Gym / Equipment / Maintenance / Reservation BC (L) | IAM BC (C) | Segment 1 (C) | Corrections (C) |
 | Fernández Linares, Alvaro Sebastian | ORION-tech-c | Profiles BC / Routines BC (L) | IAM BC (L) | Segment 2 (L) | C4 Diagram Revision (C) |
-| Atoche Gonzales, Nicolas Fernando | THECOMAX | Analytics BC (L) | (C) | (C) | Ubiquitous Language Update (L) |
-| Cataño Zarate, Jesus Miguel | jcuz1510 | Database Design & Creation (L) | (C) | (C) | Figma Documentation (C) |
-| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Analytics BC (C) | (C) | Segment 1 (L) | Figma Documentation (L) |
+| Espinoza Orrego, Valentino Andre | valentinoespinoza13 | Analytics BC (L) | (C) | Segment 1 (L) | Figma Documentation (L) |
 
 #### Sprint Backlog 3
 
@@ -622,10 +615,10 @@ Para este Sprint 3, el equipo concentró sus esfuerzos en el desarrollo del back
 | TS57 | Obtener rutina por ID API | T49 | Implement GET /api/v1/routines/{id} | Endpoint REST para recuperar el detalle de una rutina con sus bloques de ejercicio. | 2 hrs | Fernández | Done |
 | TS58 | Listar rutinas por cliente API | T50 | Implement GET /api/v1/routines?clientId={id} | Endpoint REST para listar todas las rutinas de un cliente específico. | 2 hrs | Fernández | Done |
 | TS59 | Agregar bloque de ejercicio API | T51 | Implement POST /api/v1/routines/{id}/exercise-blocks | Endpoint REST para añadir un bloque de ejercicio con nombre, tipo y orden a una rutina existente. | 3 hrs | Fernández | Done |
-| TAS-164 | Sprint 2 corrections | TAS-175 | Ubiquitous language update | Actualizar el glosario de lenguaje ubicuo en el Capítulo II para reflejar la terminología implementada en el backend. | 3 hrs | Atoche | Done |
+| TAS-164 | Sprint 2 corrections | TAS-175 | Ubiquitous language update | Actualizar el glosario de lenguaje ubicuo en el Capítulo II para reflejar la terminología implementada en el backend. | 3 hrs | Espinoza | Done |
 | TAS-164 | Sprint 2 corrections | TAS-174 | Remove hardcoded part in the main flow of the app | Conectar el frontend Angular a las URLs reales del backend, reemplazando valores hardcodeados por el environment de producción. | 3 hrs | Fernández | Done |
 | TAS-164 | Sprint 2 corrections | TAS-173 | Support in C4 diagram revision | Revisar y validar los diagramas C4 Component para asegurar que reflejan la arquitectura real del backend Spring Boot. | 3 hrs | Azama | Done |
-| TAS-164 | Sprint 2 corrections | TAS-172 | Diagrams Revision C4 Backend | Actualizar y corregir los diagramas C4 para representar con precisión la arquitectura por Bounded Contexts del backend. | 4 hrs | Atoche | Done |
+| TAS-164 | Sprint 2 corrections | TAS-172 | Diagrams Revision C4 Backend | Actualizar y corregir los diagramas C4 para representar con precisión la arquitectura por Bounded Contexts del backend. | 4 hrs | Fernández | Done |
 | TAS-164 | Sprint 2 corrections | TAS-171 | Figma documentation correction and completion | Corregir y completar la documentación de prototipos Figma en el informe del proyecto. | 3 hrs | Espinoza | Done |
 
 ![Trello-board](image.png)
@@ -774,7 +767,7 @@ Durante el Sprint 3, la colaboración del equipo se concentró principalmente en
 
 El presente apartado detalla los acuerdos y objetivos definidos durante el Sprint Planning Meeting de nuestra cuarta y última iteración, así como los resultados alcanzados al cierre del ciclo de vida del proyecto. Para este Sprint final, el equipo se concentró en tres frentes de trabajo: (1) completar los Bounded Contexts de Analytics, IoT/Monitoring y Membership del backend con Spring Boot; (2) incorporar un modelo de negocio de suscripción real, integrando Stripe como servicio de pago de terceros para la activación y facturación de cuentas de administrador; y (3) lograr la integración plena del frontend Angular con el backend real desplegado en producción, subsanando las correcciones identificadas en el Sprint 3 y consolidando la versión final de todos los productos digitales de la plataforma.
 
-**Cambio en la composición del equipo:** al inicio de este Sprint, Atoche Gonzales, Nicolas Fernando y Cataño Zarate, Jesus Miguel se retiraron del curso. Se incorporó al equipo **Limache Coronel, Imanol Fabrizio** (GitHub: `ImaLi06`), quien asumió trabajo en los Bounded Contexts de Monitoring, Maintenance y Routines, además del módulo de Alertas en el frontend.
+**Cambio en la composición del equipo:** al inicio de este Sprint, dos integrantes del equipo se retiraron del curso. Se incorporó al equipo **Limache Coronel, Imanol Fabrizio** (GitHub: `ImaLi06`), quien asumió trabajo en los Bounded Contexts de Monitoring, Maintenance y Routines, además del módulo de Alertas en el frontend.
 
 | Aspect | Details |
 | :--- | :--- |
