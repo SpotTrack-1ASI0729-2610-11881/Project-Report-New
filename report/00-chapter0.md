@@ -78,15 +78,53 @@ URL del Repositorio spottrack-report: (https://github.com/SpotTrack-1ASI0729-261
 
 **Sprints 1 y 2**
 
+*Report*
+
 ![](../assets/Insights/report.png)
+
+*Website*
+
+![](../assets/Insights/website.png)
+
+*Web Application*
+
+![](../assets/Insights/webapp.png)
 
 **Sprint 3**
 
+*Report*
+
 ![](../assets/Insights/sprint3/report-insights.png)
+
+*Website*
+
+![](../assets/Insights/sprint3/website-insights.png)
+
+*Web Application*
+
+![](../assets/Insights/sprint3/webapp-insights.png)
+
+*Platform*
+
+![](../assets/Insights/sprint3/platform-insights.png)
 
 **Sprint 4**
 
+*Report*
+
 ![](../assets/Insights/sprint4/report-insights.png)
+
+*Website*
+
+![](../assets/Insights/sprint4/website-insights.png)
+
+*Web Application*
+
+![](../assets/Insights/sprint4/webapp-insights.png)
+
+*Platform*
+
+![](../assets/Insights/sprint4/platform-insights.png)
 
 ---
 
