@@ -35,9 +35,7 @@
     <tr><th>Código</th><th>Apellidos y Nombres</th></tr>
   </thead>
   <tbody>
-    <tr><td>u20241d317</td><td>Atoche Gonzales, Nicolas Fernando</td></tr>
     <tr><td>u202411310</td><td>Azama Fukuda, Juan Pablo</td></tr>
-    <tr><td>u202413214</td><td>Cataño Zárate, Jesús Miguel</td></tr>
     <tr><td>u202414928</td><td>Fernández Linares, Alvaro Sebastian</td></tr>
     <tr><td>u202410344</td><td>Espinoza Orrego, Valentino Andre</td></tr>
     <tr><td>u20241a860</td><td>Limache Coronel, Imanol Fabrizio</td></tr>
