@@ -26,15 +26,6 @@ Soy **Alvaro Sebastian Fernández Linares** (código: u202414928), estudiante de
 
 Soy **Valentino Andre Espinoza Orrego** (código: u202410344), "Estudiante de Ingeniería de Software en la UPC apasionado por la tecnología y el aprendizaje constante. Me especializo en potenciar mis capacidades técnicas y analíticas, trabajando colaborativamente para resolver problemas con eficiencia. Busco oportunidades prácticas donde aplicar mis conocimientos, contribuir responsablemente y desarrollar soluciones funcionales de alto impacto
 
-![foto-nicolas](../assets/foto-nicolas.png)
-
-Soy **Nicolas Fernando Atoche Gonzales** (código: u20241d317), actualmente estoy en el quinto ciclo de la carrera de ingeniería de software. Poseo un conocimiento básico/intermedio en programación con C++, java y Lua. Además, cuento con conocimientos en el desarrollo de videojuegos. Dentro del equipo, estoy encargado en el desarrollo del backend  del proyecto. A su vez suelo orientarme por el conocimiento y el pensamiento lógico, con lo cual suelo buscar la solución más óptima y ágil dentro de un problema a través de pasos sencillos y definidos que construyan una base sólida donde pueda desarrollar respuestas claras y efectivas.
-
-![foto-jesus](../assets/foto-jesus-c.png)
-
-Soy **Jesús Miguel Cataño Zárate**, (Código: u202413214). Actualmente estudio el 5to ciclo de Ingeniería de Software. Cuento con un nivel intermedio en C++,C# y experiencia usando Java, para desarrollos móviles y HTML,JS,Node.Js en cuanto a páginas web. 
-Mi aporte al equipo, a nivel técnico, contribuyo en el desarrollo creación de arquitecturas escalables y eficientes. Por otro lado, desempeño el rol de Team Leader dentro de mi grupo, asumiendo la responsabilidad de guiar y coordinar al equipo para trabajar de manera efectiva.
-
 ## Solution Profile
 
 ### Antecedentes y problemática
