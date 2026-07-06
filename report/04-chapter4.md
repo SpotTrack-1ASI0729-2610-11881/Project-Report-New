@@ -712,4 +712,37 @@ Flujos dinámicos del ciclo de vida del mantenimiento, abarcando desde la detecc
 ## Database Design
 
 ### Database Diagrams
-![spottrack-platform](../assets/spottrack-platform.png)
+
+En esta sección se presentan los diagramas Entidad-Relación (ER) de cada Bounded Context de la plataforma SpotTrack. Al final se incluye el diagrama consolidado que integra todos los contextos en una vista unificada de la plataforma.
+
+#### IAM & Profiles
+
+![IAM & Profiles ER Diagram](../docs/database/iam_profiles_bc_er_diagram.png)
+
+#### Membership
+
+![Membership ER Diagram](../docs/database/membership_bc_er_diagram.png)
+
+#### Gym
+
+![Gym ER Diagram](../docs/database/gym_bc_er_diagram.png)
+
+#### Routines
+
+![Routines ER Diagram](../docs/database/routines_bc_er_diagram.png)
+
+#### Monitoring
+
+![Monitoring ER Diagram](../docs/database/monitoring_bc_er_diagram.png)
+
+#### Alerts
+
+![Alerts ER Diagram](../docs/database/alerts_bc_er_diagram.png)
+
+#### Maintenance & Analytics
+
+![Maintenance & Analytics ER Diagram](../docs/database/maintenance_analytics_bc_er_diagram.png)
+
+#### Diagrama Completo
+
+![SpotTrack Platform - Diagrama Completo](../assets/spottrack-platform.png)
