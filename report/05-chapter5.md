@@ -161,6 +161,11 @@ Execution evidence video: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202
 #### Team Collaboration Insights during Sprint
 ![](../assets/Insights/website.png)
 
+Los siguientes analíticos de colaboración corresponden al repositorio del Project Report durante el Sprint 1, evidenciando la participación de los miembros del equipo en la elaboración del informe mediante Pull Requests fusionados a la rama `develop` y la distribución de commits por integrante bajo el flujo GitFlow.
+
+#### Report
+![Report repository collaboration insights - Sprint 1](../assets/Insights/sprint1/report-insights.png)
+
 
 
 ### Sprint 2
