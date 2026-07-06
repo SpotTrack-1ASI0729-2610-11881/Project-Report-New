@@ -1329,8 +1329,14 @@ Usar un color que indique peligro o acción destructiva, como un rojo suave, par
 
 ## Video About the Product
 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBqCwjhy-X9RpjfwzjwhXqVARIbfCSm8cjN-vPPROqJqLk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BDcZEP
+En esta sección se presenta el video *About the Product* de SpotTrack, dirigido a los visitantes del Landing Page y a los usuarios de las aplicaciones. El video resume el modelo de negocio y las principales características y beneficios de la solución —monitoreo IoT en tiempo real del estado de las máquinas, mapa de calor de ocupación, reservas exprés, mantenimiento predictivo y analítica de uso—, incluyendo algunas escenas de interacción con el producto y al menos una opinión de un usuario representativo de cada segmento objetivo (administradores de gimnasios y clientes frecuentes) que participó en las entrevistas de validación. El tono de la comunicación es consistente con el adoptado para el producto.
 
+![Video About the Product - SpotTrack](../assets/about-the-product-thumbnail.jpg){width=500px}
+
+**Enlaces del video:**
+
+- **Microsoft Stream:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQBqCwjhy-X9RpjfwzjwhXqVARIbfCSm8cjN-vPPROqJqLk?e=hrfyGW
+- **YouTube:** https://youtu.be/MmlNGWqN-0k
 
 ## Conclusiones y Recomendaciones
 
