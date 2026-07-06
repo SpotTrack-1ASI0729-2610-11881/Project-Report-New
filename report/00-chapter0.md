@@ -76,7 +76,17 @@
 
 URL del Repositorio spottrack-report: (https://github.com/SpotTrack-1ASI0729-2610-11881/spottrack-report.git)
 
+**Sprints 1 y 2**
+
 ![](../assets/Insights/report.png)
+
+**Sprint 3**
+
+![](../assets/Insights/sprint3/report-insights.png)
+
+**Sprint 4**
+
+![](../assets/Insights/sprint4/report-insights.png)
 
 ---
 
