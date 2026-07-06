@@ -1008,6 +1008,20 @@ A continuación se detallan los principales endpoints implementados durante el S
 
 Repositorio de Web Services: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform — documentación interactiva disponible en Swagger UI (`/swagger-ui/index.html`), configurada mediante `springdoc-openapi-starter-webmvc-ui` con esquema de seguridad JWT Bearer.
 
+##### Repositorio y Trazabilidad de Documentación
+
+Para asegurar la transparencia y el seguimiento de los cambios, se detallan los enlaces a todos los repositorios de la organización utilizados durante el Sprint 4.
+
+URL Organización: https://github.com/upc-pre-202610-1asi0729-11881-spottrack
+
+URL Repositorio Web Services (Backend): https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-platform
+
+URL Repositorio Frontend Web Application: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-webapp
+
+URL Repositorio Landing Page: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-website
+
+URL Repositorio Report: https://github.com/upc-pre-202610-1asi0729-11881-spottrack/spottrack-report
+
 #### Software Deployment Evidence for Sprint Review
 
 El backend (`spottrack-platform`) se mantiene contenedorizado mediante un `Dockerfile` multi-stage (build con Maven 3.9/Eclipse Temurin 26, ejecución sobre `eclipse-temurin:26-jre`) y un `docker-compose.yml` que expone las variables de entorno de base de datos, `JWT_SECRET` y las credenciales de Stripe (`STRIPE_SECRET_API_KEY`, `STRIPE_WEBHOOK_SECRET`), desplegado en Azure App Service conectado a Azure MySQL Flexible Database con `useSSL=true`. **Se identifica como pendiente la ausencia de un pipeline de CI/CD** (no existe carpeta `.github/workflows` en este repositorio); el despliegue del backend se realiza de forma manual a partir de la imagen Docker.
