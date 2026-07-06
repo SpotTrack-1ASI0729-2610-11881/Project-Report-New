@@ -1411,6 +1411,17 @@ Se recomienda corregir la lectura de nivel de batería de los sensores IoT, repo
 
 Para una eventual continuidad del producto más allá del ciclo académico, se recomienda mapear explícitamente las dependencias funcionales entre Bounded Contexts durante la planificación de cada sprint (por ejemplo, Membership como precondición de Gym Onboarding), en lugar de descubrirlas durante la implementación, con el fin de acotar la brecha entre Story Points estimados y velocidad real observada en este sprint.
 
+## Video About the Team
+
+En esta sección se presenta el video *About the Team* de SpotTrack, el cual resume el proceso de trabajo realizado por el equipo a lo largo de los cuatro sprints del proyecto. El video combina escenas de las sesiones de trabajo reales del equipo con narración en voz en off del proceso de ingeniería de software seguido, e incluye el testimonio ante cámara de cada integrante describiendo las actividades que realizó, el logro de los outcomes y el desarrollo de competencias alcanzado durante el ciclo de vida del producto digital.
+
+![Video About the Team - SpotTrack](../assets/about-the-team-thumbnail.jpg){width=500px}
+
+**Enlaces del video:**
+
+- **Microsoft Stream:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u202410344_upc_edu_pe/IQCeBAJRJruqRpHrYHKWh9dIAZ-pnIuAtFKfjQC6ITyNkzQ?e=5BwqCi
+- **YouTube:** https://youtu.be/9i-B31jPiNI
+
 ## Bibliography
 
 <p style="padding-left: 30px; text-indent: -30px;">DINGG Team. (2025, 26 de noviembre). *Your 5-step operational plan to handle equipment failures*. DINGG. https://dingg.app/blogs/your-5-step-operational-plan-to-handle-equipment-failures</p>
