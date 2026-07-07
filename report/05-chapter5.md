@@ -91,7 +91,7 @@ La siguiente figura muestra la configuración del archivo de workflow de GitHub 
 Deployed landing page:
 ![Landing page screenshot](../assets/landing-page-deployment-evidence/lading-page-screenshot.png)
 
-https://upc-pre-202610-1asi0730-11881-spottrack.github.io/spottrack-website/
+https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/
 
 ## Landing Page, Services & Applications Implementation
 
