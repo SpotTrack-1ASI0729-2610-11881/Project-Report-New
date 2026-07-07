@@ -91,7 +91,7 @@ La siguiente figura muestra la configuración del archivo de workflow de GitHub 
 Deployed landing page:
 ![Landing page screenshot](../assets/landing-page-deployment-evidence/lading-page-screenshot.png)
 
-https://upc-pre-202610-1asi0730-11881-spottrack.github.io/spottrack-website/
+https://upc-pre-202610-1asi0729-11881-spottrack.github.io/spottrack-website/
 
 ## Landing Page, Services & Applications Implementation
 
@@ -518,7 +518,7 @@ Por parte de la aplicación web, se utilizó un static web app de Azure para rea
 ![](../assets/azure-evidence.png)
 ![](../assets/github-actions-webapp.png)
 
-Webapp URL: https://kind-desert-06c07fc10.7.azurestaticapps.net/
+Webapp URL: https://ashy-meadow-0d9e60a10.7.azurestaticapps.net/
 
 #### Team Collaboration Insights during Sprint
 

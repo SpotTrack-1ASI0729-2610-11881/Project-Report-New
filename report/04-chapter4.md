@@ -184,7 +184,7 @@ Bottom Navigation Bar: Barra inferior persistente con 3 o 4 íconos de acceso r�
 
 ![US14 Filtrado de alternativas por grupo muscular](../assets/WIREFRAMES/US15%20Filtrado%20de%20alternativas%20por%20grupo%20muscular-W.png)
 
-![US15 Sistema de reserva exprés en horas pico](../assets/WIREFRAMES/S16%20-%20reserva%20express.png}
+![US15 Sistema de reserva exprés en horas pico](../assets/WIREFRAMES/S16%20-%20reserva%20express.png)
 
 ![US16 Acumulación automática de horas de uso](../assets/WIREFRAMES/US17_Wireframe.png){width=600px}
 
