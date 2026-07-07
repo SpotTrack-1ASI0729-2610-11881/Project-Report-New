@@ -55,6 +55,42 @@
 
 \newpage
 
+# Registro de Versiones del Informe
+
+| Versión | Fecha | Autor | Descripción de modificación |
+|--------|------|------|-----------------------------|
+|1.0.0 | 25/04/26 | Azama, Espinoza, Fernández | Se realizaron todos los incisos realizados a Lean UX, Needfidining, UI/UX Design y DDD|
+|2.0.0 | 10/05/26 | Azama, Espinoza, Fernández | Se completó el despliegue de la Landing Page en GitHub Pages con todas sus secciones (Hero, Features, Pricing, Contact, Footer). Se implementó el desarrollo frontend de la Web Application en Angular con Fake RESTful API (JSON Server desplegado en Azure), cubriendo los bounded contexts de Equipment, IoT Monitoring, Heatmap, Authentication, Maintenance, Analytics, Routines y Booking. Se documentó el Sprint 2 Planning, Aspect Leaders, Sprint Backlog, Development Evidence, Services Documentation y Software Deployment Evidence. Se aplicó la corrección de artefactos pendientes del Sprint 1, incluyendo diagrama ERD, diagrama de clases, Big Picture EventStorming, evidencias de colaboración y estandarización de entrevistas. Se incorporaron las secciones de Conclusiones y Recomendaciones para ambos sprints. |
+|3.0.0 | 19/06/26 | Azama, Espinoza, Fernández | Se implementó el desarrollo backend de la Web Application con Spring Boot, conectando los servicios reales a las vistas Angular desarrolladas en el Sprint 2. Se desplegó una nueva versión de la Landing Page con mejoras de contenido y se actualizó el frontend con las correcciones pendientes del Sprint 2. Se realizaron entrevistas de validación con representantes de ambos segmentos objetivo (administradores y clientes de gimnasio). Se documentó el Sprint 3 Planning, Aspect Leaders, Sprint Backlog, Development Evidence, Validation Interviews y Software Deployment Evidence. Se incorporaron las Conclusiones y Recomendaciones del Sprint 3. |
+|4.0.0 | 05/07/26 | Azama, Limache, Espinoza, Fernández | Se completó el modelo de negocio SaaS con la integración de Stripe (suscripción, pago y facturación de membresías), el onboarding multi-gimnasio y la ampliación de la red de sensores IoT junto con el Centro de Alertas unificado. Se incorporó al equipo Limache Coronel, Imanol Fabrizio para reforzar el desarrollo del sprint final. Se documentó el Sprint 4 Planning, Aspect Leaders, Sprint Backlog, Development Evidence, Execution Evidence, Services Documentation y Software Deployment Evidence, junto con los nuevos User Stories y Technical Stories del Capítulo III. Se desplegó la versión final de los tres productos digitales (Landing Page, Web Application y Backend API) en producción. |
+
+---
+
+
+
+## Project Report Collaboration Insights
+
+URL del Repositorio spottrack-report: (https://github.com/SpotTrack-1ASI0729-2610-11881/spottrack-report.git)
+
+Esta sección presenta los analíticos de colaboración y commits en GitHub del repositorio del Project Report (`spottrack-report`), evidenciando la participación de todos los miembros del equipo en la elaboración del informe a lo largo de las entregas, en coherencia con el Registro de Versiones del Informe. Los analíticos de colaboración de los repositorios de implementación (Landing Page, Web Application y Platform) se documentan en la sección *Team Collaboration Insights* de cada Sprint del Capítulo V.
+
+**Sprints 1 y 2**
+
+![](../assets/Insights/report.png)
+
+**Sprint 3**
+
+![](../assets/Insights/sprint3/report-insights.png)
+
+**Sprint 4**
+
+![](../assets/Insights/sprint4/report-insights.png)
+
+---
+
+
+
+
 <nav id="TOC">
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
@@ -178,40 +214,7 @@
 </nav>
 
 
-ewpage
 
-# Registro de Versiones del Informe
-
-| Versión | Fecha | Autor | Descripción de modificación |
-|--------|------|------|-----------------------------|
-|1.0.0 | 25/04/26 | Azama, Espinoza, Fernández | Se realizaron todos los incisos realizados a Lean UX, Needfidining, UI/UX Design y DDD|
-|2.0.0 | 10/05/26 | Azama, Espinoza, Fernández | Se completó el despliegue de la Landing Page en GitHub Pages con todas sus secciones (Hero, Features, Pricing, Contact, Footer). Se implementó el desarrollo frontend de la Web Application en Angular con Fake RESTful API (JSON Server desplegado en Azure), cubriendo los bounded contexts de Equipment, IoT Monitoring, Heatmap, Authentication, Maintenance, Analytics, Routines y Booking. Se documentó el Sprint 2 Planning, Aspect Leaders, Sprint Backlog, Development Evidence, Services Documentation y Software Deployment Evidence. Se aplicó la corrección de artefactos pendientes del Sprint 1, incluyendo diagrama ERD, diagrama de clases, Big Picture EventStorming, evidencias de colaboración y estandarización de entrevistas. Se incorporaron las secciones de Conclusiones y Recomendaciones para ambos sprints. |
-|3.0.0 | 19/06/26 | Azama, Espinoza, Fernández | Se implementó el desarrollo backend de la Web Application con Spring Boot, conectando los servicios reales a las vistas Angular desarrolladas en el Sprint 2. Se desplegó una nueva versión de la Landing Page con mejoras de contenido y se actualizó el frontend con las correcciones pendientes del Sprint 2. Se realizaron entrevistas de validación con representantes de ambos segmentos objetivo (administradores y clientes de gimnasio). Se documentó el Sprint 3 Planning, Aspect Leaders, Sprint Backlog, Development Evidence, Validation Interviews y Software Deployment Evidence. Se incorporaron las Conclusiones y Recomendaciones del Sprint 3. |
-|4.0.0 | 05/07/26 | Azama, Limache, Espinoza, Fernández | Se completó el modelo de negocio SaaS con la integración de Stripe (suscripción, pago y facturación de membresías), el onboarding multi-gimnasio y la ampliación de la red de sensores IoT junto con el Centro de Alertas unificado. Se incorporó al equipo Limache Coronel, Imanol Fabrizio para reforzar el desarrollo del sprint final. Se documentó el Sprint 4 Planning, Aspect Leaders, Sprint Backlog, Development Evidence, Execution Evidence, Services Documentation y Software Deployment Evidence, junto con los nuevos User Stories y Technical Stories del Capítulo III. Se desplegó la versión final de los tres productos digitales (Landing Page, Web Application y Backend API) en producción. |
-
----
-
-
-
-## Project Report Collaboration Insights
-
-URL del Repositorio spottrack-report: (https://github.com/SpotTrack-1ASI0729-2610-11881/spottrack-report.git)
-
-Esta sección presenta los analíticos de colaboración y commits en GitHub del repositorio del Project Report (`spottrack-report`), evidenciando la participación de todos los miembros del equipo en la elaboración del informe a lo largo de las entregas, en coherencia con el Registro de Versiones del Informe. Los analíticos de colaboración de los repositorios de implementación (Landing Page, Web Application y Platform) se documentan en la sección *Team Collaboration Insights* de cada Sprint del Capítulo V.
-
-**Sprints 1 y 2**
-
-![](../assets/Insights/report.png)
-
-**Sprint 3**
-
-![](../assets/Insights/sprint3/report-insights.png)
-
-**Sprint 4**
-
-![](../assets/Insights/sprint4/report-insights.png)
-
----
 
 ## Student Outcome
 | Criterio específico                                                        | Acciones realizadas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Conclusiones                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
