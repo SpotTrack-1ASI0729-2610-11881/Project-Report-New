@@ -518,7 +518,7 @@ Por parte de la aplicación web, se utilizó un static web app de Azure para rea
 ![](../assets/azure-evidence.png)
 ![](../assets/github-actions-webapp.png)
 
-Webapp URL: https://kind-desert-06c07fc10.7.azurestaticapps.net/
+Webapp URL: https://ashy-meadow-0d9e60a10.7.azurestaticapps.net/
 
 #### Team Collaboration Insights during Sprint
 
